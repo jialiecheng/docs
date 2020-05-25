@@ -1,0 +1,28 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jialiecheng/docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jialiecheng/docs/issues"
+  },
+  "homepage": "https://github.com/jialiecheng/docs#readme",
+  "dependencies": {
+    "moment": "^2.26.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.5.0"
+  }
+}
