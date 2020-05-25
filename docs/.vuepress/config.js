@@ -35,8 +35,9 @@ module.exports = {
         buttonText: "刷新"
       }
     }
-    ],
-  themeConfig, {
+   ]
+  ],
+  themeConfig: {
     lastUpdated: '更新时间',
     logo: '/assets/img/jlclogo1.png',
     nav: [
