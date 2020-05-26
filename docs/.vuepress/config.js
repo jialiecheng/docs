@@ -1,7 +1,7 @@
 const moment = require('moment');
 moment.locale("zh-cn");
 module.exports = {
-  base: "/docs/",
+  // base: "/docs/",
   title: "jialiecheng",
   description: "jialiecheng的笔记",
   head: [
@@ -17,39 +17,42 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
-  plugins: [
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          const moment = require('moment')
-          return moment(timestamp).format("LLLL")
+  plugins: {
+    '@vuepress/last-updated': {
+        transformer: (timestamp, lang) => moment(timestamp).format("LLLL")
+      },
+      '@vuepress/pwa': {
+        serviceWorker: true,
+        updatePopup: {
+          message: "发现新的内容，奥利给",
+          buttonText: "刷新"
         }
+      },
+      '@vssue/vuepress-plugin-vssue': {
+        // 设置 `platform` 而不是 `api`
+        platform: 'github-v4',
+        // 其他的 Vssue 配置
+        owner: 'jialiecheng',
+        repo: 'docs',
+        clientId: 'd9d07f4a39a133719ac6',
+        clientSecret: '8408fae43098629487fb9b6f3233cb50f9fffd39',
+        autoCreateIssue: true
       }
-    ],
-    [
-    '@vuepress/pwa', {
-      serviceWorker: true,
-      updatePopup: {
-        message: "发现新的内容，奥利给",
-        buttonText: "刷新"
-      }
-    }
-   ]
-  ],
+  },
+
   themeConfig: {
     lastUpdated: '更新时间',
     logo: '/assets/img/jlclogo1.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/css' },
+      { text: 'Guide', link: '/about' },
       {
         text: 'Languages',
         items: [
           {
             text: 'Group1', items: [
               { text: 'Home', link: '/' },
-              { text: 'Guide', link: '/css' }
+              { text: 'Guide', link: '/about1' }
             ]
           },
           {
