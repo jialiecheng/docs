@@ -13,7 +13,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: '更新时间',
     logo: '/assets/img/jlclogo1.png',
-    // nav: navConf
-    // sidebar: sidebarConf
+    nav: navConf,
+    // sidebar: sidebarConf  侧边栏
   }
 }
