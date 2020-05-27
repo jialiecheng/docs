@@ -28,5 +28,16 @@ module.exports ={
       '@vuepress/back-to-top': true,
       '@vuepress/google-analytics': {
         'ga': secret.ga 
-      }
+      },
+      '@vuepress/medium-zoom': {
+        selector: 'img',
+        // medium-zoom options here
+        // See: https://github.com/francoischalifour/medium-zoom#options
+        // options: {
+        //   margin: 16
+        },
+        "vuepress-plugin-auto-sidebar": {
+          nav: true  //自动生成侧边栏
+        }
+      
 }
