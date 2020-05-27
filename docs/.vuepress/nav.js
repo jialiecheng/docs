@@ -1,18 +1,7 @@
 module.exports = [
-    {
-        "text": "javascript",
-        "items":
-            [{
-                "text": "javascript",
-                "link": "/javascript/"
-            }]
-    },
-    {
-        "text": "css",
-        "items":
-            [{
-                "text": "css",
-                "link": "/css/"
-            }]
-    }
+  {
+    text: "JAVABasicSyntax",
+    items: [{ text: "JAVABasicSyntax", link: "/JAVABasicSyntax/" }],
+  },
+  { text: "javascript", items: [{ text: "javascript", link: "/javascript/" }] },
 ];
