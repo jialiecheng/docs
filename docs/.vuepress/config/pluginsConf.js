@@ -35,9 +35,6 @@ module.exports ={
         // See: https://github.com/francoischalifour/medium-zoom#options
         // options: {
         //   margin: 16
-        },
-        "vuepress-plugin-auto-sidebar": {
-          nav: true  //自动生成侧边栏
         }
       
 }
