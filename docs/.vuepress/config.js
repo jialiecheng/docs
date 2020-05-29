@@ -6,7 +6,7 @@ const sidebarConf = require("./config/sidebarConf.js");
 module.exports = {
   // base: "/docs/",
   title: "jialiecheng",
-  description: "jialiecheng的笔记",
+  description: "JiaLC'S BLOG",
   head: headConf,
   plugins: pluginsConf,
 
@@ -14,6 +14,7 @@ module.exports = {
     lastUpdated: '更新时间',
     logo: '/assets/img/jlclogo1.png',
     nav: navConf,
-    // sidebar: sidebarConf  侧边栏
+    // sidebar: sidebarConf  
+    sidebar: 'auto'
   }
 }

@@ -1,5 +1,6 @@
 ---
 navbar: ture
+sidebar: false
 ---
 ![IMG_0017.PNG](http://ww1.sinaimg.cn/large/007eYKdZly1gf88f7ecqmj31ps0uu78y.jpg)
 ![IMG_0018.PNG](http://ww1.sinaimg.cn/large/007eYKdZly1gf88kc64e0j31ps0uu492.jpg)

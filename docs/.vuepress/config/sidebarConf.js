@@ -1,30 +1,19 @@
-module.exports ={
-    
-    "/JAVABasicSyntax/": [
-        'D2',
-        'D3',
-        'D4',
-        'D5',
-        'D6',
-        'D7',
-        'D8',
-        'D9',
-        'D10',
-        'D11',
-        'D12',
-        'D13',
-        'D14',
-        'D15',
-        'D16',
-        'D17',
-        'D18',
-        'D19',
-        'D20',
-        'D21',
-        'D22',
-      ],
-      "/路径规划/": [
-        '1',
-        
-      ]
+module.exports = {
+  
+  "/JAVABasicSyntax/": [
+  {sidebar: 'auto',
+  sidebarDepth: 2,
+  }],
+  "/每天5题/": [
+  {sidebar: 'auto',
+  sidebarDepth: 1,
+  }],
+  "/JLC的画/": [
+  {sidebar: 'auto',
+  sidebarDepth: 2,
+  }],
+  "/路径规划/": [
+  {sidebar: 'auto',
+  sidebarDepth: 2,
+  }],
 }
