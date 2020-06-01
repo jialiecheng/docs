@@ -19,6 +19,24 @@ module.exports = [
     ]
   },
   {
+    text: 'JAVAWeb',
+    items: [
+      { text: 'day1', link: 'JAVAWeb/1' },
+      { text: 'day2', link: '2' },
+      { text: 'day3', link: '3' },
+      { text: 'day4', link: '4' },
+      { text: 'day5', link: '5' },
+      { text: 'day6', link: '6' },
+      { text: 'day7', link: '7' },
+      { text: 'day8', link: '8' },
+      { text: 'day9', link: '9' },
+      { text: 'day10', link: '10' },
+      { text: 'day11', link: '11' },
+      { text: 'day12', link: '12' },
+      { text: 'day13', link: '13' },
+    ]
+  },
+  {
     text: '每天5题',
     items: [
       {
