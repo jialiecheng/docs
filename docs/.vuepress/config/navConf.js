@@ -21,17 +21,17 @@ module.exports = [
   {
     text: 'JAVAWeb',
     items: [
-      { text: 'day1', link: 'JAVAWeb/1xml' },
-      { text: 'day2', link: '2html' },
-      { text: 'day3', link: '3css&js' },
-      { text: 'day4', link: '4js对象' },
-      { text: 'day5', link: '5xml&dtd&jaxp' },
-      { text: 'day6', link: '6Schema&SAX&dom4j' },
-      { text: 'day7', link: '7java基础加强' },
-      { text: 'day8', link: '8' },
-      { text: 'day9', link: '9' },
-      { text: 'day10', link: '10' },
-      { text: 'day11', link: '11' },
+      { text: '1xml', link: 'JAVAWeb/1xml' },
+      { text: '2html', link: 'JAVAWeb/2html' },
+      { text: '3css&js', link: 'JAVAWeb/3css&js' },
+      { text: '4js对象', link: 'JAVAWeb/4js对象' },
+      { text: '5xml&dtd&jaxp', link: '5xml&dtd&jaxp' },
+      { text: '6Schema&SAX&dom4j', link: '6Schema&SAX&dom4j' },
+      { text: '7java基础加强', link: '7java基础加强' },
+      { text: '8Tomcat&Web应用&HTTP协议', link: '8Tomcat&Web应用&HTTP协议' },
+      { text: 'day9', link: '9Servlet' },
+      { text: '10Response&Request', link: '10Response&Request' },
+      { text: '11JSP&Session&Cookie&HttpSession', link: '11JSP&Session&Cookie&HttpSession' },
       { text: 'day12', link: '12' },
       { text: 'day13', link: '13' },
       { text: 'day14', link: '14' },
@@ -106,7 +106,6 @@ module.exports = [
     ]
   },
   { text: 'meitian', link: '/' },
-  { text: 'Guide', link: '/about' },
   {
     text: '路径规划',
     items: [

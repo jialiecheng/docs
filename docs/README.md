@@ -16,9 +16,12 @@ siderbar: false
 [![Twitter](https://img.shields.io/twitter/url?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjialiecheng%2Fdocs) 
 
 ![jlclogo2.PNG](http://ww1.sinaimg.cn/large/007eYKdZly1gf89kenbsdj344o2tjti8.jpg)
-
+1
 -->
+<!-- - 与其总是眼巴巴地等着未来奇迹的诞生，
+- 不如从现在开始发力，耐得住寂寞、受得了辛苦，
+- 做好一切准备去迎接时间的馈赠。 -->
 
 
 
-
+·1

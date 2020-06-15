@@ -1076,3 +1076,7 @@ c.html
 
 　　　　在实际开发中，没有这样的问题，实际中不可能访问本地的文件。
 ```
+
+## js事件
+
+![20200608105053](https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200608105053.png)

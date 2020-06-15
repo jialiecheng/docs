@@ -271,8 +271,8 @@ public class TestJunit {
 
  　　泛型、枚举、静态导入、自动拆装箱、增强for、可变参数、反射
 ```
-## 5、泛型的简介
-```html
+# 5、泛型的简介
+```java
 　　为什么要使用泛型？
 　　- 一般使用在集合上
 
@@ -286,11 +286,11 @@ public class TestJunit {
 
 　　　　- 常用集合 list  set  map
 
-　　　　- 泛型语法 集合<String>  比如 List<String>
+　　　　- 泛型语法 集合 <String>  比如 List<String>
 
-　　在泛型里面写是一个对象，String 不能写基本的数据类型 比如int ()
+　　在泛型里面写是一个对象，String ,不能写基本的数据类型 比如int ()
 
-　　写基本的数据类型对应的包装类
+　　需要写基本的数据类型对应的包装类
 
 　　　　byte -- Byte
 
@@ -298,7 +298,7 @@ public class TestJunit {
 
 　　　　int -- Integer
 
- 　　　　 long -- Long
+ 　　　 long -- Long
 
 　　　　float -- Float
 
@@ -323,8 +323,9 @@ public class TestJunit {
         list.add("ccc");
         //遍历list集合 有几种方式  三种
         //普通for循环  迭代器  增强for
+
         //普通for循环
-        for(int i=0;i<list.size();i++) {
+        for(int i=0; i<list.size(); i++) {
             String s = list.get(i);
             System.out.println(s);
         }
@@ -341,6 +342,8 @@ public class TestJunit {
         }
     }
 　　　　作业1： ArrayList  linkedList  Vector 这三个区别
+
+
 
 　　在set上使用泛型
 　　代码：
@@ -378,6 +381,7 @@ public class TestJunit {
         map.put("aaa", "111");
         map.put("bbb", "222");
         map.put("ccc", "333");
+
         //遍历map 有几种遍历方式 两种
         // 1、获取所有的key，通过key得到value 使用get方法
         // 2、获取key和value的关系
@@ -390,7 +394,7 @@ public class TestJunit {
             String value = map.get(key);
             System.out.println(key+" : "+value);
         }
-        
+      
         System.out.println("==============");
 
         //得到key和value的关系
@@ -405,30 +409,39 @@ public class TestJunit {
     }
 ```
 ## 6、泛型使用在方法上
-```html
+```java
 　　定义一个数组，实现指定位置上数组元素的交换
 
  1 public class TestDemo03 {
  2     public static void main(String[] args) {
  3         //创建一个数组 实现11和13位置交换
  4     　　Integer[] arr1 = {10,11,12,13,14};
+//这里为什么使用integer而不是int类型
  5     　　System.out.println(Arrays.toString(arr1));
+
  6     　　swap1(arr1,1,3);
+
  7     　　System.out.println(Arrays.toString(arr1));
- 8         
+ 8         {10,13,12,11,14}
+
  9     　　System.out.println("=========================");
+
+
 10     　　//创建一个string类型的数组 实现 bb和dd位置交换
 11     　　String[] arr2 = {"aa","bb","cc","dd","ff"};
 12    　　 System.out.println(Arrays.toString(arr2));
 13    　　 swap1(arr2,1,3);
 14     　　System.out.println(Arrays.toString(arr2));
 15     }
+
+
 16     private static void swap1(String[] arr2, int i, int j) {
 17    　　 String temp1 = arr2[i];
 18     　　arr2[i] = arr2[j];
 19    　　 arr2[j] = temp1;
 20     }
 21     private static void swap1(int[] arr1, int i, int j) {
+   // 为什么这里输入的是int类型的
 22     　　//定义一个中间变量
 23     　　int temp = arr1[i];
 24     　　arr1[i] = arr1[j];
@@ -449,7 +462,33 @@ public class TestJunit {
         arr[a] = arr[b];
         arr[b] = temp;
     }
+
+
+
+
+
  作业2： 实现一个泛型方法，接受任意一个数组，颠倒数组中所有元素
+public <T> void reverse(T arr[]){
+		
+		int start = 0;
+		int end = arr.length-1;
+		
+		while(true){
+			
+			if(start>=end){
+				break;
+			}
+			
+			T temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+			
+			start++;
+			end--;
+		}
+	}
+
+
 ```
 ## 7、泛型在类上的使用（了解）
 ```html
@@ -464,11 +503,12 @@ public class TestDemo04<T> {
     //写一个静态方法 在类上面定义的泛型，不能再静态方法里面使用
     public static <A> void test12(A cc) {}
 }
- 
+ ```
 
-8、枚举的简介
-　　什么是枚举？
+## 8、枚举的简介
 
+- 什么是枚举？
+```java
 　　　　需要在一定的范围内取值，这个值只能是这个范围内中的任意一个。
 
 　　　　现实场景：交通信号灯，有三种颜色，但是每次只能亮三种颜色里面的任意一个
@@ -498,6 +538,7 @@ public class TestEnum1 {
         this.color1 = Color2.RED;
     }
 }
+
 class Color2 {
     //构造方法私有化
     private Color2(String name){}
@@ -505,6 +546,7 @@ class Color2 {
     public static final Color2 GREEN = new Color2("");
     public static final Color2 YELLOW = new Color2("");
 }
+
 public class TestEnum1 {    
     //第三种方式 jdk5.0新特性 使用枚举
     private Color3 color3;
@@ -573,7 +615,7 @@ enum Color11 {
 24 }
 ```
 ## 9、枚举的api的操作
-```html
+```java
 　　name() ：返回枚举的名称
 
 　　ordinal() ：枚举的下标，下标从0开始
@@ -646,7 +688,7 @@ RED 0
 YELLOW
 ```
 ## 10、静态导入(了解)
-```html
+```java
 　　可以在代码里面，直接使用静态导入方式，导入静态方法或者常量
 
 　　  import static XX.XX.xxx
@@ -669,7 +711,7 @@ import static java.util.Arrays.sort;
 12         
 13         int[] arr1 = {10,1,3,20,15};
 14         sort(arr1);
-15         //System.out.println(toString(arr1));
+15         //= System.out.println(toString(arr1));
 16     }
 17 }
 结果：
@@ -683,7 +725,8 @@ hello
 　　比如现在实现一个计算器 ，方法都在Math类里面，不用写Math.
 ```
 ## 11、自动拆装箱
-```html
+```java
+
 　　装箱
 
 　　　　把基本的数据类型转换成包装类
@@ -706,7 +749,7 @@ hello
 
  
 
-　　在jdk1.4里面如何实现装箱和拆箱
+　　在jdk1.4 里面如何实现装箱和拆箱
 
 　　- //在jdk1.4里面实现拆装箱
 
@@ -718,13 +761,13 @@ hello
 
 　　　　//拆箱
 
-　　　　int a = m.intValue();
+　　　　int a = m.intValue();//intvalue是将m这个integer类转换为int
 
 　　}
 
 　　jdk是会向下兼容
 
-　　- 比如 jdk1.4里面写的代码，这个时候到5.0里面也可以运行
+　　- 比如 jdk1.4 里面写的代码，这个时候到5.0  里面也可以运行
 
  
 
@@ -732,9 +775,9 @@ hello
 
 　　== 执行的结果是会调用  doSomething(double m)
 
-　　== 首先在jdk1.4里面肯定调用这个方法，如果调用下面的方法，需要类型转换，但是jdk1.4不能实现自动拆装箱
+　　== 首先在jdk 1.4 里面肯定调用这个方法，如果调用下面的方法，需要类型转换，但是jdk 1.4 不能实现自动拆装箱
 
-　　== 由于jdk是向下兼容，所以，在jdk1.4调用这个方法，在jdk5.0里面还是会调用这个方法
+　　== 由于jdk是向下兼容，所以，在jdk 1.4 调用这个方法，在jdk 5.0 里面还是会调用这个方法
 
 public class TestDemo2 {
     public static void main(String[] args) {
@@ -754,7 +797,7 @@ public class TestDemo2 {
 　　　　char--- Character
 ```
 ## 12、增强for循环（*****）
-```html
+```java
 　　语法 for(遍历出来的值 : 要遍历的集合) {}
 
 　　- for(String s : list) {
@@ -791,6 +834,10 @@ public class TestDemo2 {
 16         }
 17     }
 18 }
+
+
+
+
 　　增强for循环出现目的：为了替代迭代器
 
  　　增强for底层就是迭代器实现的(通过查看.class字节码)
@@ -853,9 +900,10 @@ public class TestDemo2 {
 46         }
 47     }*/
 48 }
+
 ```
 ## 14、可变参数
-```html
+```java
 　　可变参数可以应用在什么场景：
 
 　　实现两个数的相加，实现三个数的相加 四个数的相加
@@ -910,6 +958,7 @@ public class TestDemo2 {
 16         }
 17 　　}
 18 }
+
  　　注意的地方
 
 　　　　（1）可变参数需要写在方法的参数列表中，不能单独定义
@@ -921,7 +970,7 @@ public class TestDemo2 {
 　　　　　　- add1(int a,int...nums)
 ```
 ## 15、反射的原理（********理解********）
-```html
+```java
 　　应用在一些通用性比较高的代码中
 
 　　后面学到的框架，大多数都是使用反射来实现的
@@ -963,9 +1012,12 @@ public class TestDemo2 {
 23         this.id = id;
 24     }
 25 }
+```
 　　画图分析反射的原理
 
- 
+![20200607202924](https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200607202924.png)
+
+```java
 
 　　首先需要把java文件保存到本地硬盘 .java
 
@@ -988,7 +1040,7 @@ public class TestDemo2 {
 　　普通方法通过一个类 Method
 ```
 ## 16、使用反射操作类里面的无参数的构造方法（**会写**）
-```html
+```java
 Person.java
 
  1 public class Person {
@@ -1047,7 +1099,7 @@ Person.java
     }
 ```
 ## 17、使用反射操作有参数的构造方法（**会写**）
-```html
+```java
     //操作有参数的构造方法
     @Test
     public void test2() throws Exception {
@@ -1064,7 +1116,7 @@ Person.java
     }
 ```
 ## 18、使用反射操作属性（**会写**）
-```html
+```java
     //操作name属性
     @Test
     public void test3() {
@@ -1088,7 +1140,7 @@ Person.java
     }
 ```
 ## 19、使用泛型操作普通方法（**会写**）
-```html
+```java
 　　使用Method类表示普通方法
 
 　　代码
