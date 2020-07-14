@@ -9,7 +9,7 @@ module.exports ={
         transformer: (timestamp, lang) => moment(timestamp).format("LLLL")
       },
       '@vuepress/pwa': {
-        serviceWorker: true,
+        serviceWorker: false,
         updatePopup: {
           message: "发现新的内容，奥利给",
           buttonText: "刷新"
