@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>01_Java开发工具(常见开发工具介绍)(了解) | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/42.e8a9c1c4.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>01_Java开发工具(常见开发工具介绍)(了解)</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/JAVA/D11.html#_01-java开发工具-常见开发工具介绍-了解" class="sidebar-link">01_Java开发工具(常见开发工具介绍)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_02-java开发工具-eclipse中helloworld案例以及汉化-了解" class="sidebar-link">02_Java开发工具(Eclipse中HelloWorld案例以及汉化)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_03-java开发工具-eclipse的视窗和视图概述-了解" class="sidebar-link">03_Java开发工具(Eclipse的视窗和视图概述)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_04-java开发工具-eclipse工作空间的基本配置-掌握" class="sidebar-link">04_Java开发工具(Eclipse工作空间的基本配置)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_05-java开发工具-eclipse中内容辅助键的使用-掌握" class="sidebar-link">05_Java开发工具(Eclipse中内容辅助键的使用)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_06-java开发工具-eclipse中快捷键的使用-掌握" class="sidebar-link">06_Java开发工具(Eclipse中快捷键的使用)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_07-java开发工具-eclipse中如何提高开发效率-掌握" class="sidebar-link">07_Java开发工具(Eclipse中如何提高开发效率)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_08-java开发工具-eclipse中一个标准学生类及其测试-掌握" class="sidebar-link">08_Java开发工具(Eclipse中一个标准学生类及其测试)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_09-java开发工具-eclipse中接口抽象类具体类代码体现-掌握" class="sidebar-link">09_Java开发工具(Eclipse中接口抽象类具体类代码体现)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_10-java开发工具-eclipse中如何生成jar包并导入到项目中-了解" class="sidebar-link">10_Java开发工具(Eclipse中如何生成jar包并导入到项目中)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_11-java开发工具-eclipse中如何删除项目和导入项目-掌握" class="sidebar-link">11_Java开发工具(Eclipse中如何删除项目和导入项目)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_12-java开发工具-eclipse中断点调试的基本使用-了解" class="sidebar-link">12_Java开发工具(Eclipse中断点调试的基本使用)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_13-java开发工具-eclipse查看java中参数传递问题-了解" class="sidebar-link">13_Java开发工具(Eclipse查看Java中参数传递问题)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_14-常见对象-api概述-了解" class="sidebar-link">14_常见对象(API概述)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_15-常见对象-object类的概述-了解" class="sidebar-link">15_常见对象(Object类的概述)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_16-常见对象-object类的hashcode-方法-了解" class="sidebar-link">16_常见对象(Object类的hashCode()方法)(了解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_17-常见对象-object类的getclass-方法-在反射的时候掌握" class="sidebar-link">17_常见对象(Object类的getClass()方法)(在反射的时候掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_18-常见对象-object类的tostring-方法-掌握" class="sidebar-link">18_常见对象(Object类的toString()方法)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_19-常见对象-object类的equals-方法-掌握" class="sidebar-link">19_常见对象(Object类的equals()方法)(掌握)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D11.html#_20-常见对象-号和equals方法的区别-掌握" class="sidebar-link">20_常见对象(==号和equals方法的区别)(掌握)</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_01-java开发工具-常见开发工具介绍-了解"><a href="#_01-java开发工具-常见开发工具介绍-了解" class="header-anchor">#</a> 01_Java开发工具(常见开发工具介绍)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>操作系统自带的记事本软件
+<span class="token class-name">B</span><span class="token operator">:</span>高级记事本软件
+<span class="token class-name">C</span><span class="token operator">:</span>集成开发环境 IDE
+<span class="token punctuation">(</span><span class="token class-name">Integrated</span> <span class="token class-name">Development</span> <span class="token class-name">Environment</span><span class="token punctuation">)</span>
+<span class="token class-name">D</span><span class="token operator">:</span><span class="token class-name">Eclipse</span>和<span class="token class-name">MyEclipse</span>的区别
+a<span class="token operator">:</span><span class="token class-name">Eclipse</span>是一种可扩展的开放源代码的IDE。
+b<span class="token operator">:</span><span class="token class-name">Eclipse</span>的特点描述 <span class="token operator">*</span> 免费 <span class="token operator">*</span> 纯<span class="token class-name">Java</span>语言编写 <span class="token operator">*</span> 免安装 <span class="token operator">*</span> 扩展性强
+c<span class="token operator">:</span><span class="token class-name">MyEclipse</span> <span class="token operator">*</span> 在<span class="token class-name">Eclipse</span>基础上追加的功能性插件，对插件收费 <span class="token operator">*</span> 在WEB开发中提供强大的系统架构平台
+<span class="token class-name">E</span><span class="token operator">:</span>下载 http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>eclipse<span class="token punctuation">.</span>org<span class="token operator">/</span>
+org是非盈利团体
+<span class="token class-name">F</span><span class="token operator">:</span>安装
+绿色版	解压就可以使用<span class="token punctuation">(</span><span class="token class-name">Eclipse</span><span class="token punctuation">)</span>
+安装版 双击运行<span class="token punctuation">,</span>一路next即可<span class="token punctuation">(</span>JDK<span class="token punctuation">)</span>
+<span class="token class-name">G</span><span class="token operator">:</span>卸载
+绿色版	直接删除文件夹即可
+安装版 专业卸载软件或者控制面板添加删除程序
+</code></pre></div><h2 id="_02-java开发工具-eclipse中helloworld案例以及汉化-了解"><a href="#_02-java开发工具-eclipse中helloworld案例以及汉化-了解" class="header-anchor">#</a> 02_Java开发工具(Eclipse中HelloWorld案例以及汉化)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code> <span class="token class-name">A</span><span class="token operator">:</span>选择工作空间
+工作空间 其实就是我们写的源代码所在的目录
+ <span class="token class-name">B</span><span class="token operator">:</span>用<span class="token class-name">Eclipse</span>来完成一个<span class="token class-name">HelloWorld</span>案例
+代码以项目为基本单位
+创建项目
+创建包
+创建类
+编写代码
+ <span class="token class-name">C</span><span class="token operator">:</span>编译和运行
+ <span class="token class-name">D</span><span class="token operator">:</span><span class="token class-name">Eclipse</span>的汉化
+从<span class="token class-name">Eclipse</span>  <span class="token number">3.5</span> 开始，安装目录下就多了一个dropins目录<span class="token punctuation">,</span>只要将插件解压后放到到该目录即可。
+同理，这种方式卸载插件也是特别的方便，推荐这种方式
+ <span class="token class-name">E</span><span class="token operator">:</span>语法检查提示
+红色波浪线
+必须处理<span class="token punctuation">,</span>否则编译通不过
+黄色波浪线
+可以不搭理他
+</code></pre></div><h2 id="_03-java开发工具-eclipse的视窗和视图概述-了解"><a href="#_03-java开发工具-eclipse的视窗和视图概述-了解" class="header-anchor">#</a> 03_Java开发工具(Eclipse的视窗和视图概述)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code> <span class="token class-name">A</span><span class="token operator">:</span>视窗 每一个基本的窗体被称为视窗
+<span class="token class-name">PackageExplorer</span> 显示项目结构，包，类，及资源
+<span class="token class-name">Outline</span> 显示类的结构，方便查找，识别，修改
+<span class="token class-name">Console</span> 程序运行的结果在该窗口显示
+<span class="token class-name">Hierarchy</span> 显示<span class="token class-name">Java</span>继承层次结构，选中类后F4
+ <span class="token class-name">B</span><span class="token operator">:</span>视图 是由某些视窗的组合而成的
+<span class="token class-name">Java</span>视图
+<span class="token class-name">Debug</span>视图
+</code></pre></div><h2 id="_04-java开发工具-eclipse工作空间的基本配置-掌握"><a href="#_04-java开发工具-eclipse工作空间的基本配置-掌握" class="header-anchor">#</a> 04_Java开发工具(Eclipse工作空间的基本配置)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code> <span class="token class-name">A</span><span class="token operator">:</span>程序的编译和运行的环境配置<span class="token punctuation">(</span>一般不改<span class="token punctuation">)</span>
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">Java</span>
+编译环境：<span class="token class-name">Compiler</span>	默认选中的就是最高版本。
+运行环境：<span class="token class-name">Installed</span> <span class="token class-name">JREs</span>	默认会找你安装的那个JDK。建议配置了<span class="token class-name">Java</span>的环境变量。
+问题：
+低编译，高运行。可以。
+高编译，低运行。不可以。
+建议，编译和运行的版本一致
+。
+
+ <span class="token class-name">B</span><span class="token operator">:</span>如何去掉默认注释<span class="token operator">?</span>
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">Java</span> – <span class="token class-name">Code</span> <span class="token class-name">Style</span> – <span class="token class-name">Code</span> <span class="token class-name">Templates</span>
+选择你不想要的内容，通过右边<span class="token class-name">Edit</span>编辑。
+注意：请只删除注释部分，不是注释部分的不要删除。
+ <span class="token class-name">C</span><span class="token operator">:</span>行号的显示和隐藏
+显示：在代码区域的最左边的空白区域，右键 – <span class="token class-name">Show</span> <span class="token class-name">Line</span> <span class="token class-name">Numbers</span>即可。
+隐藏：把上面的动作再做一次。
+<span class="token class-name">D</span><span class="token operator">:</span>字体大小及颜色
+a<span class="token operator">:</span><span class="token class-name">Java</span>代码区域的字体大小和颜色：
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">General</span> – <span class="token class-name">Appearance</span> – <span class="token class-name">Colors</span> <span class="token class-name">And</span> <span class="token class-name">Fonts</span> <span class="token operator">--</span><span class="token class-name">Java</span>修改 – <span class="token class-name">Java</span> <span class="token class-name">Edit</span> <span class="token class-name">Text</span> <span class="token class-name">Font</span>
+b<span class="token operator">:</span>控制台
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">General</span> – <span class="token class-name">Appearance</span> – <span class="token class-name">Colors</span> <span class="token class-name">And</span> <span class="token class-name">Fonts</span> – <span class="token class-name">Debug</span> – <span class="token class-name">Console</span> font
+c<span class="token operator">:</span>其他文件
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">General</span> – <span class="token class-name">Appearance</span> – <span class="token class-name">Colors</span> <span class="token class-name">And</span> <span class="token class-name">Fonts</span> – <span class="token class-name">Basic</span> – <span class="token class-name">Text</span> <span class="token class-name">Font</span>
+<span class="token class-name">E</span><span class="token operator">:</span>窗体给弄乱了，怎么办<span class="token operator">?</span>
+window – <span class="token class-name">Reset</span> <span class="token class-name">Perspective</span>
+<span class="token class-name">F</span><span class="token operator">:</span>控制台找不到了，怎么办<span class="token operator">?</span>
+<span class="token class-name">Window</span>–<span class="token class-name">Show</span> <span class="token class-name">View</span>—<span class="token class-name">Console</span>
+<span class="token class-name">G</span><span class="token operator">:</span>取消悬浮提示
+window – <span class="token class-name">Preferences</span> – <span class="token class-name">Java</span>–<span class="token class-name">Editor</span>–<span class="token class-name">Hovers</span>。右边将<span class="token class-name">Combined</span> <span class="token class-name">Hover</span>勾去掉。
+这样代码的悬浮框就不会自动出现了。如果想看提示，将光标悬浮在代码上，按F2即可。
+</code></pre></div><h2 id="_05-java开发工具-eclipse中内容辅助键的使用-掌握"><a href="#_05-java开发工具-eclipse中内容辅助键的使用-掌握" class="header-anchor">#</a> 05_Java开发工具(Eclipse中内容辅助键的使用)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">Alt</span><span class="token operator">+</span><span class="token operator">/</span> 起提示作用
+<span class="token class-name">B</span><span class="token operator">:</span>main<span class="token operator">+</span>alt<span class="token operator">+</span><span class="token operator">/</span><span class="token punctuation">,</span>syso<span class="token operator">+</span>alt<span class="token operator">+</span><span class="token operator">/</span><span class="token punctuation">,</span>给出其他提示
+<span class="token class-name">C</span><span class="token operator">:</span>补充输出语句<span class="token punctuation">,</span>选中需要输出的部分<span class="token punctuation">,</span>alt<span class="token operator">+</span><span class="token operator">/</span>选择最后一项即可
+<span class="token class-name">D</span><span class="token operator">:</span>定义自己的alt <span class="token operator">+</span> <span class="token operator">/</span>
+windows–perference<span class="token operator">-</span><span class="token class-name">Java</span><span class="token operator">-</span><span class="token class-name">Editor</span><span class="token operator">-</span><span class="token class-name">Templates</span>–<span class="token class-name">New</span>
+</code></pre></div><h2 id="_06-java开发工具-eclipse中快捷键的使用-掌握"><a href="#_06-java开发工具-eclipse中快捷键的使用-掌握" class="header-anchor">#</a> 06_Java开发工具(Eclipse中快捷键的使用)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>新建 ctrl <span class="token operator">+</span> n
+<span class="token class-name">B</span><span class="token operator">:</span>格式化 ctrl<span class="token operator">+</span>shift<span class="token operator">+</span>f
+<span class="token class-name">C</span><span class="token operator">:</span>导入包 ctrl<span class="token operator">+</span>shift<span class="token operator">+</span>o
+<span class="token class-name">D</span><span class="token operator">:</span>注释 ctrl<span class="token operator">+</span><span class="token operator">/</span><span class="token punctuation">,</span>ctrl<span class="token operator">+</span>shift<span class="token operator">+</span><span class="token operator">/</span><span class="token punctuation">,</span>ctrl<span class="token operator">+</span>shift<span class="token operator">+</span>\
+<span class="token class-name">E</span><span class="token operator">:</span>代码上下移动 选中代码alt<span class="token operator">+</span>上<span class="token operator">/</span>下箭头
+<span class="token class-name">F</span><span class="token operator">:</span>查看源码 选中类名<span class="token punctuation">(</span>F3或者<span class="token class-name">Ctrl</span><span class="token operator">+</span>鼠标点击<span class="token punctuation">)</span>
+<span class="token class-name">G</span><span class="token operator">:</span>查找具体的类 ctrl <span class="token operator">+</span> shift <span class="token operator">+</span> t
+<span class="token class-name">H</span><span class="token operator">:</span>查找具体类的具体方法 ctrl <span class="token operator">+</span> o
+<span class="token class-name">I</span><span class="token operator">:</span>给建议 ctrl<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>根据右边生成左边的数据类型<span class="token punctuation">,</span>生成方法
+<span class="token class-name">J</span><span class="token operator">:</span>删除代码 ctrl <span class="token operator">+</span> d
+<span class="token class-name">K</span><span class="token operator">:</span>抽取方法alt <span class="token operator">+</span> shift <span class="token operator">+</span> m
+<span class="token class-name">L</span><span class="token operator">:</span>改名alt <span class="token operator">+</span> shift <span class="token operator">+</span> r
+</code></pre></div><h2 id="_07-java开发工具-eclipse中如何提高开发效率-掌握"><a href="#_07-java开发工具-eclipse中如何提高开发效率-掌握" class="header-anchor">#</a> 07_Java开发工具(Eclipse中如何提高开发效率)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code>alt <span class="token operator">+</span> shift <span class="token operator">+</span> s
+<span class="token class-name">A</span><span class="token operator">:</span>自动生成构造方法
+<span class="token class-name">B</span><span class="token operator">:</span>自动生成get<span class="token operator">/</span>set方法
+</code></pre></div><h2 id="_08-java开发工具-eclipse中一个标准学生类及其测试-掌握"><a href="#_08-java开发工具-eclipse中一个标准学生类及其测试-掌握" class="header-anchor">#</a> 08_Java开发工具(Eclipse中一个标准学生类及其测试)(掌握)</h2> <p>A:案例演示
+用Eclipse实现标准学生类及其测试</p> <h2 id="_09-java开发工具-eclipse中接口抽象类具体类代码体现-掌握"><a href="#_09-java开发工具-eclipse中接口抽象类具体类代码体现-掌握" class="header-anchor">#</a> 09_Java开发工具(Eclipse中接口抽象类具体类代码体现)(掌握)</h2> <p>A:案例演示
+用Eclipse实现接口抽象类具体类代码</p> <h2 id="_10-java开发工具-eclipse中如何生成jar包并导入到项目中-了解"><a href="#_10-java开发工具-eclipse中如何生成jar包并导入到项目中-了解" class="header-anchor">#</a> 10_Java开发工具(Eclipse中如何生成jar包并导入到项目中)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>jar是什么<span class="token operator">?</span>
+jar是多个<span class="token keyword">class</span>文件的压缩包。
+<span class="token class-name">B</span><span class="token operator">:</span>jar有什么用<span class="token operator">?</span>
+用别人写好的东西
+<span class="token class-name">C</span><span class="token operator">:</span>打jar包
+选中项目–右键–<span class="token class-name">Export</span>–<span class="token class-name">Java</span>–<span class="token class-name">Jar</span>–自己指定一个路径和一个名称–<span class="token class-name">Finish</span>
+<span class="token class-name">D</span><span class="token operator">:</span>导入jar包
+复制到项目路径下并添加至构建路径。
+</code></pre></div><h2 id="_11-java开发工具-eclipse中如何删除项目和导入项目-掌握"><a href="#_11-java开发工具-eclipse中如何删除项目和导入项目-掌握" class="header-anchor">#</a> 11_Java开发工具(Eclipse中如何删除项目和导入项目)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>删除项目
+选中项目 – 右键 – 删除
+从项目区域中删除
+从硬盘上删除
+<span class="token class-name">B</span><span class="token operator">:</span>导入项目
+在项目区域右键找到<span class="token keyword">import</span>
+找到<span class="token class-name">General</span>，展开，并找到
+<span class="token class-name">Existing</span> <span class="token class-name">Projects</span> into <span class="token class-name">Workspace</span>
+点击next<span class="token punctuation">,</span>然后选择你要导入的项目
+注意：这里选择的是项目名称
+</code></pre></div><h2 id="_12-java开发工具-eclipse中断点调试的基本使用-了解"><a href="#_12-java开发工具-eclipse中断点调试的基本使用-了解" class="header-anchor">#</a> 12_Java开发工具(Eclipse中断点调试的基本使用)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">Debug</span>的作用
+调试程序
+查看程序执行流程
+<span class="token class-name">B</span><span class="token operator">:</span>如何查看程序执行流程
+什么是断点：
+就是一个标记，从哪里开始。
+如何设置断点：
+你想看哪里的程序，你就在那个有效程序的左边双击即可。
+在哪里设置断点：
+哪里不会点哪里。
+目前：我们就在每个方法的第一条有效语句上都加。
+如何运行设置断点后的程序：
+右键 – <span class="token class-name">Debug</span> as – <span class="token class-name">Java</span> <span class="token class-name">Application</span>
+看哪些地方：
+<span class="token class-name">Debug</span>：断点测试的地方
+在这个地方，记住F6，或者点击也可以。一次看一行的执行过程。
+<span class="token class-name">Variables</span>：查看程序的变量变化
+<span class="token class-name">ForDemo</span>：被查看的源文件
+<span class="token class-name">Console</span>：控制台
+如何去断点：
+a<span class="token operator">:</span>再次双击即可
+b<span class="token operator">:</span>找到<span class="token class-name">Debug</span>视图，<span class="token class-name">Variables</span>界面，找到<span class="token class-name">Breakpoints</span>，并点击，然后看到所有的断点，最后点击那个双叉。
+</code></pre></div><h2 id="_13-java开发工具-eclipse查看java中参数传递问题-了解"><a href="#_13-java开发工具-eclipse查看java中参数传递问题-了解" class="header-anchor">#</a> 13_Java开发工具(Eclipse查看Java中参数传递问题)(了解)</h2> <p>A:断点演示
+断点查看Java中参数传递问题</p> <h2 id="_14-常见对象-api概述-了解"><a href="#_14-常见对象-api概述-了解" class="header-anchor">#</a> 14_常见对象(API概述)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token function">API</span><span class="token punctuation">(</span><span class="token class-name">Application</span> <span class="token class-name">Programming</span> <span class="token class-name">Interface</span><span class="token punctuation">)</span>
+应用程序编程接口
+<span class="token class-name">B</span><span class="token operator">:</span><span class="token class-name">Java</span> API
+就是<span class="token class-name">Java</span>提供给我们使用的类，这些类将底层的实现封装了起来，
+我们不需要关心这些类是如何实现的，只需要学习这些类如何使用。
+</code></pre></div><h2 id="_15-常见对象-object类的概述-了解"><a href="#_15-常见对象-object类的概述-了解" class="header-anchor">#</a> 15_常见对象(Object类的概述)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">Object</span>类概述
+类层次结构的根类
+所有类都直接或者间接的继承自该类
+<span class="token class-name">B</span><span class="token operator">:</span>构造方法
+<span class="token keyword">public</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+回想面向对象中为什么说：
+子类的构造方法默认访问的是父类的无参构造方法
+</code></pre></div><h2 id="_16-常见对象-object类的hashcode-方法-了解"><a href="#_16-常见对象-object类的hashcode-方法-了解" class="header-anchor">#</a> 16_常见对象(Object类的hashCode()方法)(了解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+a<span class="token operator">:</span>返回该对象的哈希码值。默认情况下，该方法会根据对象的地址来计算。
+b<span class="token operator">:</span>不同对象的，<span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>一般
+</code></pre></div><h2 id="_17-常见对象-object类的getclass-方法-在反射的时候掌握"><a href="#_17-常见对象-object类的getclass-方法-在反射的时候掌握" class="header-anchor">#</a> 17_常见对象(Object类的getClass()方法)(在反射的时候掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token class-name">Class</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+a<span class="token operator">:</span>返回此 <span class="token class-name">Object</span> 的运行时类。
+b<span class="token operator">:</span>可以通过<span class="token class-name">Class</span>类中的一个方法，获取对象的真实类的全名称。
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_18-常见对象-object类的tostring-方法-掌握"><a href="#_18-常见对象-object类的tostring-方法-掌握" class="header-anchor">#</a> 18_常见对象(Object类的toString()方法)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+a<span class="token operator">:</span>返回该对象的字符串表示		
+		<span class="token keyword">public</span> <span class="token class-name">Stirng</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> name <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> age<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+b<span class="token operator">:</span>它的值等于：
+<span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> “@” <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+c<span class="token operator">:</span>由于默认情况下的数据对我们来说没有意义，一般建议重写该方法。
+<span class="token class-name">B</span><span class="token operator">:</span>最终版
+自动生成
+</code></pre></div><h2 id="_19-常见对象-object类的equals-方法-掌握"><a href="#_19-常见对象-object类的equals-方法-掌握" class="header-anchor">#</a> 19_常见对象(Object类的equals()方法)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+a<span class="token operator">:</span>指示其他某个对象是否与此对象“相等”。
+b<span class="token operator">:</span>默认情况下比较的是对象的引用是否相同。
+c<span class="token operator">:</span>由于比较对象的引用没有意义，一般建议重写该方法。
+</code></pre></div><h2 id="_20-常见对象-号和equals方法的区别-掌握"><a href="#_20-常见对象-号和equals方法的区别-掌握" class="header-anchor">#</a> 20_常见对象(==号和equals方法的区别)(掌握)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token operator">==</span>是一个比较运算符号<span class="token punctuation">,</span>既可以比较基本数据类型<span class="token punctuation">,</span>也可以比较引用数据类型<span class="token punctuation">,</span>基本数据类型比较的是值<span class="token punctuation">,</span>引用数据类型比较的是地址值
+equals方法是一个方法<span class="token punctuation">,</span>只能比较引用数据类型<span class="token punctuation">,</span>所有的对象都会继承<span class="token class-name">Object</span>类中的方法<span class="token punctuation">,</span>如果没有重写<span class="token class-name">Object</span>类中的equals方法<span class="token punctuation">,</span>equals方法和<span class="token operator">==</span>号比较引用数据类型无区别<span class="token punctuation">,</span>重写后的equals方法比较的是对象中的属性
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月6日星期六上午9点21分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/42.e8a9c1c4.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/38.75e85ec9.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="language- extra-class"><pre class="language-text"><code>1、常用软件体系结构
+
+　　BS：浏览器/服务器
+
+　　CS：客户端/服务器
+
+　　WEB资源
+
+　　　　动态资源
+
+　　　　　　JSP
+
+　　　　　　Servlet
+
+　　　　静态资源
+
+　　　　　　html
+
+　　常用服务器
+
+　　　　Tomcat
+
+　　　　Weblogic
+
+　　　　Resin
+
+　　　　JBOSS
+
+2、Tomcat
+
+　　安装
+
+　　　　安装版
+
+　　　　解压版
+
+　　启动和关闭
+
+　　　　配置JAVA_HOME
+
+　　　　启动：bin/startup,bat
+
+　　　　关闭：bin/shutdown.bat
+
+　　　　主页：http://localhost:8080
+
+　　配置端口号
+
+　　目录结构
+
+3、Web应用
+
+4、HTTP协议
+</code></pre></div><h1 id="软件系统体系结构"><a href="#软件系统体系结构" class="header-anchor">#</a> 软件系统体系结构</h1> <h3 id="_1-常见软件系统体系结构b-s、c-s"><a href="#_1-常见软件系统体系结构b-s、c-s" class="header-anchor">#</a> 1 常见软件系统体系结构B/S、C/S</h3> <div class="language- extra-class"><pre class="language-text"><code>1.1　C/S
+l C/S结构即客户端/服务器（Client/Server），例如QQ；
+
+l 需要编写服务器端程序，以及客户端程序，例如我们安装的就是QQ的客户端程序；
+
+l 缺点：软件更新时需要同时更新客户端和服务器端两端，比较麻烦；
+
+l 优点：安全性比较好。
+
+ 
+
+1.2　B/S（*****）
+l B/S结构即浏览器/服务器（Browser/Server）；
+
+l 优点：只需要编写服务器端程序；
+
+l 缺点：安全性较差。
+</code></pre></div><p></p> <h3 id="_2-web资源"><a href="#_2-web资源" class="header-anchor">#</a> 2　WEB资源</h3> <div class="language- extra-class"><pre class="language-text"><code>2.1　Web资源介绍
+l html：静态资源；
+
+　　浏览器可以看的懂！它可以有变量！
+
+l JSP/Servlet：动态资源。
+
+　　需要先转换成html，再给浏览器看。
+
+当然，除了JavaWeb程序，还有其他Web程序，例如：ASP、PHP等。
+
+ 
+
+2.2　静态资源和动态资源区别
+
+ 静态资源：一般客户端发送请求到web服务器，web服务器从内存取到相应的文件，返回给客户端，客户端解析并渲染显示出来。
+
+动态资源：一般客户端请求的动态资源，先将请求交于web容器，web容器连接数据库，数据库处理数据之后，将内容交给web服务器，web服务器返回给客户端解析渲染处理。
+
+- 静态资源和动态资源的区别
+
+静态资源一般都是设计好的html页面，而动态资源依靠设计好的程序来实现按照需求的动态响应；
+
+静态资源的交互性差，动态资源可以根据需求自由实现；
+在服务器的运行状态不同，静态资源不需要与数据库参于程序处理，动态可能需要多个数据库的参与运算。
+
+ 
+
+2.3　访问Web资源
+打开浏览器，输入URL：
+
+l 协议名://域名:端口/路径，例如：http://www.itcast.cn:80/index.html
+
+</code></pre></div><h3 id="_3-web服务器"><a href="#_3-web服务器" class="header-anchor">#</a> 3　Web服务器</h3> <div class="language- extra-class"><pre class="language-text"><code>Web服务器的作用是接收客户端的请求，给客户端作出响应。
+
+对于JavaWeb程序而已，还需要有JSP/Servlet容器，JSP/Servlet容器的基本功能是把动态资源转换成静态资源，当然JSP/Servlet容器不只这些功能，我们会在后面一点一点学习。
+
+我们需要使用的是Web服务器和JSP/Servlet容器，通常这两者会集于一身。下面是对JavaWeb服务器：
+
+l Tomcat（Apache）：当前应用最广的JavaWeb服务器；
+
+l JBoss（Redhat红帽）：支持JavaEE，应用比较广；EJB容器
+
+l GlassFish（Orcale）：Oracle开发JavaWeb服务器，应用不是很广；
+
+l Resin（Caucho）：支持JavaEE，应用越来越广；
+
+l Weblogic（Orcale）：要钱的！支持JavaEE，适合大型项目；
+
+l Websphere（IBM）：要钱的！支持JavaEE，适合大型项目；
+
+</code></pre></div><p>Tomcat（有重点）</p> <p>1　Tomcat概述
+Tomcat服务器由Apache提供，开源免费。由于Sun和其他公司参与到了Tomcat的开发中，所以最新的JSP/Servlet规范总是能在Tomcat中体现出来。当前最新版本是Tomcat8，我们课程中使用Tomcat7。Tomcat7支持Servlet3.0，而Tomcat6只支持Servlet2.5！</p> <p></p> <p>2　安装、启动、配置Tomcat
+下载Tomcat可以到http://tomcat.apache.org下载。</p> <p>Tomcat分为安装版和解压版：</p> <p>l 安装版：一台电脑上只能安装一个Tomcat；</p> <p>l 解压版：无需安装，解压即可用，解压多少份都可以，所以我们选择解压版。</p> <p>2.1　Tomcat目录结构
+安装版Tomcat的安装过程请参考day08_res/Tomcat安装.doc文件。</p> <p>把解压版Tomcat解压到一个没有中文，没有空格的路径中即可，建议路径不要太深，因为我们需要经常进入Tomcat安装目录。例如：D:\apache-tomcat-7.0.42</p> <p></p> <p>2.2　启动和关闭Tomcat
+在启动Tomcat之前，我们必须要配置环境变量：</p> <p>l JAVA_HOME：必须先配置JAVA_HOME，因为Tomcat启动需要使用JDK；</p> <p>l CATALANA_HOME：如果是安装版，那么还需要配置这个变量，这个变量用来指定Tomcat的安装路径，例如：F:\apache-tomcat-7.0.42。</p> <p>l 启动：进入%CATALANA_HOME%\bin目录，找到startup.bat，双击即可；</p> <p>l 关闭：进入%CATALANA_HOME%\bin目录，找到shutdown.bat，双击即可；</p> <p></p> <p>startup.bat会调用catalina.bat，而catalina.bat会调用setclasspath.bat，setclasspath.bat会使用JAVA_HOME环境变量，所以我们必须在启动Tomcat之前把JAVA_HOME配置正确。</p> <p>启动问题：</p> <p>l 点击startup.bat后窗口一闪即消失：检查JAVA_HOME环境变量配置是否正确；</p> <p></p> <p>2.3　进入Tomcat主页
+　　访问：http://localhost:8080</p> <p></p> <p>2.4　配置端口号
+打开%CATALANA_HOME%\conf\server.xml文件：</p> <p>http默认端口号为80，也就是说在URL中不给出端口号时就表示使用80端口。当然你也可以修改为其它端口号。</p> <p>当把端口号修改为80后，在浏览器中只需要输入：http://localhost就可以访问Tomcat主页了。</p> <p></p> <p>2.5　Tomcat的目录结构</p> <p>l bin：该目录下存放的是二进制可执行文件，如果是安装版，那么这个目录下会有两个exe文件：tomcat6.exe、tomcat6w.exe，前者是在控制台下启动Tomcat，后者是弹出UGI窗口启动Tomcat；如果是解压版，那么会有startup.bat和shutdown.bat文件，startup.bat用来启动Tomcat，但需要先配置JAVA_HOME环境变量才能启动，shutdawn.bat用来停止Tomcat；</p> <p>l conf：这是一个非常非常重要的目录，这个目录下有四个最为重要的文件：</p> <p>Ø server.xml：配置整个服务器信息。例如修改端口号，添加虚拟主机等；下面会详细介绍这个文件；</p> <p>Ø tomcatusers.xml：存储tomcat用户的文件，这里保存的是tomcat的用户名及密码，以及用户的角色信息。可以按着该文件中的注释信息添加tomcat用户，然后就可以在Tomcat主页中进入Tomcat Manager页面了；</p> <p>Ø web.xml：部署描述符文件，这个文件中注册了很多MIME类型，即文档类型。这些MIME类型是客户端与服务器之间说明文档类型的，如用户请求一个html网页，那么服务器还会告诉客户端浏览器响应的文档是text/html类型的，这就是一个MIME类型。客户端浏览器通过这个MIME类型就知道如何处理它了。当然是在浏览器中显示这个html文件了。但如果服务器响应的是一个exe文件，那么浏览器就不可能显示它，而是应该弹出下载窗口才对。MIME就是用来说明文档的内容是什么类型的！</p> <p>Ø context.xml：对所有应用的统一配置，通常我们不会去配置它。</p> <p>l lib：Tomcat的类库，里面是一大堆jar文件。如果需要添加Tomcat依赖的jar文件，可以把它放到这个目录中，当然也可以把应用依赖的jar文件放到这个目录中，这个目录中的jar所有项目都可以共享之，但这样你的应用放到其他Tomcat下时就不能再共享这个目录下的Jar包了，所以建议只把Tomcat需要的Jar包放到这个目录下；</p> <p>l logs：这个目录中都是日志文件，记录了Tomcat启动和关闭的信息，如果启动Tomcat时有错误，那么异常也会记录在日志文件中。</p> <p>l temp：存放Tomcat的临时文件，这个目录下的东西可以在停止Tomcat后删除！</p> <p>l webapps：存放web项目的目录，其中每个文件夹都是一个项目；如果这个目录下已经存在了目录，那么都是tomcat自带的。项目。其中ROOT是一个特殊的项目，在地址栏中没有给出项目目录时，对应的就是ROOT项目。http://localhost:8080/examples，进入示例项目。其中examples就是项目名，即文件夹的名字。</p> <p>l work：运行时生成的文件，最终运行的文件都在这里。通过webapps中的项目生成的！可以把这个目录下的内容删除，再次运行时会生再次生成work目录。【当客户端用户访问一个JSP文件时，Tomcat会通过JSP生成Java文件，然后再编译Java文件生成class文件，生成的java和class文件都会存放到这个目录下。】</p> <p>l LICENSE：许可证。</p> <p>l NOTICE：说明文件。</p> <p></p> <p>Web应用（重点）
+静态网站：</p> <p>l 在webapps目录下创建一个目录（命名必须不包含中文和空格），这个目录称之为项目目录；</p> <p>l 在项目目录下创建一个html文件；</p> <p>动态网站：</p> <p>l 在webpass目录下创建一个项目目录；</p> <p>l 在项目目录下创建如下内容：</p> <p>Ø WEB-INF目录；</p> <p>¨ 在WEB-INF目录下创建web.xml文件</p> <p>Ø 创建静态或动态页面</p> <p></p> <p>1　创建静态应用
+l 在webapps下创建一个hello目录；</p> <p>l 在webapps\hello\下创建index.html；</p> <p>l 启动tomcat；</p> <p>l 打开浏览器访问http://localhost:8080/hello/index.html</p> <p></p> <p>index.html</p> <html><head><title>hello</title></head> <body><h1>Hello World!</h1></body></html> <p>2　创建动态应用
+l 在webapps下创建hello1目录；</p> <p>l 在webapps\hello1\下创建WEB-INF目录；</p> <p>l 在webapps\hello1\WEB-INF\下创建web.xml；</p> <p>l 在webapps\hello1\下创建index.html。</p> <p>l 打开浏览器访问http://localhost:8080/hello/index.html</p> <p></p> <p>web.xml</p> <p></p>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"></web-app> <p></p> <p>完整的Web应用还需要在WEB-INF目录下创建：</p> <p>l classes；</p> <p>l lib目录；</p> <p>webapps</p> <p>|- hello</p> <p>|-index.html</p> <p>|-WEB-INF</p> <p>|-web.xml</p> <p>|-classes</p> <p>|-lib</p> <p></p> <p>l hello：应用目录，hello就是应用的名称；</p> <p>l index.html：应用资源。应用下可以有多个资源，例如css、js、html、jsp等，也可以把资源放到文件夹中，例如：hello\html\index.html，这时访问URL为：http://localhost:8080/hello/html/index.html；</p> <p>l WEB-INF：这个目录名称必须是大写，这个目录下的东西是无法通过浏览器直接访问的，也就是说放到这里的东西是安全的；</p> <p>l web.xml：应用程序的部署描述符文件，可以在该文件中对应用进行配置，例如配置应用的首页：</p> <p><welcome-file-list></welcome-file-list></p> <p><welcome-file>index.html</welcome-file></p> <p></p> <p>l classes：存放class文件的目录；</p> <p>l lib：存放jar包的目录；</p> <p></p> <p>3　配置外部应用（了解）
+　　原来我们的项目放到webapps下，现在我放到外面，也希望tomcat可以找到它！</p> <p>也可以把应用放到Tomcat之外，这就是外部应用了。例如我们把上面写的hello应用从webapps目录中剪切到C盘下，即C:/hello。现在hello这个Web应用已经不在Tomcat中了，这时我们需要在tomcat中配置外部应用的位置，配置的方式一共有两种：</p> <p>l conf/server.xml：打开server.xml文件，找到<Host>元素，在其中添加<Context>元素，代码如下：</Context></Host></p> <p>server.xml</p> <p>1) path：指定当前应用的名称；</p> <p>2) docBase：指定应用的物理位置；</p> <p>3) 浏览器访问路径：http://localhost:8080/itcast_hello/index.html。</p> <p></p> <p>l conf/catalana/localhost：在该目录下创建itcast_hello.xml文件，在该文件中编写<Context>元素，代码如下：</Context></p> <p>1) 文件名：指定当前应用的名称；</p> <p>2) docBase：指定应用的物理位置；</p> <p>3) 浏览器访问路径：http://localhost:8080/itcast_hello/index.html。</p> <p></p> <div class="language- extra-class"><pre class="language-text"><code>### 4　理解server.xml（了解）
+
+</code></pre></div><Server><p><Servier></Servier></p> <p><Connector></Connector></p> <p><Engine></Engine></p> <p><Host></Host></p> <p><Context></Context></p> <p>l <Server>：根元素，表示整个服务器的配置信息；</Server></p> <p>l <Service>：<Server>的子元素，在<Server>中只能有一个<Service>元素，它表示服务；</Service></Server></Server></Service></p> <p>l <Connector>：<Service>的子元素，在<Service>中可以有N个<Connector>元素，它表示连接。</Connector></Service></Service></Connector></p> <p>l <Engine>：<Service>的子元素，在<Service>中只能有一<Engine>元素，该元素表示引擎，它是<Service>组件的核心。</Service></Engine></Service></Service></Engine></p> <p>l <Host>：<Engine>的子元素，在<Engine>中可以有N个<Host>元素，每个<Host>元素表示一个虚拟主机。所谓虚拟主机就像是真的主机一样，每个主机都有自己的主机名和项目目录。例如<Host name="”localhost”" appBase="”webapps”">表示主机名为localhost，这个主机的项目存放在webapps目录中。访问这个项目下的主机时，需要使用localhost主机名，项目都存放在webapps目录下。</Host></Host></Host></Engine></Engine></Host></p> <p>l <Context>：<Host>元素的子元素，在<Host>中可以有N个<Context>元素，每个<Context>元素表示一个应用。如果应用在<Host>的appBase指定的目录下，那么可以不配置<Context>元素，如果是外部应用，那么就必须配置<Context>。如果要为应用指定资源，也需要配置<Context>元素。</Context></Context></Context></Host></Context></Context></Host></Host></Context></p> <p></p> <p>我们可以把<Server>看作是一个大酒店：</Server></p> <p>l <Service>：酒店的服务部门；服务</Service></p> <p>l <Connector>：服务员；连接</Connector></p> <p>l <Engine>：后厨；引擎’</Engine></p> <p>l <Host>：后厨中的一个区，例如川菜区是一个<Host>、粤菜区是一个<Host>；虚拟主机</Host></Host></Host></p> <p>l <Context>：后厨的一个厨师。一个应用</Context></p> <p></p> <p>用户发出一个请求：http://localhost:8080/hello/index.jsp。发现是http/1.1协议，而且还是8080端口，所以就交给了处理这一请求的“服务员（处理HTTP请求的<Connector>’连接’）”，“服务员”再把请求交给了“后厨（<Engine>’引擎’）”，因为请求是要一盘水煮鱼，所以由“川菜区（<Host>）’虚拟主机’”负责，因为“大老王师傅<Context>’一个应用’”做水煮鱼最地道，所以由它完成。</Context></Host></Engine></Connector></p> <p>l <Connector>：关心请求中的http、和8080；</Connector></p> <p>l &lt; Host&gt;：关心localhost；</p> <p>l <Context>：关心hello</Context></p> <p></p> <div class="language- extra-class"><pre class="language-text"><code>### 5　映射虚拟主机（了解）
+</code></pre></div><p>我们的目标是，在浏览器中输出：http://www.itcast.cn就可以访问我们的项目。</p> <p>完成这一目标，我们需要做三件事：</p> <p>l 修改端口号为80，这一点应该没有问题吧；</p> <p>l 在本机上可以解析域名为127.0.0.1，这需要修改C:\WINDOWS\system32\drivers\etc\hosts文件，添加对http://www.itcast.cn和127.0.01的绑定关系；</p> <p>l 在server.xml文件中添加一个<Host>（主机）。</Host></p> <p></p> <p>1) 修改端口号为80</p> <p></p> <p>2) 绑定http://www.itcast.cn和127.0.01的绑定关系</p> <p></p> <p>3) server.xml文件中添加一个<Host></Host></p> <p></p> <p></p> <p>l name=”www.itcast.cn”：指定虚拟主机名为www.itcast.cn；</p> <p>l appBase=”F:/itcastapps”：指定当前虚拟主机的应用程序存放目录为F:/itcastapps。</p> <p>l 在itcastapps目录下创建名为ROOT的应用，因为一个主机只可以有一个名为ROOT的应用，名为ROOT的应用在浏览器中访问是可以不给出应用名称。</p> <p></p> <p></p> <p>现在访问：http://www.itcast.cn看看是什么页面！</p> <p>请注意，只有本机可以通过http://www.itcast.cn来访问，而其他电脑不可以！</p> <p></p> <p></p> <div class="language- extra-class"><pre class="language-text"><code>### 6　MyEclipse创建JavaWeb应用
+</code></pre></div><p>6.1　配置Tomcat
+使用MyEclipse配置服务器后，就可以使用MyEclipse来启动和停止服务器了。当然，你需要先安装好服务器（Tomcat），才能配置。</p> <p>MyEclipse自带了一个Tomcat，强烈建议不要使用它。所以，我们需要先把MyEclipse自带的Tomcat关闭，然后再来配置我们自己的Tomcat。</p> <p>l 关闭MyEclipse自带Tomcat。</p> <p>在工具栏中找到，点击下箭头，点击Configure Server Connector。</p> <p></p> <p>弹出对话框</p> <p></p> <p>l 配置我们自己的Tomcat</p> <p></p> <p>使用MyEclipse启动Tomcat</p> <p></p> <p>6.2　创建JavaWeb应用</p> <p></p> <p></p> <p>6.3　启动Tomcat</p> <p>上面两种方式都可以启动tomcat</p> <p>6.4　关闭tomcat
+　　与启动Tomcat相同位置下方就是Stop Server，即可关闭tomcat了。</p> <p>6.5　发布项目到tomcat的webapps目录</p> <p>项目发布后，就是把项目的WebRoot目录copy到Tomcat的webapps目录，并把WebRoot重命名为项目名称，即hello。所以在Tomcat的webapps下会多出一个文件夹hello。</p> <p>6.6　打war包
+JavaSE程序可以打包成Jar包，而JavaWeb程序可以打包成war包。然后把war发布到Tomcat的webapps目录下，Tomcat会在启动时自动解压war包。</p> <p></p> <p></p> <p></p> <p>HTTP协议（重点）
+协议：协议的甲乙双方，就是客户端（浏览器）和服务器！
+　　理解成双方通信的格式！</p> <p>l 请求协议；</p> <p>l 响应协议；</p> <p></p> <p>1　安装HttpWatch
+HttpWatch是专门为IE浏览器提供的，用来查看HTTP请求和响应内容的工具。而FireFox上需要安装FireBug软件。如果你使用的是Chrome，那么就不用自行安装什么工具了，因为它自身就有查看请求和响应内容的功能！</p> <p>HttpWatch和FireBug这些工具对浏览器而言不是必须的，但对我们开发者是很有帮助的，通过查看HTTP请求响应内容，可以使我们更好的学习HTTP协议。</p> <p></p> <p>2　HTTP概述
+HTTP（hypertext transport protocol），即超文本传输协议。这个协议详细规定了浏览器和万维网服务器之间互相通信的规则。</p> <p>HTTP就是一个通信规则，通信规则规定了客户端发送给服务器的内容格式，也规定了服务器发送给客户端的内容格式。其实我们要学习的就是这个两个格式！客户端发送给服务器的格式叫“请求协议”；服务器发送给客户端的格式叫“响应协议”。</p> <p></p> <p>3　请求协议
+请求协议的格式如下：</p> <p>请求首行；</p> <p>请求头信息；</p> <p>空行；</p> <p>请求体。</p> <p></p> <p>浏览器发送给服务器的内容就这个格式的，如果不是这个格式服务器将无法解读！在HTTP协议中，请求有很多请求方法，其中最为常用的就是GET和POST。不同的请求方法之间的区别，后面会一点一点的介绍。</p> <p></p> <p>3.1　GET请求
+　　打开IE，在访问hello项目的index.jsp之间打开HttpWatch，并点击“Record”按钮。然后访问index.jsp页面。查看请求内容如下：</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200607213337.png" alt="20200607213337"></p> <p>GET /hello/index.jsp HTTP/1.1</p> <p>Host: localhost</p> <p>User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0</p> <p>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8</p> <p>Accept-Language: zh-cn,zh;q=0.5</p> <p>Accept-Encoding: gzip, deflate</p> <p>Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7</p> <p>Connection: keep-alive</p> <p>Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98</p> <p>这个位置虽然没有东西，但很重要，它是空行。如果有请求体，那么请求体在空行的下面</p> <p></p> <p></p> <p>l GET /hello/index.jsp HTTP/1.1：GET请求没有请求体，请求服务器路径为/hello/index.jsp，协议为1.1；</p> <p>l Host:localhost：请求的主机名为localhost；</p> <p>l User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0：与浏览器和OS相关的信息。有些网站会显示用户的系统版本和浏览器版本信息，这都是通过获取User-Agent头信息而来的；</p> <p>l Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8：告诉服务器，当前客户端可以接收的文档类型，其实这里包含了*/*，就表示什么都可以接收；</p> <p>l Accept-Language: zh-cn,zh;q=0.5：当前客户端支持的语言，可以在浏览器的工具à选项中找到语言相关信息；</p> <p>l Accept-Encoding: gzip, deflate：支持的压缩格式。数据在网络上传递时，可能服务器会把数据压缩后再发送；</p> <p>l Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7：客户端支持的编码；</p> <p>l Connection: keep-alive：客户端支持的链接方式，保持一段时间链接，默认为3000ms；</p> <p>l Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98：因为不是第一次访问这个地址，所以会在请求中把上一次服务器响应中发送过来的Cookie在请求中一并发送去过；这个Cookie的名字为JSESSIONID。</p> <p></p> <p>3.2　POST请求
+为了演示POST请求，我们需要修改index.jsp页面，即添加一个表单：</p> <form action="" method="post"><p>关键字：<input type="text" name="keyword"></p> <p><input type="submit" value="提交"></p></form> <p></p> <p></p> <p>打开HttpWatch，输入hello后点击提交，查看请求内容如下：</p> <p>POST /hello/index.jsp HTTP/1.1</p> <p>Accept: image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/x-ms-application, application/x-ms-xbap, application/vnd.ms-xpsdocument, application/xaml+xml, <em>/</em></p> <p>Referer: http://localhost:8080/hello/index.jsp</p> <p>Accept-Language: zh-cn,en-US;q=0.5</p> <p>User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; InfoPath.2; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)</p> <p>Content-Type: application/x-www-form-urlencoded</p> <p>Accept-Encoding: gzip, deflate</p> <p>Host: localhost:8080</p> <p>Content-Length: 13</p> <p>Connection: Keep-Alive</p> <p>Cache-Control: no-cache</p> <p>Cookie: JSESSIONID=E365D980343B9307023A1D271CC48E7D</p> <p></p> <p>keyword=hello</p> <p></p> <p>POST请求是可以有体的，而GET请求不能有请求体。</p> <p>l Referer: http://localhost:8080/hello/index.jsp：请求来自哪个页面，例如你在百度上点击链接到了这里，那么Referer:http://www.baidu.com；如果你是在浏览器的地址栏中直接输入的地址，那么就没有Referer这个请求头了；</p> <p>l Content-Type: application/x-www-form-urlencoded：表单的数据类型，说明会使用url格式编码数据；url编码的数据都是以“%”为前缀，后面跟随两位的16进制，例如“传智”这两个字使用UTF-8的url编码用为“%E4%BC%A0%E6%99%BA”；</p> <p>l Content-Length:13：请求体的长度，这里表示13个字节。</p> <p>l keyword=hello：请求体内容！hello是在表单中输入的数据，keyword是表单字段的名字。</p> <p></p> <p>Referer请求头是比较有用的一个请求头，它可以用来做统计工作，也可以用来做防盗链。</p> <p>统计工作：我公司网站在百度上做了广告，但不知道在百度上做广告对我们网站的访问量是否有影响，那么可以对每个请求中的Referer进行分析，如果Referer为百度的很多，那么说明用户都是通过百度找到我们公司网站的。</p> <p>防盗链：我公司网站上有一个下载链接，而其他网站盗链了这个地址，例如在我网站上的index.html页面中有一个链接，点击即可下载JDK7.0，但有某个人的微博中盗链了这个资源，它也有一个链接指向我们网站的JDK7.0，也就是说登录它的微博，点击链接就可以从我网站上下载JDK7.0，这导致我们网站的广告没有看，但下载的却是我网站的资源。这时可以使用Referer进行防盗链，在资源被下载之前，我们对Referer进行判断，如果请求来自本网站，那么允许下载，如果非本网站，先跳转到本网站看广告，然后再允许下载。</p> <p></p> <p>4　响应协议
+4.1　响应内容
+响应协议的格式如下：</p> <p>响应首行；</p> <p>响应头信息；</p> <p>空行；</p> <p>响应体。</p> <p></p> <p>响应内容是由服务器发送给浏览器的内容，浏览器会根据响应内容来显示。</p> <p>HTTP/1.1 200 OK</p> <p>Server: Apache-Coyote/1.1</p> <p>Content-Type: text/html;charset=UTF-8</p> <p>Content-Length: 724</p> <p>Set-Cookie: JSESSIONID=C97E2B4C55553EAB46079A4F263435A4; Path=/hello</p> <p>Date: Wed, 25 Sep 2012 04:15:03 GMT</p> <p></p>
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+<html><p></p><head><p></p> <p></p><base href="http://localhost:8080/hello/"><p></p> <p></p> <p></p><title>My JSP 'index.jsp' starting page</title><p></p> <p></p><meta http-equiv="pragma" content="no-cache"><p></p> <p></p><meta http-equiv="cache-control" content="no-cache"><p></p> <p></p><meta http-equiv="expires" content="0"><p></p> <p></p><meta http-equiv="keywords" content="keyword1,keyword2,keyword3"><p></p> <p></p><meta http-equiv="description" content="This is my page"><p></p> <p>&lt;!--</p> <p><link rel="stylesheet" type="text/css" href="styles.css"></p> <p>--&gt;</p> <p></p></head><p></p> <p></p><body><p></p> <p></p><form action="" method="post"><p></p> <p>关键字：<input type="text" name="keyword"></p> <p><input type="submit" value="提交"></p> <p></p></form><p></p> <p></p></body><p></p></html> <p></p> <p>l HTTP/1.1 200 OK：响应协议为HTTP1.1，状态码为200，表示请求成功，OK是对状态码的解释；</p> <p>l Server: Apache-Coyote/1.1：服务器的版本信息；</p> <p>l Content-Type: text/html;charset=UTF-8：响应体使用的编码为UTF-8；</p> <p>l Content-Length: 724：响应体为724字节；</p> <p>l Set-Cookie: JSESSIONID=C97E2B4C55553EAB46079A4F263435A4; Path=/hello：响应给客户端的Cookie；</p> <p>l Date: Wed, 25 Sep 2012 04:15:03 GMT：响应的时间，这可能会有8小时的时区差；</p> <p></p> <p>4.2　响应码
+响应头对浏览器来说很重要，它说明了响应的真正含义。例如200表示响应成功了，302表示重定向，这说明浏览器需要再发一个新的请求。</p> <p>l 200：请求成功，浏览器会把响应体内容（通常是html）显示在浏览器中；</p> <p>l 404：请求的资源没有找到，说明客户端错误的请求了不存在的资源；</p> <p>l 500：请求资源找到了，但服务器内部出现了错误；</p> <p>l 302：重定向，当响应码为302时，表示服务器要求浏览器重新再发一个请求，服务器会发送一个响应头Location，它指定了新请求的URL地址；</p> <p>l 304：当用户第一次请求index.html时，服务器会添加一个名为Last-Modified响应头，这个头说明了index.html的最后修改时间，浏览器会把index.html内容，以及最后响应时间缓存下来。当用户第二次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html最后的修改时间，If-Modified-Since请求头就是在告诉服务器，我这里浏览器缓存的index.html最后修改时间是这个，您看看现在的index.html最后修改时间是不是这个，如果还是，那么您就不用再响应这个index.html内容了，我会把缓存的内容直接显示出来。而服务器端会获取If-Modified-Since值，与index.html的当前最后修改时间比对，如果相同，服务器会发响应码304，表示index.html与浏览器上次缓存的相同，无需再次发送，浏览器可以显示自己的缓存页面，如果比对不同，那么说明index.html已经做了修改，服务器会响应200。</p> <p></p> <p>响应头：</p> <p>l Last-Modified：最后的修改时间；</p> <p>请求头：</p> <p>l If-Modified-Since：把上次请求的index.html的最后修改时间还给服务器；</p> <p>状态码：304，比较If-Modified-Since的时间与文件真实的时间一样时，服务器会响应304，而且不会有响正文，表示浏览器缓存的就是最新版本！</p> <p></p> <p>4.3　其他响应头
+告诉浏览器不要缓存的响应头：</p> <p>l Expires: -1；</p> <p>l Cache-Control: no-cache；</p> <p>l Pragma: no-cache；</p> <p></p> <p>自动刷新响应头，浏览器会在3秒之后请求http://www.itcast.cn：</p> <p>l Refresh: 3;url=http://www.itcast.cn</p> <p></p> <p>4.4　HTML中指定响应头
+在HTMl页面中可以使用</p><meta http-equiv="" content="">来指定响应头，例如在index.html页面中给出<meta http-equiv="Refresh" content="3;url=http://www.itcast.cn">，表示浏览器只会显示index.html页面3秒，然后自动跳转到http://www.itcast.cn。<p></p></Server></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月15日星期一下午1点10分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/38.75e85ec9.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

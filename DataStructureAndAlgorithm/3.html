@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一、简单排序 | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/13.d8d07d19.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/DataStructureAndAlgorithm/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>一、简单排序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_1-1-comparable接口介绍" class="sidebar-link">1.1 Comparable接口介绍</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_1-2-冒泡排序" class="sidebar-link">1.2 冒泡排序</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_1-3-选择排序" class="sidebar-link">1.3 选择排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#选择排序api设计：" class="sidebar-link">选择排序API设计：</a></li><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#选择排序的时间复杂度分析：" class="sidebar-link">选择排序的时间复杂度分析：</a></li></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_1-4-插入排序" class="sidebar-link">1.4 插入排序</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-1希尔排序" class="sidebar-link">2.1希尔排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#希尔排序的api设计：" class="sidebar-link">希尔排序的API设计：</a></li><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#希尔排序的时间复杂度分析" class="sidebar-link">希尔排序的时间复杂度分析</a></li><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#希尔排序和插入排序性能比较测试代码：" class="sidebar-link">希尔排序和插入排序性能比较测试代码：</a></li></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-2-归并排序" class="sidebar-link">2.2 归并排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-2-1-递归" class="sidebar-link">2.2.1 递归</a></li><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-2-2-归并排序" class="sidebar-link">2.2.2 归并排序</a></li></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-3-快速排序" class="sidebar-link">2.3 快速排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#需求：" class="sidebar-link">需求：</a></li><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#排序原理：" class="sidebar-link">排序原理：</a></li></ul></li><li><a href="/jialcblog/DataStructureAndAlgorithm/3.html#_2-4-排序的稳定性" class="sidebar-link">2.4 排序的稳定性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jialcblog/DataStructureAndAlgorithm/3.html#常见排序算法的稳定性：" class="sidebar-link">常见排序算法的稳定性：</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="一、简单排序"><a href="#一、简单排序" class="header-anchor">#</a> 一、简单排序</h1> <p>在我们的程序中，排序是非常常见的一种需求，提供一些数据元素，把这些数据元素按照一定的规则进行排序。比如查询一些订单，按照订单的日期进行排序；再比如查询一些商品，按照商品的价格进行排序等等。所以，接下来我们要学习一些常见的排序算法。</p> <p>在java的开发工具包jdk中，已经给我们提供了很多数据结构与算法的实现，比如List，SetMap，Math等等，都是以API的方式提供，这种方式的好处在于一次编写，多处使用。我们借鉴jdk的方式，也把算法封装到某个类中，那如果是这样，在我们写java代码之前，就需要先进行API的设计，设计好之后，再对这些API进行实现。</p> <p>就比如我们先设计一套API如下：
+<img src="http://ww1.sinaimg.cn/large/007eYKdZly1gfhp9dycaej30h503waad.jpg" alt="QQ截图20200605204610.png"></p> <p>什么是API
+Java API是指JDK内部自带的用Java语言书写的类库集合，包括基本数据类型处理，I/O处理，工具函数等等。Java API是以Java包和类的形式组织的，由Oracle官方负责维护，每个不同的Java版本都有自己的API,例如JDK 6的API的内容可见：
+http://docs.oracle.com/javase/6/docs/api/</p> <p>然后再使用java代码去实现它。以后我们讲任何数据结构与算法都是以这种方式讲解</p> <h2 id="_1-1-comparable接口介绍"><a href="#_1-1-comparable接口介绍" class="header-anchor">#</a> 1.1 Comparable接口介绍</h2> <p>由于我们这里要讲排序，所以肯定会在元素之间进行比较，<strong>而Java提供了一个接口Comparable就是用来定义排序规则的</strong>，在这里我们以案例的形式对Comparable接口做一个简单的回顾。</p> <p>需求：</p> <p>1.定义一个学生类Student，具有年龄age和姓名username两个属性，并通过Comparable接口提供比较规则；</p> <p>2.定义测试类Test，在测试类Test中定义测试方法Comparable getMax(Comparable c1,Comparable c2)完成测试</p> <ul><li>学生类</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> username<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>username <span class="token operator">=</span> username<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> <span class="token string">&quot;Student{&quot;</span> <span class="token operator">+</span>
+               <span class="token string">&quot;username='&quot;</span> <span class="token operator">+</span> username <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+               <span class="token string">&quot;, age=&quot;</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+               <span class="token string">'}'</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Student</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//重写抽象方法</span>
+       <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>o<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>测试类</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Student</span><span class="token punctuation">;</span>
+<span class="token comment">//定义测试类Test，在测试类Test中定义测试方法Comparable getMax(Comparable c1,Comparable c2)完成测试</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Testcompare</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//创建两个student对象，并调用getMax方法，完成测试</span>
+        <span class="token class-name">Student</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">&quot;张三&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Student</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">&quot;李四&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Comparable</span> max <span class="token operator">=</span> <span class="token function">getMax</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token comment">//</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Comparable</span> <span class="token function">getMax</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span> c1<span class="token punctuation">,</span> <span class="token class-name">Comparable</span> c2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> result <span class="token operator">=</span> c1<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//如果resurt小于0，则c1比c2小；</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>result<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> c1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> c2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_1-2-冒泡排序"><a href="#_1-2-冒泡排序" class="header-anchor">#</a> 1.2 冒泡排序</h2> <p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。</p> <p>需求：</p> <p>排序前：{4,5,6,3,2,1}
+排序后：{1,2,3,4,5,6}</p> <p>排序原理：</p> <ol><li>比较相邻的元素。如果前一个元素比后一个元素大，就交换这两个元素的位置。</li> <li>对每一对相邻元素做同样的工作，从开始第一对元素到结尾的最后一对元素。最终最后位置的元素就是最大
+值。
+<img src="http://ww1.sinaimg.cn/large/007eYKdZly1gfhs30uhe8j30gz0bd0x4.jpg" alt="QQ截图20200605222344.png"></li></ol> <p>冒泡排序API设计：</p> <p><img src="http://ww1.sinaimg.cn/large/007eYKdZly1gfhsiwv7xyj30ia04l750.jpg" alt="QQ截图20200605223905.png"></p> <ul><li>冒泡排序的代码实现：</li></ul> <p>排序代码</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Bubble</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*
+       对数组a中的元素进行排序
+    */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>a<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">//最坏情况分析{6,5,4,3,2,1}</span>
+                <span class="token comment">//比较索引j和索引j+1处的值</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">greater</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token function">exch</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>j<span class="token punctuation">,</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/*
+        比较v元素是否大于w元素
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">boolean</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span> v<span class="token punctuation">,</span><span class="token class-name">Comparable</span> w<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//直接返回boolean值</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/*
+    数组元素i和j交换位置
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exch</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Comparable</span> temp<span class="token punctuation">;</span> <span class="token comment">//问：为什么是comparable类的？</span>
+        temp <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>测试类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Bubble</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BubbleTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">//        int[] arr = {4,5,6,3,2,1}; 报错，因为int是基本数据类型，它不能实现compareble接口</span>
+        <span class="token class-name">Bubble</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//{1,2,3,4,5,6}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>冒泡排序的时间复杂度分析</li></ul> <p>冒泡排序使用了双层for循环，其中内层循环的循环体是真正完成排序的代码，所以，我们分析冒泡排序的时间复杂度，主要分析一下内层循环体的执行次数即可。</p> <p>在最坏情况下，也就是假如要排序的元素为{6,5,4,3,2,1}逆序，那么：元素比较的次数为：
+(N-1)+(N-2)+(N-3)+...+2+1=((N-1)+1)*(N-1)/2=N^2/2-N/2;</p> <p>元素交换的次数为：
+(N-1)+(N-2)+(N-3)+...+2+1=((N-1)+1)*(N-1)/2=N^2/2-N/2;</p> <p>总执行次数为：
+(N^2/2-N/2)+(N^2/2-N/2)=N^2-N;</p> <p>按照大O推导法则，保留函数中的最高阶项那么最终冒泡排序的时间复杂度为O(N^2).</p> <h2 id="_1-3-选择排序"><a href="#_1-3-选择排序" class="header-anchor">#</a> 1.3 选择排序</h2> <p>选择排序是一种更加简单直观的排序方法。</p> <p>需求：</p> <p>排序前：{4,6,8,7,9,2,10,1}
+排序后：{1,2,4,5,7,8,9,10}</p> <p>排序原理：</p> <p>1.每一次遍历的过程中，都假定第一个索引处的元素是最小值，和其他索引处的值依次进行比较，如果当前索引处的值大于其他某个索引处的值，则假定其他某个索引出的值为最小值，最后可以找到最小值所在的索引</p> <p>2.交换第一个索引处和最小值所在的索引处的值</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200708201030.png" alt="20200708201030"></p> <h3 id="选择排序api设计："><a href="#选择排序api设计：" class="header-anchor">#</a> 选择排序API设计：</h3> <p>选择排序的代码实现：
+//排序代码</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Selection</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*
+       对数组a中的元素进行排序
+    */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>a<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//定义一个变量，记录最小元素所在的索引，默认为参与选择排序的第一个元素所在的位置</span>
+            <span class="token keyword">int</span> minIndex <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token comment">//将最小的和后面的元素依次比较，初始化j为i+1，因为后续比较的是从i后面比起的 </span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">//需要比较最小索引minIndex处的值和j索引处的值；</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">greater</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    minIndex<span class="token operator">=</span>j<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">//交换最小元素所在索引minIndex处的值和索引i处的值</span>
+            <span class="token function">exch</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>i<span class="token punctuation">,</span>minIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/*
+        比较v元素是否大于w元素
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">boolean</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span> v<span class="token punctuation">,</span><span class="token class-name">Comparable</span> w<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/*
+    数组元素i和j交换位置
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exch</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Comparable</span> temp<span class="token punctuation">;</span>
+        temp <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+测试代码
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SelectionTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//原始数据</span>
+        <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">Selection</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[Ljava.lang.Integer;@282ba1e 如果不加tostring打印出来的是地址值</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//{1,2,4,5,7,8,9,10}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="选择排序的时间复杂度分析："><a href="#选择排序的时间复杂度分析：" class="header-anchor">#</a> 选择排序的时间复杂度分析：</h3> <div class="language- extra-class"><pre class="language-text"><code>选择排序使用了双层for循环，其中外层循环完成了数据交换，内层循环完成了数据比较，所以我们分别统计数据
+交换次数和数据比较次数：
+数据比较次数：
+ (N-1)+(N-2)+(N-3)+...+2+1=((N-1)+1)*(N-1)/2=N^2/2-N/2;
+
+数据交换次数：
+ N-1
+时间复杂度：N^2/2-N/2+（N-1）=N^2/2+N/2-1;
+根据大O推导法则，保留最高阶项，去除常数因子，时间复杂度为O(N^2);
+</code></pre></div><h2 id="_1-4-插入排序"><a href="#_1-4-插入排序" class="header-anchor">#</a> 1.4 插入排序</h2> <div class="language- extra-class"><pre class="language-text"><code>插入排序（Insertion sort）是一种简单直观且稳定的排序算法。
+插入排序的工作方式非常像人们排序一手扑克牌一样。开始时，我们的左手为空并且桌子上的牌面朝下。然后，我
+们每次从桌子上拿走一张牌并将它插入左手中正确的位置。为了找到一张牌的正确位置，我们从右到左将它与已在
+手中的每张牌进行比较，如下图所示：
+
+图片是扑克牌
+
+需求：
+排序前：{4,3,2,10,12,1,5,6}
+排序后：{1,2,3,4,5,6,10,12}
+排序原理：
+1.把所有的元素分为两组，已经排序的和未排序的；
+2.找到未排序的组中的第一个元素，向已经排序的组中进行插入；
+3.倒叙遍历已经排序的元素，依次和待插入的元素进行比较，直到找到一个元素小于等于待插入元素，那么就把待
+插入元素放到这个位置，其他的元素向后移动一位；
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200708220706.png" alt="20200708220706"></p> <h4 id="插入排序api设计："><a href="#插入排序api设计：" class="header-anchor">#</a> 插入排序API设计：</h4> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200708221633.png" alt="20200708221633"></p> <h4 id="插入排序代码实现："><a href="#插入排序代码实现：" class="header-anchor">#</a> 插入排序代码实现：</h4> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Insertion</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*
+       对数组a中的元素进行排序
+    */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span> j<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">//比较索引j处的值和索引j-1处的值，如果索引j-1处的值比索引j处的值大，则交换数据，如果不大，那么就找到合适的位置了，退出循环即可；</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">greater</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token function">exch</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/*
+        比较v元素是否大于w元素
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">boolean</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span> v<span class="token punctuation">,</span><span class="token class-name">Comparable</span> w<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/*
+    数组元素i和j交换位置
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exch</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Comparable</span> temp<span class="token punctuation">;</span>
+        temp <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="插入排序的时间复杂度分析"><a href="#插入排序的时间复杂度分析" class="header-anchor">#</a> 插入排序的时间复杂度分析</h4> <div class="language- extra-class"><pre class="language-text"><code>插入排序使用了双层for循环，其中内层循环的循环体是真正完成排序的代码，所以，我们分析插入排序的时间复
+杂度，主要分析一下内层循环体的执行次数即可。
+最坏情况，也就是待排序的数组元素为{12,10,6,5,4,3,2,1}，那么：
+比较的次数为：
+(N-1)+(N-2)+(N-3)+...+2+1=((N-1)+1)*(N-1)/2=N^2/2-N/2;
+交换的次数为：
+(N-1)+(N-2)+(N-3)+...+2+1=((N-1)+1)*(N-1)/2=N^2/2-N/2;
+总执行次数为：
+(N^2/2-N/2)+(N^2/2-N/2)=N^2-N;
+按照大O推导法则，保留函数中的最高阶项那么最终插入排序的时间复杂度为O(N^2).
+</code></pre></div><h1 id="二、高级排序"><a href="#二、高级排序" class="header-anchor">#</a> 二、高级排序</h1> <div class="language- extra-class"><pre class="language-text"><code>之前学习过基础排序，包括冒泡排序，选择排序还有插入排序，并且对他们在最坏情况下的时间复杂度做了分
+析，发现都是O(N^2)，而平方阶通过我们之前学习算法分析我们知道，随着输入规模的增大，时间成本将急剧上
+升，所以这些基本排序方法不能处理更大规模的问题，接下来我们学习一些高级的排序算法，争取降低算法的时间
+复杂度最高阶次幂。
+</code></pre></div><h2 id="_2-1希尔排序"><a href="#_2-1希尔排序" class="header-anchor">#</a> 2.1希尔排序</h2> <div class="language- extra-class"><pre class="language-text"><code>希尔排序是插入排序的一种，又称“缩小增量排序”，是插入排序算法的一种更高效的改进版本。
+
+前面学习插入排序的时候，我们会发现一个很不友好的事儿，如果已排序的分组元素为{2,5,7,9,10}，未排序的分组
+元素为{1,8}，那么下一个待插入元素为1，我们需要拿着1从后往前，依次和10,9,7,5,2进行交换位置，才能完成真
+正的插入，每次交换只能和相邻的元素交换位置。那如果我们要提高效率，直观的想法就是一次交换，能把1放到
+更前面的位置，比如一次交换就能把1插到2和5之间，这样一次交换1就向前走了5个位置，可以减少交换的次数，
+这样的需求如何实现呢？接下来我们来看看希尔排序的原理。
+
+需求：
+排序前：{9,1,2,5,7,4,8,6,3,5}
+排序后：{1,2,3,4,5,5,6,7,8,9}
+排序原理：
+ 1.选定一个增长量h，按照增长量h作为数据分组的依据，对数据进行分组；
+ 2.对分好组的每一组数据完成插入排序；
+ 3.减小增长量，最小减为1，重复第二步操作
+
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709094200.png" alt="20200709094200"></p> <div class="language- extra-class"><pre class="language-text"><code>增长量h的确定：增长量h的值每一固定的规则，我们这里采用以下规则：
+int h=1 while(h&lt;5){
+     h=2h+1；//3,7 
+     }//循环结束后我们就可以确定h的最大值；
+ h的减小规则为： h=h/2
+</code></pre></div><h3 id="希尔排序的api设计："><a href="#希尔排序的api设计：" class="header-anchor">#</a> 希尔排序的API设计：</h3> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709094909.png" alt="20200709094909"></p> <p>希尔排序的代码实现：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Shell</span> <span class="token punctuation">{</span>
+   <span class="token comment">/*
+      对数组a中的元素进行排序
+   */</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//1.根据数组a的长度，确定增长量h的初始值；</span>
+       <span class="token keyword">int</span> h <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+       <span class="token keyword">while</span><span class="token punctuation">(</span>h<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           h<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>h<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       
+       <span class="token comment">//2.希尔排序</span>
+       <span class="token keyword">while</span><span class="token punctuation">(</span>h<span class="token operator">&gt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token comment">//排序</span>
+           <span class="token comment">//2.1.找到待插入的元素</span>
+           <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>h<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+               <span class="token comment">//2.2把待插入的元素插入到有序数列中</span>
+               <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>j<span class="token operator">&gt;=</span>h<span class="token punctuation">;</span>j<span class="token operator">-=</span>h<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+                   <span class="token comment">//待插入的元素是a[j],比较a[j]和a[j-h]</span>
+                   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">greater</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token operator">-</span>h<span class="token punctuation">]</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                       <span class="token comment">//交换元素</span>
+                       <span class="token function">exch</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>j<span class="token operator">-</span>h<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                   <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                       <span class="token comment">//待插入元素已经找到了合适的位置，结束循环；</span>
+                       <span class="token keyword">break</span><span class="token punctuation">;</span>
+                   <span class="token punctuation">}</span>
+               <span class="token punctuation">}</span>
+
+           <span class="token punctuation">}</span>
+           <span class="token comment">//减小h的值</span>
+           h<span class="token operator">=</span> h<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">/*
+       比较v元素是否大于w元素
+    */</span>
+   <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">boolean</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span> v<span class="token punctuation">,</span><span class="token class-name">Comparable</span> w<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">return</span> v<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">/*
+   数组元素i和j交换位置
+    */</span>
+   <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exch</span><span class="token punctuation">(</span><span class="token class-name">Comparable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token class-name">Comparable</span> temp<span class="token punctuation">;</span>
+       temp <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+       a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+       a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+测试类
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShellTest</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+       <span class="token class-name">Shell</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//{1,2,3,4,5,5,6,7,8,9}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="希尔排序的时间复杂度分析"><a href="#希尔排序的时间复杂度分析" class="header-anchor">#</a> 希尔排序的时间复杂度分析</h3> <div class="language- extra-class"><pre class="language-text"><code>在希尔排序中，增长量h并没有固定的规则，有很多论文研究了各种不同的递增序列，但都无法证明某个序列是最
+好的，对于希尔排序的时间复杂度分析，已经超出了我们课程设计的范畴，所以在这里就不做分析了。
+我们可以使用事后分析法对希尔排序和插入排序做性能比较。
+在资料的测试数据文件夹下有一个reverse_shell_insertion.txt文件，里面存放的是从100000到1的逆向数据，我们
+可以根据这个批量数据完成测试。测试的思想：在执行排序前前记录一个时间，在排序完成后记录一个时间，两个
+时间的时间差就是排序的耗时。
+</code></pre></div><p>采用事后估计法</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709102733.png" alt="20200709102733"></p> <h3 id="希尔排序和插入排序性能比较测试代码："><a href="#希尔排序和插入排序性能比较测试代码：" class="header-anchor">#</a> 希尔排序和插入排序性能比较测试代码：</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Insertion</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Merge</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Shell</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">BufferedReader</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">InputStreamReader</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SortCompare</span> <span class="token punctuation">{</span>
+    <span class="token comment">//调用不同的测试方法，完成测试</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.创建一个ArrayList集合，保存读取出来的整数</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//2.创建缓存读取流BufferedReader，读取数据，并存储到ArrayList中；</span>
+        <span class="token class-name">BufferedReader</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">SortCompare</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">&quot;reverse_arr.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> line<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>line<span class="token operator">=</span>reader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//line是字符串，把line转换成Integer，存储到集合中</span>
+            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        reader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">//3.把ArrayList集合转换成数组</span>
+        <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">[</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.调用测试代码完成测试</span>
+        <span class="token comment">//testInsertion(a);//37499毫秒</span>
+        <span class="token function">testShell</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//30毫秒</span>
+<span class="token comment">//        testMerge(a);//70毫秒</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试希尔排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testShell</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Shell</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;希尔排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试插入排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testInsertion</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Insertion</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;插入排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试归并排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testMerge</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Merge</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;归并排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>通过测试发现，在处理大批量数据时，希尔排序的性能确实高于插入排序。</p> <h2 id="_2-2-归并排序"><a href="#_2-2-归并排序" class="header-anchor">#</a> 2.2 归并排序</h2> <h3 id="_2-2-1-递归"><a href="#_2-2-1-递归" class="header-anchor">#</a> 2.2.1 递归</h3> <div class="language- extra-class"><pre class="language-text"><code>正式学习归并排序之前，我们得先学习一下递归算法。
+定义：
+定义方法时，在方法内部调用方法本身，称之为递归.
+
+public void show(){         System.out.println(&quot;aaaa&quot;); 
+    show(); 
+}
+
+作用：
+它通常把一个大型复杂的问题，层层转换为一个与原问题相似的，规模较小的问题来求解。递归策略只需要少量的
+程序就可以描述出解题过程所需要的多次重复计算，大大地减少了程序的代码量。
+注意事项：
+
+在递归中，不能无限制的调用自己，必须要有边界条件，能够让递归结束，因为每一次递归调用都会在栈内存开辟
+新的空间，重新执行方法，如果递归的层级太深，很容易造成栈内存溢出。
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709152526.png" alt="20200709152526"></p> <h3 id="_2-2-2-归并排序"><a href="#_2-2-2-归并排序" class="header-anchor">#</a> 2.2.2 归并排序</h3> <div class="language- extra-class"><pre class="language-text"><code>归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用*分治法*的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。
+
+需求：
+排序前：{8,4,5,7,1,3,6,2}
+排序后：{1,2,3,4,5,6,7,8}
+
+排序原理：
+ 1.尽可能的一组数据拆分成两个元素相等的子组，并对每一个子组继续拆分，直到拆分后的每个子组的元素个数是1为止。
+ 2.将相邻的两个子组进行合并成一个有序的大组；
+ 3.不断的重复步骤2，直到最终只有一个组为止。
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709152951.png" alt="20200709152951"></p> <p>归并排序API设计：</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709153029.png" alt="20200709153029"></p> <p>归并方法：</p> <p>i指针是一直向后移一位，然后p指针是如果比对出一个小的，则对应指针向后移动一位。</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709194750.png" alt="20200709194750"></p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709195011.png" alt="20200709195011"></p> <p>一个指针遍历完一个字组后就不用，另外一个依次放入就好。</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709201152.png" alt="20200709201152"></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Insertion</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Merge</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>algorithm<span class="token punctuation">.</span>sort</span><span class="token punctuation">.</span><span class="token class-name">Shell</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">BufferedReader</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">InputStreamReader</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SortCompare</span> <span class="token punctuation">{</span>
+    <span class="token comment">//调用不同的测试方法，完成测试</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.创建一个ArrayList集合，保存读取出来的整数</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//2.创建缓存读取流BufferedReader，读取数据，并存储到ArrayList中；</span>
+        <span class="token class-name">BufferedReader</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">SortCompare</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">&quot;reverse_arr.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> line<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>line<span class="token operator">=</span>reader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//line是字符串，把line转换成Integer，存储到集合中</span>
+            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        reader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">//3.把ArrayList集合转换成数组</span>
+        <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">[</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.调用测试代码完成测试</span>
+        <span class="token comment">//testInsertion(a);//37499毫秒</span>
+        <span class="token function">testShell</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//30毫秒</span>
+<span class="token comment">//        testMerge(a);//70毫秒</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试希尔排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testShell</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Shell</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;希尔排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试插入排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testInsertion</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Insertion</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;插入排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//测试归并排序</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testMerge</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//1.获取执行之前的时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.执行算法代码</span>
+        <span class="token class-name">Merge</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.获取执行之后的时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.算出程序执行的时间并输出</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;归并排序执行的时间为：&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="归并排序时间复杂度分析："><a href="#归并排序时间复杂度分析：" class="header-anchor">#</a> 归并排序时间复杂度分析：</h4> <div class="language- extra-class"><pre class="language-text"><code>归并排序是分治思想的最典型的例子，上面的算法中，对a[lo...hi]进行排序，先将它分为a[lo...mid]和a[mid+1...hi]
+两部分，分别通过递归调用将他们单独排序，最后将有序的子数组归并为最终的排序结果。该递归的出口在于如果
+一个数组不能再被分为两个子数组，那么就会执行merge进行归并，在归并的时候判断元素的大小进行排序。
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709230503.png" alt="20200709230503"></p> <div class="language- extra-class"><pre class="language-text"><code>用树状图来描述归并，如果一个数组有8个元素，那么它将每次除以2找最小的子数组，共拆log8次，值为3，所以
+树共有3层,那么自顶向下第k层有2^k个子数组，每个数组的长度为2^(3-k)，归并最多需要2^(3-k)次比较。因此每层
+的比较次数为 2^k * 2^(3-k)=2^3,那么3层总共为 3*2^3。
+假设元素的个数为n，那么使用归并排序拆分的次数为log2(n),所以共log2(n)层，那么使用log2(n)替换上面3*2^3中 的3这个层数，最终得出的归并排序的时间复杂度为：log2(n)* 2^(log2(n))=log2(n)*n,根据大O推导法则，忽略底
+数，最终归并排序的时间复杂度为O(nlogn);
+</code></pre></div><h4 id="归并排序的缺点："><a href="#归并排序的缺点：" class="header-anchor">#</a> 归并排序的缺点：</h4> <p>需要申请额外的数组空间，导致空间复杂度提升，是典型的以空间换时间的操作。</p> <h4 id="归并排序与希尔排序性能测试："><a href="#归并排序与希尔排序性能测试：" class="header-anchor">#</a> 归并排序与希尔排序性能测试：</h4> <p>之前我们通过测试可以知道希尔排序的性能是由于插入排序的，那现在学习了归并排序后，归并排序的效率与希尔排序的效率哪个高呢？我们使用同样的测试方式来完成一样这两个排序算法之间的性能比较。</p> <p>在资料的测试数据文件夹下有一个reverse_arr.txt文件，里面存放的是从1000000到1的逆向数据，我们可以根据
+这个批量数据完成测试。测试的思想：在执行排序前前记录一个时间，在排序完成后记录一个时间，两个时间的时
+间差就是排序的耗时。</p> <h4 id="希尔排序和插入排序性能比较测试代码：-2"><a href="#希尔排序和插入排序性能比较测试代码：-2" class="header-anchor">#</a> 希尔排序和插入排序性能比较测试代码：</h4> <div class="language- extra-class"><pre class="language-text"><code>
+package cn.itcast.algorithm.test;
+
+import cn.itcast.algorithm.sort.Student;
+
+//2.定义测试类Test，在测试类Test中定义测试方法Comparable getMax(Comparable c1,Comparable c2)完成测试
+public class TestComparable {
+
+    public static void main(String[] args) {
+        //创建两个Student对象，并调用getMax方法，完成测试
+        Student s1 = new Student();
+        s1.setUsername(&quot;张三&quot;);
+        s1.setAge(18);
+
+        Student s2 = new Student();
+        s2.setUsername(&quot;李四&quot;);
+        s2.setAge(20);
+
+        Comparable max = getMax(s1, s2);
+        System.out.println(max);
+    }
+
+    public static Comparable getMax(Comparable c1,Comparable c2){
+        int result = c1.compareTo(c2);
+        //如果result&lt;0,则c1比c2小；
+        //如果result&gt;0，则c1比c2大；
+        //如果result==0,则c1和c2一样大；
+        if (result&gt;=0){
+            return c1;
+        }else{
+            return c2;
+        }
+    }
+}
+</code></pre></div><h2 id="_2-3-快速排序"><a href="#_2-3-快速排序" class="header-anchor">#</a> 2.3 快速排序</h2> <p>快速排序是对冒泡排序的一种改进。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一
+部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序
+过程可以递归进行，以此达到整个数据变成有序序列。</p> <h3 id="需求："><a href="#需求：" class="header-anchor">#</a> 需求：</h3> <p>排序前:{6, 1, 2, 7, 9, 3, 4, 5, 8}
+排序后:{1, 2, 3, 4, 5, 6, 7, 8, 9}</p> <h3 id="排序原理："><a href="#排序原理：" class="header-anchor">#</a> 排序原理：</h3> <p>1.首先设定一个分界值，通过该分界值将数组分成左右两部分；</p> <p>2.将大于或等于分界值的数据放到到数组右边，小于分界值的数据放到数组的左边。此时左边部分中各元素都小于
+或等于分界值，而右边部分中各元素都大于或等于分界值；</p> <p>3.然后，左边和右边的数据可以独立排序。对于左侧的数组数据，又可以取一个分界值，将该部分数据分成左右两
+部分，同样在左边放置较小值，右边放置较大值。右侧的数组数据也可以做类似处理。</p> <p>4.重复上述过程，可以看出，这是一个递归定义。通过递归将左侧部分排好序后，再递归排好右侧部分的顺序。当
+左侧和右侧两个部分的数据排完序后，整个数组的排序也就完成了。</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200709232840.png" alt="20200709232840"></p> <p>快速排序API设计:</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710155808.png" alt="20200710155808"></p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710160902.png" alt="20200710160902"></p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710161359.png" alt="20200710161359"></p> <div class="language- extra-class"><pre class="language-text"><code>切分原理：
+把一个数组切分成两个子数组的基本思想：
+1.找一个基准值，用两个指针分别指向数组的头部和尾部；
+2.先从尾部向头部开始搜索一个比基准值小的元素，搜索到即停止，并记录指针的位置；
+3.再从头部向尾部开始搜索一个比基准值大的元素，搜索到即停止，并记录指针的位置；
+4.交换当前左边指针位置和右边指针位置的元素；
+5.重复2,3,4步骤，直到左边指针的值大于右边指针的值停止。
+</code></pre></div><p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710161632.png" alt="20200710161632"></p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710161732.png" alt="20200710161732"></p> <p>代码:</p> <div class="language- extra-class"><pre class="language-text"><code>package cn.itcast.algorithm.sort;
+
+public class  Quick {
+    /*
+      比较v元素是否小于w元素
+   */
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) &lt; 0;
+    }
+    /*
+   数组元素i和j交换位置
+    */
+    private static void exch(Comparable[] a, int i, int j) {
+        Comparable t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+
+    //对a数组内的元素进行排序
+    public static void sort(Comparable[] a) {
+        int lo = 0;
+        int hi = a.length-1;
+        sort(a,lo,hi);//调用重载的sort方法
+    }
+
+    //对数组a中从索引lo到索引hi之间的元素进行排序
+    private static void sort(Comparable[] a, int lo, int hi) {
+        //安全性校验
+        if (hi&lt;=lo){
+            return;
+        }
+        //需要对数组中lo索引到hi索引处的元素进行分组（左子组和右子组）；partition就是用来分组的。
+        int partition = partition(a, lo, hi);//返回的是分组的分界值所在的索引，******分界值位置变换后的索引*********
+
+        //让左子组有序，不需要对分界值排序不包含分界值，所以是partition-1
+        sort(a,lo,partition-1);
+
+        //让右子组有序
+        sort(a,partition+1,hi);
+    }
+
+    //对数组a中，从索引 lo到索引 hi之间的元素进行分组，并返回分组界限对应的索引
+    public static int partition(Comparable[] a, int lo, int hi) {
+       //确定分界值，就是一开始的lo指针的位置
+        Comparable key = a[lo];
+        //定义两个指针，分别指向待切分元素的最小索引处和最大索引处的下一个位置
+        int left=lo;
+        int right=hi+1;
+
+        //切分
+        while(true){
+            //先从右往左扫描，移动right指针，找到一个比分界值小的元素，停止
+            while(less(key,a[--right])){
+                if (right==lo){
+                    break;
+                }
+            }
+
+            //再从左往右扫描，移动left指针，找到一个比分界值大的元素，停止
+            while(less(a[++left],key)){
+                if (left==hi){
+                    break;
+                }
+            }
+            //判断 left&gt;=right,如果是，则证明元素扫描完毕，结束循环，如果不是，则交换元素即可
+            if (left&gt;=right){
+                break;
+            }else{
+                exch(a,left,right);
+            }
+        }
+
+        //交换分界值
+        exch(a,lo,right);
+
+       return right;
+    }
+
+}
+
+</code></pre></div><h4 id="快速排序和归并排序的区别："><a href="#快速排序和归并排序的区别：" class="header-anchor">#</a> 快速排序和归并排序的区别：</h4> <p>快速排序是另外一种分治的排序算法，它将一个数组分成两个子数组，将两部分独立的排序。快速排序和归并排序是互补的：归并排序将数组分成两个子数组分别排序，并将有序的子数组归并从而将整个数组排序，而快速排序的方式则是当两个数组都有序时，整个数组自然就有序了。在归并排序中，一个数组被等分为两半，归并调用发生在处理整个数组之前，在快速排序中，切分数组的位置取决于数组的内容，递归调用发生在处理整个数组之后。</p> <h4 id="快速排序时间复杂度分析："><a href="#快速排序时间复杂度分析：" class="header-anchor">#</a> 快速排序时间复杂度分析：</h4> <p>快速排序的一次切分从两头开始交替搜索，直到left和right重合，因此，一次切分算法的时间复杂度为O(n),但整个
+快速排序的时间复杂度和切分的次数相关。
+最优情况：每一次切分选择的基准数字刚好将当前序列等分。</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710203352.png" alt=""></p> <h2 id="_2-4-排序的稳定性"><a href="#_2-4-排序的稳定性" class="header-anchor">#</a> 2.4 排序的稳定性</h2> <h4 id="稳定性的定义："><a href="#稳定性的定义：" class="header-anchor">#</a> 稳定性的定义：</h4> <p>数组arr中有若干元素，其中A元素和B元素相等，并且A元素在B元素前面，如果使用某种排序算法排序后，能够保证A元素依然在B元素的前面，可以说这个该算法是稳定的。</p> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200710204132.png" alt=""></p> <h4 id="稳定性的意义："><a href="#稳定性的意义：" class="header-anchor">#</a> 稳定性的意义：</h4> <p>如果一组数据只需要一次排序，则稳定性一般是没有意义的，如果一组数据需要多次排序，稳定性是有意义的。例如要排序的内容是一组商品对象，第一次排序按照价格由低到高排序，第二次排序按照销量由高到低排序，如果第二次排序使用稳定性算法，就可以使得相同销量的对象依旧保持着价格高低的顺序展现，只有销量不同的对象才需要重新排序。这样既可以保持第一次排序的原有意义，而且可以减少系统开销。</p> <h3 id="常见排序算法的稳定性："><a href="#常见排序算法的稳定性：" class="header-anchor">#</a> 常见排序算法的稳定性：</h3> <h4 id="冒泡排序："><a href="#冒泡排序：" class="header-anchor">#</a> 冒泡排序：</h4> <p>只有当arr[i]&gt;arr[i+1]的时候，才会交换元素的位置，而相等的时候并不交换位置，所以冒泡排序是一种稳定排序算法。</p> <h4 id="选择排序"><a href="#选择排序" class="header-anchor">#</a> 选择排序:</h4> <p>选择排序是给每个位置选择当前元素最小的,例如有数据{5(1)，8 ，5(2)， 2， 9 },第一遍选择到的最小元素为2，所以5(1)会和2进行交换位置，此时5(1)到了5(2)后面，破坏了稳定性，所以选择排序是一种不稳定的排序算法。</p> <h4 id="插入排序："><a href="#插入排序：" class="header-anchor">#</a> 插入排序：</h4> <p>比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果比它大则直接插入在其后面，否则一直往前找直到找到它该插入的位置。如果碰见一个和插入元素相等的，那么把要插入的元素放在相等元素的后面。所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以插入排序
+是稳定的。</p> <h4 id="希尔排序："><a href="#希尔排序：" class="header-anchor">#</a> 希尔排序：</h4> <p>希尔排序是按照不同步长对元素进行插入排序 ,虽然一次插入排序是稳定的，不会改变相同元素的相对顺序，但在
+不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以希尔排序是不
+稳定的。</p> <h4 id="归并排序："><a href="#归并排序：" class="header-anchor">#</a> 归并排序：</h4> <p>归并排序在归并的过程中，只有arr[i]&lt;arr[i+1]的时候才会交换位置，如果两个元素相等则不会交换位置，所以它并不会破坏稳定性，归并排序是稳定的。</p> <h4 id="快速排序："><a href="#快速排序：" class="header-anchor">#</a> 快速排序：</h4> <p>快速排序需要一个基准值，在基准值的右侧找一个比基准值小的元素，在基准值的左侧找一个比基准值大的元素，然后交换这两个元素，此时会破坏稳定性，所以快速排序是一种不稳定的算法。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年7月13日星期一下午3点39分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/13.d8d07d19.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

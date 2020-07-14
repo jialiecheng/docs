@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1、js的String对象 | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/34.dcab3739.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>1、js的String对象</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_1、js的string对象" class="sidebar-link">1、js的String对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_2、js的array对象" class="sidebar-link">2、js的Array对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_3、js的date对象" class="sidebar-link">3、js的Date对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_4、js的math对象" class="sidebar-link">4、js的Math对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_5、js的全局函数" class="sidebar-link">5、js的全局函数</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_6、js的函数的重载" class="sidebar-link">6、js的函数的重载</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_7、js的bom对象" class="sidebar-link">7、js的bom对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_8、js的dom对象（-）" class="sidebar-link">8、js的dom对象（**）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_9、document对象" class="sidebar-link">9、document对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#_10、案例：window弹窗案例" class="sidebar-link">10、案例：window弹窗案例</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/4js%E5%AF%B9%E8%B1%A1.html#js事件" class="sidebar-link">js事件</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1、js的string对象"><a href="#_1、js的string对象" class="header-anchor">#</a> 1、js的String对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　创建String对象
+
+　　　　var str = &quot;abc&quot;;
+
+　　方法和属性（文档）
+
+　　　　属性 length：字符串的长度
+
+　　　　方法
+
+　　　　（1）与html相关的方法
+
+　　　　　　- bold()：加粗
+
+　　　　　　- fontcolor(): 设置字符串的颜色
+
+　　　　　　- fontsize(): 设置字体的大小
+
+　　　　　　- link(): 将字符串显示成超链接
+
+　　　　　　　　str4.link(&quot;hello.html&quot;)
+
+　　　　　　- sub() sup(): 下标和上标
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ <span class="token number">9</span>         <span class="token comment">//length属性</span>
+<span class="token number">10</span>         <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">&quot;abcde&quot;</span><span class="token punctuation">;</span>
+<span class="token number">11</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">12</span> 
+<span class="token number">13</span>         <span class="token comment">//bold方法</span>
+<span class="token number">14</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">15</span>         <span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">&quot;asdf&quot;</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">17</span> 
+<span class="token number">18</span>         <span class="token comment">//fontcolor</span>
+<span class="token number">19</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">20</span>         <span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">&quot;www&quot;</span><span class="token punctuation">;</span>
+<span class="token number">21</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str2<span class="token punctuation">.</span><span class="token function">fontcolor</span><span class="token punctuation">(</span><span class="token string">&quot;red&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">22</span> 
+<span class="token number">23</span>         <span class="token comment">//fontsize</span>
+<span class="token number">24</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">25</span>         <span class="token keyword">var</span> str3 <span class="token operator">=</span> <span class="token string">&quot;qqqqq&quot;</span><span class="token punctuation">;</span>
+<span class="token number">26</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str3<span class="token punctuation">.</span><span class="token function">fontsize</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">27</span> 
+<span class="token number">28</span>         <span class="token comment">//link</span>
+<span class="token number">29</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">30</span>         <span class="token keyword">var</span> str4 <span class="token operator">=</span> <span class="token string">&quot;haha&quot;</span><span class="token punctuation">;</span>
+<span class="token number">31</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str4<span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">&quot;hello.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">32</span> 
+<span class="token number">33</span>         <span class="token comment">//sub 和sup</span>
+<span class="token number">34</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">35</span>         <span class="token keyword">var</span> s1 <span class="token operator">=</span> <span class="token string">&quot;100&quot;</span><span class="token punctuation">;</span>
+<span class="token number">36</span>         <span class="token keyword">var</span> s2 <span class="token operator">=</span> <span class="token string">&quot;200&quot;</span><span class="token punctuation">;</span>
+<span class="token number">37</span>         <span class="token keyword">var</span> s3 <span class="token operator">=</span> <span class="token string">&quot;300&quot;</span>
+<span class="token number">38</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">39</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">40</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">sup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">41</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+42 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+43 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+　　（2）与java相似的方法
+
+　　　　- concat(): 连接字符串
+
+　　　　　　//concat方法
+
+　　　　　　var str1 = &quot;abc&quot;;
+
+　　　　　　var str2 = &quot;dfg&quot;;
+
+　　　　　　document.write(str1.concat(str2));
+
+　　　　- charAt():返回指定指定位置的字符串
+
+　　　　　　var str3 = &quot;abcdefg&quot;;
+
+　　　　　　document.write(str3.charAt(20)); //字符位置不存在，返回空字符串
+
+ 　　　　- indexOf()： 返回字符串位置
+
+　　　　　　var str4 = &quot;poiuyt&quot;;
+
+　　　　　　document.write(str4.indexOf(&quot;w&quot;)); //字符不存在，返回-1
+
+　　　　- split()：切分字符串，成数组
+
+　　　　　　var str5 = &quot;a-b-c-d&quot;;
+
+　　　　　　var arr1 = str5.split(&quot;-&quot;);
+
+　　　　　　document.write(&quot;length: &quot;+arr1.length);
+
+　　　　- replace() ： 替换字符串
+
+　　　　　　传递两个参数：
+
+　　　　　　　　-- 第一个参数是原始字符
+
+　　　　　　　　-- 第二个参数要替换成的字符
+
+　　　　　　var str6 = &quot;abcd&quot;;
+
+　　　　　　document.write(str6);
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(str6.replace(&quot;a&quot;,&quot;Q&quot;));
+
+ 　　　　- substr()和substring()
+
+　　　　　　var str7 = &quot;abcdefghuiop&quot;;
+
+　　　　　　//document.write(str7.substr(5,5));  //fghui  从第五位开始，向后截取五个字符
+
+　　　　　　　　从第几位开始，向后截取几位
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(str7.substring(3,5)); //de  从第几位开始到第几位结束  [3,5)
+
+　　　　　　　　从第几位开始，到第几位结束，但是不包含最后哪一位
+               左闭右开
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ <span class="token number">9</span>         <span class="token comment">//concat方法</span>
+<span class="token number">10</span>         <span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">&quot;abc&quot;</span><span class="token punctuation">;</span>
+<span class="token number">11</span>         <span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">&quot;dfg&quot;</span><span class="token punctuation">;</span>
+<span class="token number">12</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">13</span> 
+<span class="token number">14</span>         <span class="token comment">//charAt方法</span>
+<span class="token number">15</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         <span class="token keyword">var</span> str3 <span class="token operator">=</span> <span class="token string">&quot;abcdefg&quot;</span><span class="token punctuation">;</span>
+<span class="token number">17</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str3<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//字符位置不存在，返回空字符串</span>
+<span class="token number">18</span>         
+<span class="token number">19</span>         <span class="token comment">//indexOf方法</span>
+<span class="token number">20</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">21</span>         <span class="token keyword">var</span> str4 <span class="token operator">=</span> <span class="token string">&quot;poiuyt&quot;</span><span class="token punctuation">;</span>
+<span class="token number">22</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str4<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//字符不存在，返回-1</span>
+<span class="token number">23</span> 
+<span class="token number">24</span>         <span class="token comment">//split方法</span>
+<span class="token number">25</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">26</span>         <span class="token keyword">var</span> str5 <span class="token operator">=</span> <span class="token string">&quot;a-b-c-d&quot;</span><span class="token punctuation">;</span>
+<span class="token number">27</span>         <span class="token keyword">var</span> arr1 <span class="token operator">=</span> str5<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;-&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">28</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;length: &quot;</span><span class="token operator">+</span>arr1<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">29</span>         
+<span class="token number">30</span>         <span class="token comment">//replace</span>
+<span class="token number">31</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">32</span>         <span class="token keyword">var</span> str6 <span class="token operator">=</span> <span class="token string">&quot;abcd&quot;</span><span class="token punctuation">;</span>
+<span class="token number">33</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">34</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">35</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str6<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;Q&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">36</span> 
+<span class="token number">37</span>         <span class="token comment">//substr  substring</span>
+<span class="token number">38</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;hr/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">39</span>         <span class="token keyword">var</span> str7 <span class="token operator">=</span> <span class="token string">&quot;abcdefghuiop&quot;</span><span class="token punctuation">;</span>
+<span class="token number">40</span>         <span class="token comment">//document.write(str7.substr(5,5));  //fghui  从第五位开始，向后截取五个字符</span>
+<span class="token number">41</span> 
+<span class="token number">42</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">43</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>str7<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//de  从第几位开始到第几位结束  [3,5)</span>
+<span class="token number">44</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+45 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+46 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_2、js的array对象"><a href="#_2、js的array对象" class="header-anchor">#</a> 2、js的Array对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　创建数组（三种）
+
+　　　　- var arr1 = [1,2,3];
+
+　　　　- var arr2 = new Array(3); //长度是3
+
+　　　　- var arr3 = new Array(1,2,3); //数组中的元素是1 2 3
+
+　　　　- var arr = [];  //创建一个空数组
+
+　　属性：length：查看数组的长度
+
+　　方法
+
+　　　- concat()： 数组的连接
+
+　　　　　　var arr11 = [1,2,3];
+
+　　　　　　var arr12 = [4,5,6];
+
+　　　　　　document.write(arr11.concat(arr12));//1,2,3,4,5,6
+
+ 　　 - join()：根据指定的字符分割数组
+
+　　　　　　var arr13 = new Array(3);
+
+　　　　　　arr13[0] = &quot;a&quot;;
+
+　　　　　　arr13[1] = &quot;b&quot;;
+
+　　　　　　arr13[2] = &quot;c&quot;;
+
+　　　　　　document.write(arr13);//a,b,c
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(arr13.join(&quot;-&quot;));//a-b-c
+
+　　　　- push()：向数组末尾添加元素，返回数组的新的长度
+
+　　　　　　如果添加的是一个数组，这个时候把数组当做一个整体字符串添加进去
+
+　　　　　　//push方法
+
+　　　　　　var arr14 = new Array(3);
+
+　　　　　　arr14[0] = &quot;tom&quot;;
+
+　　　　　　arr14[1] = &quot;lucy&quot;;
+
+　　　　　　arr14[2] = &quot;jack&quot;;
+
+　　　　　　document.write(&quot;old array: &quot;+arr14);//old array: tom,lucy,jack
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;old length:&quot;+arr14.length);//old length:3
+
+ 
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new length: &quot;+arr14.push(&quot;zhangsan&quot;));//new length: 4
+
+ 
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new array: &quot;+arr14);//new array: tom,lucy,jack,zhangsan
+
+ 
+
+　　　　　　var arr15 = [&quot;aaa&quot;,&quot;bbb&quot;,&quot;ccc&quot;];
+
+　　　　　　var arr16 = [&quot;www&quot;,&quot;qqq&quot;];
+
+ 
+
+　　　　　　document.write(&quot;old array:&quot;+arr15);//old array:aaa,bbb,ccc
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;old length:&quot;+arr15.length);//old length:3
+
+ 
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new length:&quot;+arr15.push(arr16));//new length:5
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new array: &quot;+arr15);//new array: aaa,bbb,ccc,www,qqq
+
+　　　　　　for(var i=0;i&lt;arr15.length;i++) {
+
+　　　　　　　　alert(arr15[i]);
+
+　　　　　　}
+
+　　　　- pop()：表示 删除最后一个元素，返回删除的那个元素
+
+　　　　　　var arr17 = [&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;,&quot;zhaoliu&quot;];
+
+　　　　　　document.write(&quot;old array: &quot;+arr17);//old array:zhangsan,lisi,wangwu,zhaoliu
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;return: &quot;+arr17.pop());//return: zhaoliu
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new array: &quot;+arr17);//new array: zhangsan,lisi,wangwu
+
+　　　　- reverse():颠倒数组中的元素的顺序
+
+　　　　　　//reverse方法
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　var arr18 = [&quot;zhangsan1&quot;,&quot;lisi1&quot;,&quot;zhaoliu1&quot;,&quot;niuqi1&quot;];
+
+　　　　　　document.write(&quot;old array: &quot;+arr18);//old array: zhangsan1,lisi1,zhaoliu1,niuqi1
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　　　document.write(&quot;new array:&quot;+arr18.reverse());//new array:niuqi1,zhaoliu1,lisi1,zhangsan1
+</code></pre></div><h2 id="_3、js的date对象"><a href="#_3、js的date对象" class="header-anchor">#</a> 3、js的Date对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　在java里面获取当前时间
+
+　　　　Date date = new Date();
+
+　　　　//格式化
+
+　　　　//toLocaleString()   //2017年8月03日 11:17:12
+
+ 　　js里面获取当前时间
+
+　　　　var date = new Date();
+
+　　　　//获取当前时间
+
+　　　　var date = new Date();
+
+　　　　document.write(date);  // Thu Aug 03 2017 13:22:56 GMT+0800 (中国标准时间)
+
+ 　　　　//转换成习惯的格式
+
+　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　document.write(date.toLocaleString());//2017/8/3 下午1:22:56
+
+　　获取当前的年方法
+
+　　　　getFullYear()：得到当前的年
+
+　　　　　　document.write(&quot;year: &quot;+date.getFullYear());//year: 2017
+
+ 　　获取当前的月方法
+
+　　　　getMonth()：获取当前的月
+
+　　　　　　返回的是 0-11月，如果想要得到准确的值，加1
+
+　　　　　　var date1 = date.getMonth()+1;
+
+　　　　　　document.write(&quot;month: &quot;+date1);//month: 8
+
+ 　　获取当前的星期
+
+　　　　getDay()：星期,返回的是 (0 ~ 6)
+
+　　　　外国朋友，把星期日作为一周的第一天，星期日返回的是 0
+
+　　　　而星期一到星期六 返回的是 1-6
+
+　　　　document.write(&quot;week: &quot;+date.getDay());//week: 4
+
+ 　　获取当前的日
+
+　　　　getDate()：得到当前的天 1-31
+
+　　　　document.write(&quot;day: &quot;+date.getDate());//day: 3
+
+ 　　获取当前的小时
+
+　　　　getHours()：获取小时
+
+　　　　document.write(&quot;hour: &quot;+date.getHours());//hour: 13
+
+ 　　获取当前的分钟
+
+　　　　getMinutes()：分钟
+
+　　　　document.write(&quot;minute: &quot;+date.getMinutes());//minute: 22
+
+ 　　获取当前的秒
+
+　　　　getSeconds(): 秒
+
+　　　　document.write(&quot;second: &quot;+date.getSeconds());//second: 56
+
+ 　　获取毫秒数
+
+　　　　getTime()
+
+　　　　返回的是1970 1 1 至今的毫秒数
+
+ document.write(&quot;times: &quot;+date.getTime());//times: 1501737776787
+
+ 应用场景：
+
+　　　　　　使用毫秒数处理缓存的效果（不有缓存）
+
+　　　　　　　　http://www.baidu.com?毫秒数
+</code></pre></div><h2 id="_4、js的math对象"><a href="#_4、js的math对象" class="header-anchor">#</a> 4、js的Math对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>
+　　数学的运算
+
+　　里面的都是静态方法，使用可以直接使用 Math.方法()
+
+　　ceil(x): 向上舍入
+
+　　floor(x)：向下舍入
+
+　　round(x)：四舍五入
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ <span class="token number">9</span>         <span class="token keyword">var</span> mm <span class="token operator">=</span> <span class="token number">10.7</span><span class="token punctuation">;</span>
+<span class="token number">10</span>         
+<span class="token number">11</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;old : &quot;</span><span class="token operator">+</span>mm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">12</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">13</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;ceil: &quot;</span><span class="token operator">+</span>Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>mm<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">14</span> 
+<span class="token number">15</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;floor: &quot;</span><span class="token operator">+</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>mm<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">17</span>         
+<span class="token number">18</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">19</span>         document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;round: &quot;</span><span class="token operator">+</span>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>mm<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">20</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+21 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+22 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+　　random()：得到随机数（伪随机数0-1）
+
+　　　　- 得到0-9的随机数
+
+　　　　　　Math.random()10
+
+　　　　　　Math.floor(Math.random()10));
+
+ 
+
+　　//pow(x,y)  2的5次方
+
+　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　Document.write(Math.pow(2,5));
+</code></pre></div><h2 id="_5、js的全局函数"><a href="#_5、js的全局函数" class="header-anchor">#</a> 5、js的全局函数</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　由于不属于任何一个对象，直接写名称使用
+
+ 
+
+　　eval() ： 执行js代码（如果字符串是一个js代码，使用方法直接执行）
+
+　　　　var str = &quot;alert('1234');&quot;;
+
+　　　　//alert(str);
+
+　　　　eval(str);//1234
+
+　　encodeURI() ：对字符进行编码
+
+ var str1 = &quot;测试中文aaa1234&quot;;
+
+ var encode1 = encodeURI(str1);
+
+　　　　document.write(encode1);//- %E6%B5%8B%E8%AF%95%E4%B8%AD%E6%96%87aaa1234
+
+ 
+
+　　decodeURI()  ：对字符进行解码
+
+var decode1 = decodeURI(encode1);
+
+document.write(decode1);//测试中文aaa1234
+
+ 
+
+　　　　encodeURIComponent() 和 decodeURIComponent()
+
+ 
+
+　　isNaN():判断当前字符串是否是数字
+
+　　　　-- var str2 = &quot;aaaa&quot;;
+
+　　　　alert(isNaN(str2));//true
+
+　　　　如果是数字，返回false
+
+　　　　如果不是数字，返回true
+
+ 
+
+　　parseInt()：类型转换
+
+　　　　var str3 = &quot;123&quot;;
+
+　　　　document.write(parseInt(str3)+1);//124
+</code></pre></div><h2 id="_6、js的函数的重载"><a href="#_6、js的函数的重载" class="header-anchor">#</a> 6、js的函数的重载</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　什么是重载？方法名相同，参数不同
+
+　　js的重载是否存在？ 不存在
+
+　　　　调用最后一个方法
+
+　　　　把传递的参数保存到 arguments数组里面
+
+ 
+
+　　js里面是否存在重载？(面试题目)
+
+　　　　（1）js里面不存在重载。
+
+　　　　（2）但是可以通过其他方式模拟重载的效果 （通过aruguments数组来实现）
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ <span class="token number">9</span>         <span class="token keyword">function</span> <span class="token function">add1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">10</span>             <span class="token comment">//比如传递的是两个参数</span>
+<span class="token number">11</span>             <span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">12</span>                 <span class="token keyword">return</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">13</span> 
+<span class="token number">14</span>             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">15</span>                 <span class="token keyword">return</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">16</span> 
+<span class="token number">17</span>             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">18</span> 
+<span class="token number">19</span>                 <span class="token keyword">return</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">+</span>arguments<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">20</span>             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token number">21</span>                 <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token number">22</span>             <span class="token punctuation">}</span>
+<span class="token number">23</span>         <span class="token punctuation">}</span>
+<span class="token number">24</span>         <span class="token comment">//调用</span>
+<span class="token number">25</span>         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//NaN</span>
+<span class="token number">26</span>         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//NaN</span>
+<span class="token number">27</span>         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 10</span>
+<span class="token number">28</span>         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 10</span>
+<span class="token number">29</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+30 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+31 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_7、js的bom对象"><a href="#_7、js的bom对象" class="header-anchor">#</a> 7、js的bom对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　bom：broswer object model: 浏览器对象模型
+
+ 　　有哪些对象？
+
+　　navigator： 获取客户机的信息（浏览器的信息）
+　　　　- navigator.appName
+
+　　　　- document.write(navigator.appName);
+
+　　screen: 获取屏幕的信息
+
+　　　　- document.write(screen.width);//1417
+
+　　　　  document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　  document.write(screen.height);//797
+
+　　location: 请求url地址
+
+　　　　- href属性
+
+　　　　　　获取到请求的url地址
+
+　　　　　　　　- document.write(location.href);//file:///F:/第二阶段_JavaWeb阶段/超全面的JavaWeb视频教程/JavaWeb视频教程_day3/JavaWeb视频教程_day3-资料源码/code/08-js的bom对象一.html
+
+ 
+
+　　　　　　设置url地址
+
+　　　　　　　　- 页面上安置一个按钮，按钮上绑定一个事件，当我点击这个按钮，页面可以跳转到另外一个页面
+
+　　　　　　　　- location.href = &quot;hello.html&quot;;
+
+ 
+
+　　　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tiaozhuan<span class="token punctuation">&quot;</span></span> <span class="token attr-name">οnclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>href1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+
+　　　　　　　　　　Function href1() {
+
+　　　　//alert(“aaaa”);
+
+　　　　location.href = “hello.html”;
+
+　　　　}
+
+　　　　　　　　　- 鼠标点击事件  οnclick=&quot;js的方法;&quot;
+
+　　history：请求的url的历史记录
+
+　　　　- 创建三个页面
+
+　　　　　　1、创建第一个页面 a.html 写一个超链接 到 b.html
+
+　　　　　　2、创建b.html 超链接 到 c.html
+
+　　　　　　3、创建c.html
+
+ 　　　　- 到访问的上一个页面
+
+　　　　　　history.back();
+
+　　　　　　history.go(-1);
+
+　　　　- 到访问的下一个页面
+
+　　　　　　history.forward();
+
+　　　　　　history.go(1);
+
+a.html
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>AAAAAAAAAAAAAAAAAAAAAAA<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>b.html<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>AAAAAAAAA<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">11</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+13 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+b.html
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>back<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>back1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>next<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>next1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+11     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>BBBBBBBBBBBBBBBBBBBBBBB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+12 
+13     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>c.html<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>BBBBBBBB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+14     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">15</span>         <span class="token comment">//到上一个页面</span>
+<span class="token number">16</span>         <span class="token keyword">function</span> <span class="token function">back1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">17</span>             <span class="token comment">//history.back();</span>
+<span class="token number">18</span>             history<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">19</span>         <span class="token punctuation">}</span>
+<span class="token number">20</span>         <span class="token comment">//到下一个页面</span>
+<span class="token number">21</span>         <span class="token keyword">function</span> <span class="token function">next1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">22</span>             <span class="token comment">//history.forward();</span>
+<span class="token number">23</span>             history<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">24</span>         <span class="token punctuation">}</span>
+<span class="token number">25</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+26 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+27 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+c.html
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>CCCCCCCCCCCCCCCCCCCCCC<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">    
+<span class="token number">10</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+11 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code>　　window（）
+　　　　窗口对象
+
+　　　　顶层对象（所用的bom对象都是在window里面操作的）
+
+　　　　方法
+
+　　　　　　- window.alert() ：页面弹出一个框，显示内容
+
+　　　　　　　　简写alert()
+
+　　　　　　- confirm()：确认框
+
+　　　　　　　　- var flag = window.confirm(&quot;是否删除&quot;);
+
+　　If(flag == true) {
+
+　　Alert(“删除成功”);
+
+　　}else {
+
+　　Alert(“删除失败”)
+
+　　}
+
+　　　　　　- prompt()：输入的对话框
+
+　　　　　　　　- window.prompt(&quot;please input : &quot;,&quot;0&quot;);
+
+　　　　　　　　- window.prompt(&quot;在显示的内容&quot;,&quot;输入框里面的默认值&quot;);
+
+ 
+
+　　　　　　- open()：打开一个新的窗口
+
+　　　　　　　　open(&quot;打开的新窗口的地址url&quot;,&quot;&quot;,&quot;窗口特征，比如窗口宽度和高度&quot;)
+
+　　　　　　　　- 创建一个按钮，点击这个按钮，打开一个新的窗口
+
+  -<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>open<span class="token punctuation">&quot;</span></span> <span class="token attr-name">οnclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>open1()<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+
+　　　　　　　　- function open1() {
+
+　　　　　　　　　　window.open(&quot;hello.html&quot;,&quot;&quot;,&quot;width=200,height=100&quot;);
+
+　　　　　　　　　　}
+
+　　　　　　- close()：关闭窗口(浏览器兼容性比较差)
+
+　　　　　　　　- window.close();
+
+ 
+
+　　　　　　- 做定时器
+
+　　　　　　setInterval(&quot;js代码&quot;,毫秒数)  1秒=1000毫秒
+
+　　　　　　　　- 表示每三秒，执行一次alert方法
+
+　　　　　　　　window.setInterval(&quot;alert('123');&quot;,3000);
+
+　　　　　　setTimeout(&quot;js代码&quot;,毫秒数)
+
+　　　　　　　　- 表示在毫秒数之后执行，但是只会执行一次
+
+ 
+
+　　　　　　　　- 表示四秒之后执行js代码，只会执行一次
+
+　　　　　　　　window.setTimeout(&quot;alert('abc');&quot;,4000);
+
+ 
+
+　　　　　　clearInterval(): 清除setInterval设置的定时器
+
+　　　　　　　　var id1 = setInterval(&quot;alert('123');&quot;,3000);//通过setInterval会有一个返回值
+
+　　　　　　　　clearInterval(id1);
+
+ 
+
+　　　　　　clearTimeout() : 清除setTimeout设置的定时器
+
+　　　　　　　　var id2 = setTimeout(&quot;alert('abc');&quot;,4000);
+
+　　　　　　　　clearTimeout(id2);
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>interval<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>clear1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>timeout<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>clear2();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+11     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">12</span>         <span class="token comment">//演示setInterval方法</span>
+<span class="token number">13</span>         <span class="token comment">//var id1 = setInterval(&quot;alert('123');&quot;,3000);</span>
+<span class="token number">14</span> 
+<span class="token number">15</span>         <span class="token comment">//演示setTimeout方法</span>
+<span class="token number">16</span>         <span class="token keyword">var</span> id2 <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">&quot;alert('abc');&quot;</span><span class="token punctuation">,</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">17</span> 
+<span class="token number">18</span>         <span class="token comment">//清除setInterval</span>
+<span class="token number">19</span>         <span class="token keyword">function</span> <span class="token function">clear1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">20</span>             <span class="token function">clearInterval</span><span class="token punctuation">(</span>id1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">21</span>         <span class="token punctuation">}</span>
+<span class="token number">22</span>         <span class="token comment">//清除setTimeout</span>
+<span class="token number">23</span>         <span class="token keyword">function</span> <span class="token function">clear2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">24</span>             <span class="token function">clearTimeout</span><span class="token punctuation">(</span>id2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">25</span>         <span class="token punctuation">}</span>
+<span class="token number">26</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+27 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+28 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_8、js的dom对象（-）"><a href="#_8、js的dom对象（-）" class="header-anchor">#</a> 8、js的dom对象（****）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　dom：document object model: 文档对象模型
+
+　　文档：
+
+　　　　超文本文档（超文本标记文档） html 、xml
+
+　　对象：
+
+　　　　提供了属性和方法
+
+　　模型：使用属性和方法操作超文本标记型文档
+
+ 
+
+　　可以使用js里面的dom里面提供的对象，使用这些对象的属性和方法，对标记型文档进行操作
+
+ 
+
+　　想要对标记型文档进行操作，首先需要 对标记型文档里面的所有内容封装成对象
+
+　　　　-- 需要把html里面的标签、属性、文本内容都封装成对象
+
+ 
+
+　　要想对标记型文档进行操作，解析标记型文档
+
+　　　　- 画图分析，如何使用dom解析html
+
+ 
+解析过程
+
+　　根据html的层级结构，在内存中分配一个树形结构，需要把html中的每部分封装成对象，
+
+　　- document对象：整个文档
+
+　　- element对象：标签对象
+
+　　- 属性对象
+
+　　- 文本对象
+
+ 
+
+　　-- Node节点对象：这个对象是这些对象的父对象
+
+　　　　如果在对象里面找不到想要的方法，这个时候到Node对象里面去找
+
+ 
+
+　　DOM模型有三种：
+
+　　　　DOM level 1：将html文档封装成对象。
+
+　　　　DOM level 2：在level 1的基础上添加新的功能，例如：对于事件和css样式的支持。
+
+　　　　DOM level 3：支持xml1.0的一些新特性。
+
+ 
+
+　　DHTML：是很多技术的简称
+
+　　　　html: 封装数据
+
+　　　　css：使用属性和属性值设置样式
+
+　　　　dom：操作html文档（标记型文档）
+
+　　　　javascript：专门指的是js的语法语句（ECMAScript）
+</code></pre></div><h2 id="_9、document对象"><a href="#_9、document对象" class="header-anchor">#</a> 9、document对象</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　表示整个的文档
+
+　　常用方法
+
+　　　　write()方法：
+
+　　　　　　（1）向页面输出变量（值）
+
+　　　　　　（2）向页面输出html代码
+
+　　　　　　- var str = &quot;abc&quot;;
+
+　　　　　　document.write(str);
+
+　　　　　　document.write(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>&quot;);
+
+　　　　getElementById();
+
+　　　　　　- 通过id得到元素（标签）
+
+　　　　　　- //使用getElementById得到input标签
+
+　　　　　　var input1 = document.getElementById(&quot;nameid&quot;);  //传递的参数是标签里面的id的值
+
+　　　　　　//得到input里面的value值
+
+　　　　　　alert(input1.name);   //标签对象.属性名称
+
+　　　　　　//向input里面设置一个值value
+
+　　　　　　input1.value = &quot;bbbbb&quot;;
+
+ 　　　　getElementsByName();
+
+　　　　　　- 通过标签的name的属性值得到标签
+
+　　　　　　- 返回的是一个集合（数组）
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>aaaa<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bbbbb<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>cccc<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+11     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dddd<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+12     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">13</span> 
+<span class="token number">14</span>         <span class="token comment">//使用getElementsByName得到input标签</span>
+<span class="token number">15</span>         <span class="token keyword">var</span> inputs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token string">&quot;name1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         <span class="token comment">//alert(inputs.length);</span>
+<span class="token number">17</span>         <span class="token comment">//遍历数组</span>
+<span class="token number">18</span>         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>inputs<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">19</span>             <span class="token keyword">var</span> input1 <span class="token operator">=</span> inputs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//每次循环得到input对象，赋值到input1里面</span>
+<span class="token number">20</span>             <span class="token function">alert</span><span class="token punctuation">(</span>input1<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//得到每个input标签里面的value值</span>
+<span class="token number">21</span>         <span class="token punctuation">}</span>
+<span class="token number">22</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+23 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+24 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+　　　　getElementsByTagName(&quot;标签名称&quot;);
+
+　　　　　　- 通过标签名称得到元素
+
+　　　　　　- //演示getElementsByTagName
+
+　　　　　　var inputs1 = document.getElementsByTagName(&quot;input&quot;);  //传递的参数，是标签名称
+
+　　　　　　//alert(inputs1.length);
+
+　　　　　　//遍历数组，得到每个input标签
+
+　　　　　　for(var m=0;m&lt;inputs1.length;m++) {
+
+　　　　　　　　//得到每个input标签
+
+　　　　　　　　var input1 = inputs1[m];
+
+　　　　　　　　//得到value值
+
+　　　　　　　　alert(input1.value);
+
+　　　　　　}
+
+　　　　注意地方
+
+　　　　　　只有一个标签，这个标签只能使用name获取到，这个使用，使用getElementsByName返回的是一个数组，但是现在只有一个元素，这个时候不需要遍历，而是可以直接通过数组的下标获取到值
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name11<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>WWWWWW<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">10</span>         <span class="token comment">//通过name得到input标签</span>
+<span class="token number">11</span>         <span class="token operator">/</span><span class="token keyword">var</span> inputs2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token string">&quot;name11&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">12</span>         <span class="token function">alert</span><span class="token punctuation">(</span>inputs2<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">/</span>
+<span class="token number">13</span> 
+<span class="token number">14</span>         <span class="token comment">//通过input名称获取</span>
+<span class="token number">15</span>         <span class="token keyword">var</span> inputss <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;input&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         <span class="token function">alert</span><span class="token punctuation">(</span>inputss<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">17</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+18 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+19 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="http://ww1.sinaimg.cn/large/007eYKdZly1gffe876mzqj30jm094wec.jpg" alt="QQ截图20200603205107.png"></p> <h2 id="_10、案例：window弹窗案例"><a href="#_10、案例：window弹窗案例" class="header-anchor">#</a> 10、案例：window弹窗案例</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　- 实现过程
+
+　　　　1、创建一个页面
+
+　　　　　　有两个输入项和一个按钮
+
+　　　　　　按钮上面有一个事件：弹出一个新窗口 open
+
+ 
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     编号：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>numid<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+ 9     姓名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>nameid<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>选择<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>open1()<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+11     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">12</span>         <span class="token comment">//实现弹出窗口的方法</span>
+<span class="token number">13</span>         <span class="token keyword">function</span> <span class="token function">open1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">14</span>             <span class="token comment">//open方法</span>
+<span class="token number">15</span>             window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;user.html&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;width=250,height=150&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">16</span>         <span class="token punctuation">}</span>
+<span class="token number">17</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+18 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+19 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+　　2、创建弹出页面
+
+　　　　表格
+
+　　　　每一行有一个按钮和编号和姓名
+
+　　　　按钮上有一个事件：把当前的编号和姓名，赋值到第一个页面相应的位置
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">bordercolor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blue<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 9         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+10             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>操作<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+11             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>编号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+12             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>姓名<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+13         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+14         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+15             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>选择<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>s1('100','东方不败');<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+16             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+17             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>东方不败<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+18         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+19         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+20             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>选择<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>s1('101','岳不群');<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+21             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+22             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>岳不群<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+23         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+24         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+25             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>选择<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>s1('102','林平之');<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+26             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>102<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+27             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>林平之<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+28         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+29     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+30     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">31</span>         <span class="token comment">//实现s1方法</span>
+<span class="token number">32</span>         <span class="token keyword">function</span> <span class="token function">s1</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span>name1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">33</span>             <span class="token comment">//需要把num1和name1赋值到window页面</span>
+<span class="token number">34</span>             <span class="token comment">//跨页面的操作  opener：得到创建这个窗口的窗口 得到window页面</span>
+<span class="token number">35</span>             <span class="token keyword">var</span> pwin <span class="token operator">=</span> window<span class="token punctuation">.</span>opener<span class="token punctuation">;</span> <span class="token comment">//得到window页面</span>
+<span class="token number">36</span>             pwin<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;numid&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> num1<span class="token punctuation">;</span>
+<span class="token number">37</span>             pwin<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;nameid&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> name1<span class="token punctuation">;</span>
+<span class="token number">38</span>             <span class="token comment">//关闭窗口</span>
+<span class="token number">39</span>             window<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">40</span>         <span class="token punctuation">}</span>
+<span class="token number">41</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+42 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+43 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+　　　　－opener:属性，获取创建当前窗口的窗口
+
+　　　　- 做这个案例时候会有一个问题
+
+　　　　由于我们现在访问的是本地文件，js安全性，谷歌浏览器安全级别很高，不允许访问本地文件
+
+　　　　在实际开发中，没有这样的问题，实际中不可能访问本地的文件。
+</code></pre></div><h2 id="js事件"><a href="#js事件" class="header-anchor">#</a> js事件</h2> <p><img src="https://raw.githubusercontent.com/jialiecheng/ImageBed/master/20200608105053.png" alt="20200608105053"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月15日星期一下午1点10分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/34.dcab3739.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

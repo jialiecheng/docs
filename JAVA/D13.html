@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>## 01_常见对象(StringBuffer类的概述) | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/44.19a232b8.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVA/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVA/D13.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>## 01_常见对象(StringBuffer类的概述)</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/JAVA/D13.html#_01-常见对象-stringbuffer类的概述" class="sidebar-link">01_常见对象(StringBuffer类的概述)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_02-常见对象-stringbuffer类的构造方法" class="sidebar-link">02_常见对象(StringBuffer类的构造方法)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_03-常见对象-stringbuffer的添加功能" class="sidebar-link">03_常见对象(StringBuffer的添加功能)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_04-常见对象-stringbuffer的删除功能" class="sidebar-link">04_常见对象(StringBuffer的删除功能)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_05-常见对象-stringbuffer的替换和反转功能" class="sidebar-link">05_常见对象(StringBuffer的替换和反转功能)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_06-常见对象-stringbuffer的截取功能及注意事项" class="sidebar-link">06_常见对象(StringBuffer的截取功能及注意事项)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_07-常见对象-stringbuffer和string的相互转换" class="sidebar-link">07_常见对象(StringBuffer和String的相互转换)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_08-常见对象-把数组转换成字符串" class="sidebar-link">08_常见对象(把数组转换成字符串)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_09-常见对象-字符串反转" class="sidebar-link">09_常见对象(字符串反转)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_10-常见对象-stringbuffer和stringbulider的区别" class="sidebar-link">10_常见对象(StringBuffer和StringBulider的区别)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_11-常见对象-string和stringbuffer分别作为参数传递" class="sidebar-link">11_常见对象(String和StringBuffer分别作为参数传递)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_12-常见对象-数组高级冒泡排序原理图解" class="sidebar-link">12_常见对象(数组高级冒泡排序原理图解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_13-常见对象-数组高级冒泡排序代码实现" class="sidebar-link">13_常见对象(数组高级冒泡排序代码实现)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_14-常见对象-数组高级选择排序原理图解" class="sidebar-link">14_常见对象(数组高级选择排序原理图解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_15-常见对象-数组高级选择排序代码实现" class="sidebar-link">15_常见对象(数组高级选择排序代码实现)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_16-常见对象-数组高级二分查找原理图解" class="sidebar-link">16_常见对象(数组高级二分查找原理图解)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_17-常见对象-数组高级二分查找代码实现及注意事项" class="sidebar-link">17_常见对象(数组高级二分查找代码实现及注意事项)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_18-常见对象-arrays类的概述和方法使用" class="sidebar-link">18_常见对象(Arrays类的概述和方法使用)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_19-常见对象-基本类型包装类的概述" class="sidebar-link">19_常见对象(基本类型包装类的概述)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_20-常见对象-integer类的概述和构造方法" class="sidebar-link">20_常见对象(Integer类的概述和构造方法)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_21-常见对象-string和int类型的相互转换" class="sidebar-link">21_常见对象(String和int类型的相互转换)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_22-常见对象-jdk5的新特性自动装箱和拆箱" class="sidebar-link">22_常见对象(JDK5的新特性自动装箱和拆箱)</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVA/D13.html#_23-常见对象-integer的面试题" class="sidebar-link">23_常见对象(Integer的面试题)</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id=""><a href="#" class="header-anchor">#</a></h1> <h2 id="_01-常见对象-stringbuffer类的概述"><a href="#_01-常见对象-stringbuffer类的概述" class="header-anchor">#</a> 01_常见对象(StringBuffer类的概述)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>类的概述
+通过JDK提供的API，查看<span class="token class-name">StringBuffer</span>类的说明
+线程安全的可变字符序列
+
+<span class="token class-name">B</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>和<span class="token class-name">String</span>的区别
+<span class="token class-name">String</span>是一个不可变的字符序列
+<span class="token class-name">StringBuffer</span>是一个可变的字符序列
+
+<span class="token class-name">C</span><span class="token operator">:</span>一般方法
+<span class="token function">hasNextXxx</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 判断是否还有下一个输入项<span class="token punctuation">,</span>其中<span class="token class-name">Xxx</span>可以是<span class="token class-name">Int</span><span class="token punctuation">,</span><span class="token class-name">Double</span>等。如果需要判断是否包含下一个字符串，则可以省略<span class="token class-name">Xxx</span>
+<span class="token function">nextXxx</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 获取下一个输入项。<span class="token class-name">Xxx</span>的含义和上个方法中的<span class="token class-name">Xxx</span>相同<span class="token punctuation">,</span>默认情况下，<span class="token class-name">Scanner</span>使用空格，回车等作为分隔符
+</code></pre></div><h2 id="_02-常见对象-stringbuffer类的构造方法"><a href="#_02-常见对象-stringbuffer类的构造方法" class="header-anchor">#</a> 02_常见对象(StringBuffer类的构造方法)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>的构造方法：
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>无参构造方法
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token keyword">int</span> capacity<span class="token punctuation">)</span><span class="token operator">:</span>指定容量的字符串缓冲区对象
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">)</span><span class="token operator">:</span>指定字符串内容的字符串缓冲区对象
+
+<span class="token class-name">B</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>的方法：
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>返回当前容量。 理论值（不掌握）
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>返回长度（字符数）。 实际值
+
+<span class="token class-name">C</span><span class="token operator">:</span>案例演示
+构造方法和长度方法的使用
+</code></pre></div><h2 id="_03-常见对象-stringbuffer的添加功能"><a href="#_03-常见对象-stringbuffer的添加功能" class="header-anchor">#</a> 03_常见对象(StringBuffer的添加功能)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>的添加功能
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+可以把任意类型数据添加到字符串缓冲区里面，并返回字符串缓冲区本身
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> offset<span class="token punctuation">,</span><span class="token class-name">String</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+在指定位置把任意类型的数据插入到字符串缓冲区里面，并返回字符串缓冲区本身
+</code></pre></div><h2 id="_04-常见对象-stringbuffer的删除功能"><a href="#_04-常见对象-stringbuffer的删除功能" class="header-anchor">#</a> 04_常见对象(StringBuffer的删除功能)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>的删除功能
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">deleteCharAt</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+删除指定位置的字符，并返回其本身
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//删除的时候包含头不包含尾</span>
+删除从指定位置开始指定位置结束的内容，并返回本身
+</code></pre></div><h2 id="_05-常见对象-stringbuffer的替换和反转功能"><a href="#_05-常见对象-stringbuffer的替换和反转功能" class="header-anchor">#</a> 05_常见对象(StringBuffer的替换和反转功能)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token punctuation">.</span><span class="token class-name">StringBuffer</span>的替换功能
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">replace</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">,</span><span class="token class-name">String</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+从start开始到end用str替换，包含头不包含尾
+<span class="token class-name">StringBuffer</span>的反转功能
+<span class="token keyword">public</span> <span class="token class-name">StringBuffer</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+字符串反转
+</code></pre></div><h2 id="_06-常见对象-stringbuffer的截取功能及注意事项"><a href="#_06-常见对象-stringbuffer的截取功能及注意事项" class="header-anchor">#</a> 06_常见对象(StringBuffer的截取功能及注意事项)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span>的截取功能
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">substring</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">)</span><span class="token punctuation">;</span>
+从指定位置截取到末尾
+publid <span class="token class-name">String</span> <span class="token function">subtostring</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+截取从指定位置开始到结束位置，包括开始位置不包括结束位置
+<span class="token class-name">B</span><span class="token operator">:</span>注意事项
+注意：返回类型不再是<span class="token class-name">StringBuffer</span>本身，而是<span class="token class-name">String</span>，所以要用<span class="token class-name">String</span>接收
+</code></pre></div><h2 id="_07-常见对象-stringbuffer和string的相互转换"><a href="#_07-常见对象-stringbuffer和string的相互转换" class="header-anchor">#</a> 07_常见对象(StringBuffer和String的相互转换)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">String</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">&gt;</span><span class="token class-name">StringBuffer</span>
+a<span class="token punctuation">.</span>通过构造方法
+b<span class="token punctuation">.</span>通过<span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法
+    <span class="token class-name">StringBuffer</span> sb1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">&quot;heima&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//通过构造方法将字符串转换为StringBuffer对象</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token class-name">StringBuffer</span> sb2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	sb2<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;heima&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>					
+	<span class="token comment">//通过append方法将字符串转换为StringBuffer对象</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">B</span><span class="token operator">:</span><span class="token class-name">StringBuffer</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">&gt;</span><span class="token class-name">String</span>
+a<span class="token punctuation">.</span>通过构造方法
+b<span class="token punctuation">.</span>通过<span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法
+c<span class="token punctuation">.</span>通过subString（<span class="token number">0</span>，length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">&quot;heima&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+	<span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>sb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//通过构造将StringBuffer转换为String</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token class-name">String</span> s2 <span class="token operator">=</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>						
+    <span class="token comment">//通过toString方法将StringBuffer转换为String</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token class-name">String</span> s3 <span class="token operator">=</span> sb<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> sb<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//通过截取子字符串将StringBuffer转换为String</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="_08-常见对象-把数组转换成字符串"><a href="#_08-常见对象-把数组转换成字符串" class="header-anchor">#</a> 08_常见对象(把数组转换成字符串)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>把数组中的数据按照指定格式拼接成一个字符串
+举例：
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+输出结果：
+“<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>”
+用<span class="token class-name">StringBuffer</span>的功能实现
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">arrayToString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+<span class="token comment">/*
+ * 将数组转换为字符串
+ * 1,返回值类型String
+ * 2,参数列表int[]
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">arrayToString</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//创建字符串缓冲区对象</span>
+	sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;[&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>										<span class="token comment">//将[添加到缓冲区</span>
+	
+	
+	<span class="token comment">//{1,2,3}</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>				<span class="token comment">//遍历数组</span>
+		<span class="token comment">//sb.append(arr[i] + &quot;, &quot;);						//这样做没有]</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//[1, 2, 3]  表示这是最后一个值，则最后加]</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+			sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//[1, 2, 不然加，dd</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+</code></pre></div><h2 id="_09-常见对象-字符串反转"><a href="#_09-常见对象-字符串反转" class="header-anchor">#</a> 09_常见对象(字符串反转)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>把字符串反转
+举例：
+键盘录入<span class="token string">&quot;abc&quot;</span>
+输出结果：
+“cba”
+用<span class="token class-name">StringBuffer</span>的功能实现
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Scanner</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//创建键盘录入对象</span>
+	    <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>				
+	    <span class="token comment">//将键盘录入的字符串存储在line中</span>
+        <span class="token class-name">String</span> line <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>						
+	
+	    <span class="token comment">/*
+        //将字符串转换为StringBuffer对象
+        StringBuffer sb = new StringBuffer(line);	
+        //将缓冲区的内容反转		
+	    sb.reverse();										
+	
+	    System.out.println(sb.toString());*/</span>
+	
+	    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">revString</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/*
+     * 将字符串反转
+     * 1,返回值类型String
+     * 2,参数列表String line
+     *
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">revString</span><span class="token punctuation">(</span><span class="token class-name">String</span> line<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	    <span class="token comment">//将字符串转换为StringBuffer对象</span>
+        <span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>			
+	    <span class="token comment">//将缓冲区的内容反转</span>
+        sb<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>										
+	
+	    <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div><h2 id="_10-常见对象-stringbuffer和stringbulider的区别"><a href="#_10-常见对象-stringbuffer和stringbulider的区别" class="header-anchor">#</a> 10_常见对象(StringBuffer和StringBulider的区别)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">StringBulider</span>的概述
+通过查看API了解一下<span class="token class-name">StringBulider</span>类
+面试题
+<span class="token class-name">StringBuffer</span>和<span class="token class-name">StringBulider</span>的区别
+<span class="token class-name">StringBuffer</span>是 jdk1<span class="token punctuation">.</span><span class="token number">0</span> 版本的，是线程安全的，效率低
+<span class="token class-name">StringBulider</span>是 jdk1<span class="token punctuation">.</span><span class="token number">5</span> 版本的，是线程不安全的，效率高
+<span class="token class-name">String</span>和<span class="token class-name">StringBuffer</span><span class="token punctuation">,</span><span class="token class-name">StringBulider</span>的区别
+<span class="token class-name">String</span>是一个不可变的字符序列
+<span class="token class-name">StringBuffer</span>、<span class="token class-name">StringBulider</span>是可变的字符序列
+</code></pre></div><h2 id="_11-常见对象-string和stringbuffer分别作为参数传递"><a href="#_11-常见对象-string和stringbuffer分别作为参数传递" class="header-anchor">#</a> 11_常见对象(String和StringBuffer分别作为参数传递)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>形式参数问题
+<span class="token class-name">String</span>作为参数传递
+<span class="token class-name">StringBuffer</span>作为参数传递
+<span class="token class-name">B</span><span class="token operator">:</span>案例演示
+<span class="token class-name">String</span>和<span class="token class-name">StringBuffer</span>分别作为参数传递问题
+基本数据类型的值传递不改变其值
+引用数据类型的值传递改变其值
+<span class="token class-name">String</span>虽然是引用数据类型，但是它当做参数传递时和基本数据类型一样
+因为<span class="token class-name">String</span>的值一旦初始化不可改变
+</code></pre></div><h2 id="_12-常见对象-数组高级冒泡排序原理图解"><a href="#_12-常见对象-数组高级冒泡排序原理图解" class="header-anchor">#</a> 12_常见对象(数组高级冒泡排序原理图解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+需求：把一个字符串的首字母转成大写，其余为小写。<span class="token punctuation">(</span>只考虑英文大小写字母字符<span class="token punctuation">)</span>
+冒泡排序：
+轻的上浮，沉的下降
+两个相邻位置相比较，如果前面的元素比后面的元素大就换位置
+</code></pre></div><h2 id="_13-常见对象-数组高级冒泡排序代码实现"><a href="#_13-常见对象-数组高级冒泡排序代码实现" class="header-anchor">#</a> 13_常见对象(数组高级冒泡排序代码实现)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+
+  <span class="token comment">/*
+   * 冒泡排序
+   * 1,返回值类型,void
+   * 2,参数列表,int[] arr
+   * 
+   * 	第一次:arr[0]与arr[1],arr[1]与arr[2],arr[2]与arr[3],arr[3]与arr[4]比较4次
+  	第二次:arr[0]与arr[1],arr[1]与arr[2],arr[2]与arr[3]比较3次
+  	第三次:arr[0]与arr[1],arr[1]与arr[2]比较2次
+  	第四次:arr[0]与arr[1]比较1次
+   */</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//外循环只需要比较arr.length-1次就可以了</span>
+  	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>	
+          <span class="token comment">//-1为了防止索引越界,-i为了提高效率</span>
+    	 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>		
+  			<span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  				<span class="token comment">/*int temp = arr[j];
+  				arr[j] = arr[j + 1];
+  				arr[j+1] = temp;*/</span>
+  				<span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>j<span class="token punctuation">,</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  			<span class="token punctuation">}</span>
+  		<span class="token punctuation">}</span>
+  	<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+
+</code></pre></div><h2 id="_14-常见对象-数组高级选择排序原理图解"><a href="#_14-常见对象-数组高级选择排序原理图解" class="header-anchor">#</a> 14_常见对象(数组高级选择排序原理图解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+需求：对数组元素进行排序
+选择排序：
+从<span class="token number">0</span>索引开始，依次和后面的元素比较，小的往前放，第一次完毕，最小值出现在了最小索引处
+</code></pre></div><h2 id="_15-常见对象-数组高级选择排序代码实现"><a href="#_15-常见对象-数组高级选择排序代码实现" class="header-anchor">#</a> 15_常见对象(数组高级选择排序代码实现)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+
+  <span class="token comment">/*
+  * 选择排序
+  * 1,返回值类型void
+  * 2,参数列表int[] arr
+  * 
+  * 	第一次:arr[0]分别与arr[1-4]比较,比较4次
+   	第二次:arr[1]分别与arr[2-4]比较,比较3次
+      第三次:arr[2]分别与arr[3-4]比较,比较2次
+      第四次:arr[3]与arr[4]比较,比较1次
+  */</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">selectSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token comment">//只需要比较arr.length-1次</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>				
+  	    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  		    <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  			    <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  			    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  			    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+  		    <span class="token punctuation">}</span>
+  	    <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+
+</code></pre></div><h2 id="_16-常见对象-数组高级二分查找原理图解"><a href="#_16-常见对象-数组高级二分查找原理图解" class="header-anchor">#</a> 16_常见对象(数组高级二分查找原理图解)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>画图演示
+二分查找
+前提：数组元素有序
+</code></pre></div><h2 id="_17-常见对象-数组高级二分查找代码实现及注意事项"><a href="#_17-常见对象-数组高级二分查找代码实现及注意事项" class="header-anchor">#</a> 17_常见对象(数组高级二分查找代码实现及注意事项)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+数组二分查找代码
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo2_Array</span> <span class="token punctuation">{</span>
+<span class="token comment">/**
+ * * A:案例演示
+		* 数组高级二分查找代码
+	* B:注意事项
+		* 如果数组无序，就不能使用二分查找。
+			* 因为如果你排序了，但是你排序的时候已经改变了我最原始的元素索引。
+
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">,</span><span class="token number">66</span><span class="token punctuation">,</span><span class="token number">77</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getIndex</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getIndex</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">66</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getIndex</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+ * 二分查找
+ * 1,返回值类型,int
+ * 2,参数列表int[] arr,int value
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">getIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> max <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>min <span class="token operator">+</span> max<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">while</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">!=</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>			<span class="token comment">//当中间值不等于要找的值,就开始循环查找</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>			<span class="token comment">//当中间值小于了要找的值</span>
+			min <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>				<span class="token comment">//最小的索引改变</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&gt;</span> value<span class="token punctuation">)</span><span class="token punctuation">{</span>	<span class="token comment">//当中间值大于了要找的值</span>
+			max <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>				<span class="token comment">//最大的索引改变</span>
+		<span class="token punctuation">}</span>
+		
+		mid <span class="token operator">=</span> <span class="token punctuation">(</span>min <span class="token operator">+</span> max<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>	<span class="token comment">//无论最大还是最小改变,中间索引都会随之改变</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span>min <span class="token operator">&gt;</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>			<span class="token comment">//如果最小索引大于了最大索引,就没有查找的可能性了</span>
+			<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>			<span class="token comment">//返回-1</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_18-常见对象-arrays类的概述和方法使用"><a href="#_18-常见对象-arrays类的概述和方法使用" class="header-anchor">#</a> 18_常见对象(Arrays类的概述和方法使用)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">Arrays</span>类概述
+针对数组进行操作的工具类
+提供了排序、查找等功能
+<span class="token class-name">B</span><span class="token operator">:</span>成员方法
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> key<span class="token punctuation">)</span>
+</code></pre></div><h2 id="_19-常见对象-基本类型包装类的概述"><a href="#_19-常见对象-基本类型包装类的概述" class="header-anchor">#</a> 19_常见对象(基本类型包装类的概述)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>为什么会有基本类型包装类
+将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据
+
+<span class="token class-name">B</span><span class="token operator">:</span>常用操作
+常用的操作之一：用于基本数据类型与字符串之间的转换
+
+<span class="token class-name">C</span><span class="token operator">:</span>基本类型和包装类的对应
+
+  	<span class="token operator">*</span> <span class="token keyword">byte</span>        <span class="token class-name">Byte</span>
+  	<span class="token operator">*</span> <span class="token keyword">short</span>       <span class="token class-name">Short</span>	
+  	<span class="token operator">*</span> <span class="token keyword">int</span>         <span class="token class-name">Integer</span>
+  	<span class="token operator">*</span> <span class="token keyword">long</span>        <span class="token class-name">Long</span>
+  	<span class="token operator">*</span> <span class="token keyword">float</span>       <span class="token class-name">Float</span>
+  	<span class="token operator">*</span> <span class="token keyword">double</span>      <span class="token class-name">Double</span>
+  	<span class="token operator">*</span> <span class="token keyword">char</span>        <span class="token class-name">Character</span>
+  	<span class="token operator">*</span> <span class="token keyword">boolean</span>     <span class="token class-name">Boolean</span>
+</code></pre></div><h2 id="_20-常见对象-integer类的概述和构造方法"><a href="#_20-常见对象-integer类的概述和构造方法" class="header-anchor">#</a> 20_常见对象(Integer类的概述和构造方法)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token class-name">Integer</span>类概述
+通过JDK提供的API<span class="token punctuation">,</span>查看<span class="token class-name">Integer</span>类的说明
+<span class="token class-name">Integer</span>类在对象中包装了一个基本类型<span class="token keyword">int</span>的值
+该类提供了多个方法，能在<span class="token keyword">int</span>类型和<span class="token class-name">String</span>类型之间相互转换
+还提供了处理<span class="token keyword">int</span>类型时非常有用的其他一些常量和方法
+<span class="token class-name">B</span><span class="token operator">:</span>构造方法
+<span class="token keyword">public</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span>
+<span class="token class-name">C</span><span class="token operator">:</span>案例演示
+使用构造方法创建对象
+</code></pre></div><h2 id="_21-常见对象-string和int类型的相互转换"><a href="#_21-常见对象-string和int类型的相互转换" class="header-anchor">#</a> 21_常见对象(String和int类型的相互转换)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span><span class="token keyword">int</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-&gt;</span><span class="token class-name">String</span>
+a<span class="token operator">:</span>和<span class="token string">&quot;&quot;</span>进行拼接
+b<span class="token operator">:</span><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
+c<span class="token operator">:</span><span class="token keyword">int</span>—<span class="token class-name">Integer</span>—<span class="token class-name">String</span><span class="token punctuation">(</span><span class="token class-name">Integer</span>类的toString方法<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+d<span class="token operator">:</span><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token class-name">Integer</span>类的静态方法<span class="token punctuation">)</span>
+
+<span class="token class-name">B</span><span class="token operator">:</span><span class="token class-name">String</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-&gt;</span><span class="token keyword">int</span>
+a<span class="token operator">:</span><span class="token class-name">String</span>—<span class="token class-name">Intrger</span>—<span class="token keyword">int</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo3_Integer</span> <span class="token punctuation">{</span>
+<span class="token comment">/**
+ * * A:int -- String
+		* a:和&quot;&quot;进行拼接
+		* b:public static String valueOf(int i)
+		* c:int -- Integer -- String(Integer类的toString方法())
+		* d:public static String toString(int i)(Integer类的静态方法)
+	* B:String -- int
+		* a:String -- Integer -- int
+			* public static int parseInt(String s)
+	基本数据类型包装类有八种,其中七种都有parseXxx的方法
+    可以将这七种的字符串表现形式转换成基本数据类型
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+	<span class="token comment">//demo1();</span>
+	<span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">&quot;true&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">boolean</span> b <span class="token operator">=</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token function">parseBoolean</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//String s2 = &quot;abc&quot;;</span>
+	<span class="token comment">//char c = Character.p  //char的包装类Character中没有pareseXxx的方法</span>
+	<span class="token comment">//字符串到字符的转换通过toCharArray()就可以把字符串转换为字符数组</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">demo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//int ----&gt; String int转换成String</span>
+	<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+	<span class="token class-name">String</span> s1 <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>						<span class="token comment">//推荐用</span>
+	<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//推荐用</span>
+	
+	<span class="token class-name">Integer</span> i2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">String</span> s3 <span class="token operator">=</span> i2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token class-name">String</span> s4 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//String----&gt; int String 转换int</span>
+	<span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">&quot;200&quot;</span><span class="token punctuation">;</span>
+	<span class="token class-name">Integer</span> i3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> i4 <span class="token operator">=</span> i3<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>					<span class="token comment">//将Integer转换成了int数</span>
+	
+	<span class="token keyword">int</span> i5 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//将String转换为int,推荐用这种</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_22-常见对象-jdk5的新特性自动装箱和拆箱"><a href="#_22-常见对象-jdk5的新特性自动装箱和拆箱" class="header-anchor">#</a> 22_常见对象(JDK5的新特性自动装箱和拆箱)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>JDK5的新特性
+自动装箱：把基本类型转换为包装类类型
+自动拆箱：把包装类类型转换为基本类型
+<span class="token class-name">B</span><span class="token operator">:</span>案例演示
+JDK5的新特性自动装箱和拆箱
+<span class="token class-name">Integer</span> ii <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+ii <span class="token operator">+=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+<span class="token class-name">C</span><span class="token operator">:</span>注意事项
+在使用时，<span class="token class-name">Integer</span> x <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>代码就会出现<span class="token class-name">NullPointerException</span>
+建议先判断是否为空，然后再使用
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo4_JDK5</span> <span class="token punctuation">{</span>
+ 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   		 <span class="token comment">//int x = 100;</span>
+   		 <span class="token comment">//Integer i1 = new Integer(x);	//将基本数据类型包装成对象,装箱		</span>
+		 <span class="token comment">//int y = i1.intValue();		//将对象转换为基本数据类型,拆箱</span>
+	
+		<span class="token class-name">Integer</span> i2 <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>				<span class="token comment">//自动装箱,把基本数据类型转换成对象</span>
+		<span class="token keyword">int</span> z <span class="token operator">=</span> i2 <span class="token operator">+</span> <span class="token number">200</span><span class="token punctuation">;</span>				<span class="token comment">//自动拆箱,把对象转换为基本数据类型</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+		<span class="token class-name">Integer</span> i3 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+		<span class="token keyword">int</span> a <span class="token operator">=</span> i3 <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">;</span>						
+		<span class="token comment">//底层用i3调用intValue,但是i3是null,null调用方法就会出现</span>
+		<span class="token comment">//空指针异常java.lang.NullPointerException</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>					
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_23-常见对象-integer的面试题"><a href="#_23-常见对象-integer的面试题" class="header-anchor">#</a> 23_常见对象(Integer的面试题)</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">A</span><span class="token operator">:</span>案例演示
+
+  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo5_Integer</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">/**
+   * @param args
+   */</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token class-name">Integer</span> i1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token class-name">Integer</span> i2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1 <span class="token operator">==</span> i2<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//false</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//true</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-----------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  	<span class="token class-name">Integer</span> i3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">197</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//这是创建了对象，就不一样了</span>
+  	<span class="token class-name">Integer</span> i4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">197</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i3 <span class="token operator">==</span> i4<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//false</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i3<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//true</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-----------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  	<span class="token class-name">Integer</span> i5 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>    <span class="token comment">//这是创建了基本变量，在常量池中，是一样的</span>
+  	<span class="token class-name">Integer</span> i6 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i5 <span class="token operator">==</span> i6<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//true</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i5<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i6<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//true</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-----------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  	<span class="token class-name">Integer</span> i7 <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>  <span class="token comment">//超过了int的范围</span>
+  	<span class="token class-name">Integer</span> i8 <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i7 <span class="token operator">==</span> i8<span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//false</span>
+  	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i7<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i8<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//true</span>
+  	
+  	<span class="token comment">/*
+  	 * -128到127是byte的取值范围,如果在这个取值范围内,
+  	 * 自动装箱就不会新创建对象,而是从常量池中获取
+  	 * 如果超过了byte取值范围就会再新创建对象
+  	 * 
+  	 * public static Integer valueOf(int i) {
+  	      assert IntegerCache.high &gt;= 127;
+  	      if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)			//i&gt;= -128 &amp;&amp; i &lt;= 127
+  	      return IntegerCache.cache[i + (-IntegerCache.low)];
+  	   return new Integer(i);
+  	   }
+  	 */</span>
+  <span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月6日星期六上午9点21分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/44.19a232b8.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

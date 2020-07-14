@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>xml&amp;dtd&amp;jaxp | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/35.81a111b2.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/36.9c07e7ea.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" class="nav-link">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>xml&amp;dtd&amp;jaxp</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_1、表单提交方式" class="sidebar-link">1、表单提交方式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_2、xml的简介（了解）" class="sidebar-link">2、xml的简介（了解）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_3、xml的应用" class="sidebar-link">3、xml的应用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_4、xml的语法" class="sidebar-link">4、xml的语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_5、xml的元素（标签）定义（-）" class="sidebar-link">5、xml的元素（标签）定义（*）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_6、xml中属性的定义（-）" class="sidebar-link">6、xml中属性的定义（*）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_7、xml中的注释（-）" class="sidebar-link">7、xml中的注释（*）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_8、xml中的特殊字符（-）" class="sidebar-link">8、xml中的特殊字符（*）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_9、cdata区（了解）" class="sidebar-link">9、CDATA区（了解）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_10、pi指令（处理指令）（了解）" class="sidebar-link">10、PI指令（处理指令）（了解）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_11、xml的约束" class="sidebar-link">11、xml的约束</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_12、dtd的快速入门" class="sidebar-link">12、dtd的快速入门</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_13、dtd的三种引入方式" class="sidebar-link">13、dtd的三种引入方式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_14、使用dtd定义元素" class="sidebar-link">14、使用dtd定义元素</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_15、使用dtd定义属性" class="sidebar-link">15、使用dtd定义属性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_16、实体的定义" class="sidebar-link">16、实体的定义</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_17、xml的解析的简介（写到java代码）（最重要的内容）" class="sidebar-link">17、xml的解析的简介（写到java代码）（最重要的内容）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_18、jaxp的api的查看" class="sidebar-link">18、jaxp的api的查看</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_19、使用jaxp实现查询操作" class="sidebar-link">19、使用jaxp实现查询操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_20、使用jaxp添加节点" class="sidebar-link">20、使用jaxp添加节点</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_21、使用jaxp修改节点" class="sidebar-link">21、使用jaxp修改节点</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_22、使用jaxp删除节点" class="sidebar-link">22、使用jaxp删除节点</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html#_23、使用jaxp遍历节点" class="sidebar-link">23、使用jaxp遍历节点</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="xml-dtd-jaxp"><a href="#xml-dtd-jaxp" class="header-anchor">#</a> xml&amp;dtd&amp;jaxp</h1> <h2 id="_1、表单提交方式"><a href="#_1、表单提交方式" class="header-anchor">#</a> 1、表单提交方式</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 使用submit提交
+
+　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+
+　　　　.....
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+
+　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+ 
+
+　　* 使用button提交表单
+
+　　　　- 代码
+
+　　　　//实现提交方法
+
+　　　　function form1() {
+
+　　　　　　//获取form
+
+　　　　　　var form1 = document.getElementById(&quot;form1&quot;);
+
+　　　　　　//设置action
+
+　　　　　　form1.action = &quot;hello.html&quot;;
+
+　　　　　　//提交form表单
+
+　　　　　　form1.submit();
+
+　　　　}
+
+　　* 使用超链接提交
+
+　　　　- 代码
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>hello.html?username=123456<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>使用超链接提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+ 　　* onclick：鼠标点击事件
+
+　　onchange：改变内容（一般和select一起使用）
+
+　　onfocus:得到焦点  (ie5、某些版本的ie6)
+
+　　onblur:失去焦点
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+ 3       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ 4       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+ 5       </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+ 9         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+10         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
+11         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>提交<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+12     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+13     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>
+14     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>hello.html?username=123456<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>使用超链接提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+15     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>
+
+16     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>please input<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onfocus</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>focus1();<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onblur</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blur1();<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+17 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+18     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token number">19</span>         <span class="token comment">//得到焦点</span>
+<span class="token number">20</span>         <span class="token keyword">function</span> <span class="token function">focus1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">21</span>             <span class="token comment">//alert(&quot;foucus.&quot;);</span>
+<span class="token number">22</span>             <span class="token keyword">var</span> input1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;id1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">23</span>             input1<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+<span class="token number">24</span>     <span class="token punctuation">}</span>
+<span class="token number">25</span>         <span class="token comment">//失去焦点</span>
+<span class="token number">26</span>         <span class="token keyword">function</span> <span class="token function">blur1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">27</span>             <span class="token comment">//alert(&quot;blur.&quot;);</span>
+<span class="token number">28</span>             <span class="token keyword">var</span> input1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;id1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">29</span>             input1<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&quot;please input&quot;</span><span class="token punctuation">;</span>
+<span class="token number">30</span>         <span class="token punctuation">}</span>
+<span class="token number">31</span>         <span class="token comment">//实现提交方法</span>
+<span class="token number">32</span>         <span class="token keyword">function</span> <span class="token function">form1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token number">33</span>             <span class="token comment">//获取form</span>
+<span class="token number">34</span>             <span class="token keyword">var</span> form1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;form1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">35</span>             <span class="token comment">//设置action</span>
+<span class="token number">36</span>             form1<span class="token punctuation">.</span>action <span class="token operator">=</span> <span class="token string">&quot;hello.html&quot;</span><span class="token punctuation">;</span>
+<span class="token number">37</span>             <span class="token comment">//提交form表单</span>
+<span class="token number">38</span>             form1<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">39</span>         <span class="token punctuation">}</span>
+<span class="token number">40</span>     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+41 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="http://ww1.sinaimg.cn/large/007eYKdZly1gffey52jfhj30a70693ye.jpg" alt="QQ截图20200603211735.png"> <img src="http://ww1.sinaimg.cn/large/007eYKdZly1gfff119f76j30ip04mq32.jpg" alt="1.png"></p> <h2 id="_2、xml的简介（了解）"><a href="#_2、xml的简介（了解）" class="header-anchor">#</a> 2、xml的简介（了解）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* eXtensible Markup Language：可扩展标记型语言
+
+　　　　** 标记型语言：html是标记型语言
+
+　　　　　　- 也是使用标签来操作
+
+　　　　** 可扩展：
+
+　　　　　　- html里面的标签是固定，每个标签都有特定的含义 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>
+
+　　　　　　- 标签可以自己定义,可以写中文的标签 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>&lt;/person、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>猫</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>猫</span><span class="token punctuation">&gt;</span></span>
+
+ 　　* xml用途
+
+　　　　** html是用于显示数据，xml也可以显示数据（不是主要功能）
+
+　　　　** xml主要功能，为了存储数据
+
+ 　　* xml是w3c组织发布的技术
+
+ 　　* xml有两个版本 1.0  1.1
+
+　　　　- 使用都是1.0版本，（1.1版本不能向下兼容）
+</code></pre></div><h2 id="_3、xml的应用"><a href="#_3、xml的应用" class="header-anchor">#</a> 3、xml的应用</h2> <div class="language-html extra-class"><pre class="language-html"><code>
+　　* 不同的系统之间传输数据
+
+　　　　** qq之间数据的传输
+
+　　　　** 画图分析过程
+
+ 
+
+　　* 用来表示生活中有关系的数据
+
+　　* 经常用在文件配置
+
+　　　　* 比如现在连接数据库 肯定知道数据库的用户名和密码，数据名称
+
+　　　　* 如果修改数据库的信息，不需要修改源代码，只要修改配置文件就可以了
+</code></pre></div><h2 id="_4、xml的语法"><a href="#_4、xml的语法" class="header-anchor">#</a> 4、xml的语法</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　（1）xml的文档声明（***）
+
+　　　　* 创建一个文件 后缀名是 .xml
+
+　　　　* 如果写xml，第一步 必须要有 一个文档声明（写了文档声明之后，表示写xml文件的内容）
+
+　　　　** <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;gbk&quot;?&gt;</span>
+
+　　　　*** 文档声明必须写在 第一行第一列
+
+　　　　* 属性
+
+　　　　　　- version：xml的版本 1.0(使用) 1.1
+
+　　　　　　- encoding：xml编码 gbk  utf-8  iso8859-1(不包含中文)
+
+　　　　　　- standalone：是否需要依赖其他文件 yes/no
+
+　　　　* xml的中文乱码问题解决
+
+　　　　　　** 画图分析乱码问题
+
+　　　　　　** 保存时候的编码和设置打开时候的编码一致，不会出现乱码
+
+　　（2）定义元素（标签）（***）
+
+　　（3）定义属性（***）
+
+　　（4）注释（***）
+
+　　（5）特殊字符（***）
+
+　　（6）CDATA区（了解）
+
+　　（7）PI指令（了解）
+
+1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;gbk&quot;?&gt;</span>
+2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>
+3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+5 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_5、xml的元素（标签）定义（-）"><a href="#_5、xml的元素（标签）定义（-）" class="header-anchor">#</a> 5、xml的元素（标签）定义（*****）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　** 标签定义
+
+　　** 标签定义有开始必须要有结束：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+
+　　** 标签没有内容，可以在标签内结束 ; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aa</span><span class="token punctuation">/&gt;</span></span>
+
+　　** 标签可以嵌套，必须要合理嵌套
+
+　　　　*** 合理嵌套 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aa</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aa</span><span class="token punctuation">&gt;</span></span>
+
+　　　　*** 不合理嵌套 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aa</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aa</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bb</span><span class="token punctuation">&gt;</span></span>: 这种方式是不正确的
+
+　　** 一个xml中，只能有一个根标签，其他标签都是这个标签下面的标签
+
+　　** 在xml中把空格和换行都当成内容来解析，
+
+　　　　**** 下面这两段代码含义是不一样的
+
+　　　　* <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aa</span><span class="token punctuation">&gt;</span></span>1111111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aa</span><span class="token punctuation">&gt;</span></span>
+
+　　　　* <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aa</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　11111111111
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aa</span><span class="token punctuation">&gt;</span></span>
+
+　　** xml标签可以是中文
+
+　　** xml中标签的名称规则
+　　　　（1）xml代码区分大小写
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>P</span><span class="token punctuation">&gt;</span></span>:这两个标签是不一样的
+
+　　　　（2）xml的标签不能以数字和下划线(_)开头
+
+　　　　　　&lt;2a&gt; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>_aa</span><span class="token punctuation">&gt;</span></span>: 这样是不正确的
+
+　　　　（3）xml的标签不能以xml、XML、Xml等开头
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>xmla</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>XmlB</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>XMLC</span><span class="token punctuation">&gt;</span></span>: 这些都是不正确的
+
+　　　　（4）xml的标签不能包含空格和冒号
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">b</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">b:</span>c</span><span class="token punctuation">&gt;</span></span> : 这些是不正确的
+</code></pre></div><h2 id="_6、xml中属性的定义（-）"><a href="#_6、xml中属性的定义（-）" class="header-anchor">#</a> 6、xml中属性的定义（*****）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* html是标记型文档，可以有属性
+
+　　* xml也是标记型文档，可以有属性
+
+　　* <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>aaa<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id2</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bbb<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+
+　　** 属性定义的要求
+
+　　　　（1）一个标签上可以有多个属性
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>aaa<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id2</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bbb<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+
+　　　　（2）属性名称不能相同
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>aaa<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bbb<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>：这个是不正确，不能有两个id1
+
+　　　　（3）属性名称和属性值之间使用= ，属性值使用引号包起来 （可以是单引号，也可以是双引号 ）
+
+　　　　（4）xml属性的名称规范和元素的名称规范一致
+</code></pre></div><h2 id="_7、xml中的注释（-）"><a href="#_7、xml中的注释（-）" class="header-anchor">#</a> 7、xml中的注释（*****）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 写法 <span class="token comment">&lt;!-- xml的注释 --&gt;</span>
+
+　　** 注意的地方
+
+　　　　**** 注释不能嵌套
+
+　　　　　　<span class="token comment">&lt;!--  &lt;!-- --&gt;</span>  --&gt;
+
+　　　　　　<span class="token comment">&lt;!-- &lt;!-- &lt;sex&gt;nv&lt;/sex&gt;--&gt;</span> --&gt;
+
+　　** 注释也不能放到第一行，第一行第一列必须放文档声明
+</code></pre></div><h2 id="_8、xml中的特殊字符（-）"><a href="#_8、xml中的特殊字符（-）" class="header-anchor">#</a> 8、xml中的特殊字符（*****）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 如果想要在xml中现在 a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span> <span class="token attr-name">,不能正常显示，因为把&lt;当做标签</span>
+
+　　<span class="token attr-name">*</span> <span class="token attr-name">如果就想要显示，需要对特殊字符</span> <span class="token attr-name">&lt;</span> <span class="token attr-name">进行转义</span>
+
+　　<span class="token attr-name">**</span> <span class="token attr-name">&lt;</span>    <span class="token attr-name">&amp;lt;</span>
+
+ 　　  <span class="token punctuation">&gt;</span></span>    &amp;gt
+</code></pre></div><h2 id="_9、cdata区（了解）"><a href="#_9、cdata区（了解）" class="header-anchor">#</a> 9、CDATA区（了解）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 可以解决多个字符都需要转义的操作 if(a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span> <span class="token attr-name">&amp;&amp;</span> <span class="token attr-name">b&lt;c</span> <span class="token attr-name">&amp;&amp;</span> <span class="token attr-name">d</span><span class="token punctuation">&gt;</span></span>f) {}
+
+　　* 把这些内容放到CDATA区里面，不需要转义了
+
+　　** 写法
+
+　　　　<span class="token cdata">&lt;![CDATA[ 内容  ]]&gt;</span>
+
+　　　　- 代码
+
+　　　　<span class="token cdata">&lt;![CDATA[ &lt;b&gt;if(a&lt;b &amp;&amp; b&lt;c &amp;&amp; d&gt;f) {}&lt;/b&gt; ]]&gt;</span>
+
+　　** 把特殊字符，当做文本内容，而不是标签
+
+1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>
+3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>张三<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+5     <span class="token comment">&lt;!-- &lt;sex&gt;nv&lt;/sex&gt;--&gt;</span> 
+6     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">&gt;</span></span>a<span class="token entity" title="&lt;">&amp;lt;</span>b<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+7     
+8     <span class="token cdata">&lt;![CDATA[ &lt;b&gt;if(a&lt;b &amp;&amp; b&lt;c &amp;&amp; d&gt;f) {}&lt;/b&gt; ]]&gt;</span>
+9 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_10、pi指令（处理指令）（了解）"><a href="#_10、pi指令（处理指令）（了解）" class="header-anchor">#</a> 10、PI指令（处理指令）（了解）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 可以在xml中设置样式
+
+　　* 写法： <span class="token prolog">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;css的路径&quot;?&gt;</span>
+
+　　* 设置样式，只能对英文标签名称起作用，对于中文的标签名称不起作用的。
+
+ 
+
+　　** xml的语法的总结
+　　　　所有 XML 元素都须有关闭标签
+
+　　　　XML 标签对大小写敏感
+
+　　　　XML 必须正确地嵌套顺序
+
+　　　　XML 文档必须有根元素(只有一个)
+
+　　　　XML 的属性值须加引号
+
+　　　　特殊字符必须转义 --- CDATA
+
+　　　　XML 中的空格、回车换行会解析时被保留
+</code></pre></div><h2 id="_11、xml的约束"><a href="#_11、xml的约束" class="header-anchor">#</a> 11、xml的约束</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 为什么需要约束？
+　　** 比如现在定义一个person的xml文件，只想要这个文件里面保存人的信息，比如name age等，但是如果在xml文件中
+
+　　写了一个标签<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>猫</span><span class="token punctuation">&gt;</span></span>，发现可以正常显示，因为符合语法规范。但是猫肯定不是人的信息，xml的标签是自定义的，需要技术来
+
+规定xml中只能出现的元素，这个时候需要约束。
+
+　　* xml的约束的技术 ： dtd约束 和 schema约束 （看懂）
+</code></pre></div><h2 id="_12、dtd的快速入门"><a href="#_12、dtd的快速入门" class="header-anchor">#</a> 12、dtd的快速入门</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 创建一个文件 后缀名 .dtd
+
+　　步骤：
+
+　　（1）看xml中有多少个元素 ，有几个元素，在dtd文件中写几个 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span><span class="token punctuation">&gt;</span></span>
+
+　　（2）判断元素是简单元素还是复杂元素
+
+　　　　- 复杂元素：有子元素的元素
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">元素名称</span> <span class="token attr-name">(子元素)</span><span class="token punctuation">&gt;</span></span>
+
+　　　　- 简单元素：没有子元素
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">元素名称</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+
+　　（3）需要在xml文件中引入dtd文件
+
+　　　　<span class="token doctype">&lt;!DOCTYPE 根元素名称 SYSTEM &quot;dtd文件的路径&quot;&gt;</span>
+
+1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+2 <span class="token doctype">&lt;!DOCTYPE person SYSTEM &quot;1.dtd&quot;&gt;</span>
+3 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>
+4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+5     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+6     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">&gt;</span></span>1111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+
+1.dtd
+
+ 
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">person</span> <span class="token attr-name">(name,age)</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">name</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">age</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+ 
+
+** 打开xml文件使用浏览器打开的，浏览器只负责校验xml的语法，不负责校验约束
+
+　　** 如果想要校验xml的约束，需要使用工具（myeclipse工具）
+
+　　** 打开myeclipse开发工具
+
+　　　　*** 创建一个项目 day05
+
+　　　　*** 在day05的src目录下面创建一个xml文件和一个dtd文件
+
+　　　　*** 当xml中引入dtd文件之后，比如只能出现name age，多写了一个a，会提示出错
+</code></pre></div><h2 id="_13、dtd的三种引入方式"><a href="#_13、dtd的三种引入方式" class="header-anchor">#</a> 13、dtd的三种引入方式</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　（1）引入外部的dtd文件
+
+　　　　<span class="token doctype">&lt;!DOCTYPE 根元素名称 SYSTEM &quot;dtd路径&quot;&gt;</span>
+
+　　（2）使用内部的dtd文件
+
+　　　　- <span class="token doctype">&lt;!DOCTYPE 根元素名称 [
+
+　　　　　　&lt;!ELEMENT person (name,age)&gt;
+
+　　　　　　&lt;!ELEMENT name (#PCDATA)&gt;
+
+　　　　　　&lt;!ELEMENT age (#PCDATA)&gt;
+
+　　　　]&gt;</span>
+
+　　（3）使用外部的dtd文件（网络上的dtd文件）
+
+　　　　<span class="token doctype">&lt;!DOCTYPE 根元素 PUBLIC &quot;DTD名称&quot; &quot;DTD文档的URL&quot;&gt;</span>
+
+　　　　- 后面学到框架 struts2 使用配置文件 使用 外部的dtd文件
+
+　　　　- <span class="token doctype">&lt;!DOCTYPE struts PUBLIC   &quot;-//Apache Software Foundation//DTD Struts Configuration 2.0//EN&quot; &quot;http://struts.apache.org/dtds/struts-2.0.dtd&quot;&gt;</span>
+</code></pre></div><h2 id="_14、使用dtd定义元素"><a href="#_14、使用dtd定义元素" class="header-anchor">#</a> 14、使用dtd定义元素</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 语法： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">元素名</span> <span class="token attr-name">约束</span><span class="token punctuation">&gt;</span></span>
+
+　　* 简单元素：没有子元素的元素
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">name</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　*** (#PCDATA): 约束name是字符串类型
+
+　　　　　　*** EMPTY : 元素为空（没有内容）
+
+　　　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　*** ANY:任意
+
+　　* 复杂元素：
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">person</span> <span class="token attr-name">(name,age,sex,school)</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　- 子元素只能出现一次
+
+　　　　* <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">元素名称</span> <span class="token attr-name">(子元素)</span><span class="token punctuation">&gt;</span></span>
+
+　　　　* 表示子元素出现的次数
+
+　　　　　　+ : 表示一次或者多次
+
+　　　　　　? ：表示零次或者一次
+
+　　　　　　* ：表示零次或者多次
+
+　　　　* 子元素直接使用逗号进行隔开 ,
+
+　　　　　　** 表示元素出现的顺序
+
+　　　　* 子元素直接使用|隔开
+
+　　　　　　** 表示元素只能出现其中的任意一个
+</code></pre></div><h2 id="_15、使用dtd定义属性"><a href="#_15、使用dtd定义属性" class="header-anchor">#</a> 15、使用dtd定义属性</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 语法： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">元素名称</span>
+
+　　　　　　　　<span class="token attr-name">属性名称</span> <span class="token attr-name">属性类型</span> <span class="token attr-name">属性的约束</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+
+　　* 属性类型
+
+　　　　- CDATA: 字符串
+
+　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">birthday</span>
+
+　　　　　　　　<span class="token attr-name">ID1</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#REQUIRED</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+
+　　　　- 枚举 ： 表示只能在一定的范围内出现值，但是只能每次出现其中的一个
+
+　　　　　　** 红绿灯效果
+
+　　　　　　** (aa|bb|cc)
+
+　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">age</span>
+
+　　　　　　　　<span class="token attr-name">ID2</span> <span class="token attr-name">(AA|BB|CC)</span>  <span class="token attr-name">#REQUIRED</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+
+　　　　- ID: 值只能是字母或者下划线开头
+
+　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">name</span>
+
+　　　　　　　　<span class="token attr-name">ID3</span> <span class="token attr-name">ID</span>   <span class="token attr-name">#REQUIRED</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+
+　　* 属性的约束
+
+　　　　- #REQUIRED：属性必须存在
+
+ 　　　　- #IMPLIED：属性可有可无
+
+ 　　　　- #FIXED: 表示一个固定值 #FIXED &quot;AAA&quot;
+
+　　　　　　- 属性的值必须是设置的这个固定值
+
+　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">sex</span>
+
+　　　　　　　　<span class="token attr-name">ID4</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#FIXED</span> <span class="token attr-name">&quot;ABC&quot;</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+
+　　　　- 直接值
+
+　　　　　　* 不写属性，使用直接值
+
+　　　　　　* 写了属性，使用设置那个值
+
+　　　　　　- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">school</span>
+
+　　　　　　　　<span class="token attr-name">ID5</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">&quot;WWW&quot;</span>
+
+　　　　　　<span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_16、实体的定义"><a href="#_16、实体的定义" class="header-anchor">#</a> 16、实体的定义</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 语法： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">实体名称</span> <span class="token attr-name">&quot;实体的值&quot;</span><span class="token punctuation">&gt;</span></span>
+
+　　*** <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">TEST</span> <span class="token attr-name">&quot;HAHAHEHE&quot;</span><span class="token punctuation">&gt;</span></span>
+
+　　*** 使用实体 &amp;实体名称;  比如 <span class="token entity" title="&amp;TEST;">&amp;TEST;</span>
+
+ 　　** 注意
+
+　　　　* 定义实体需要写在内部dtd里面，
+
+  　　　　如果写在外部的dtd里面，有某些浏览器下，内容得不到
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token comment">&lt;!-- &lt;!DOCTYPE person SYSTEM &quot;1.dtd&quot;&gt; --&gt;</span>
+ 3 <span class="token doctype">&lt;!DOCTYPE person [
+ 4     &lt;!ELEMENT person (name+,age?,sex*,school,birthday)&gt;
+ 5     &lt;!ELEMENT name (#PCDATA)&gt;
+
+ 6     &lt;!ATTLIST name 
+ 7         ID3 ID   #REQUIRED
+ 8     &gt;
+ 9     
+10     &lt;!ELEMENT age (#PCDATA)&gt;
+11     &lt;!ATTLIST age
+12         ID2 (AA|BB|CC)  #REQUIRED
+13     &gt;
+14     
+15     &lt;!ELEMENT sex  (#PCDATA)&gt;
+16     &lt;!ATTLIST sex
+17         ID4 CDATA #FIXED &quot;ABC&quot;
+18     &gt;
+19     
+20     &lt;!ELEMENT school  (#PCDATA)&gt;
+21     &lt;!ATTLIST school
+22         ID5 CDATA &quot;WWW&quot;
+23     &gt;
+24     
+25     &lt;!ELEMENT birthday (#PCDATA)&gt;
+26     
+27     &lt;!ATTLIST birthday
+28         ID1 CDATA #IMPLIED
+29     &gt;
+30     
+31     &lt;!ENTITY TEST &quot;HAHAHEHE&quot;&gt;
+32 ]&gt;</span>
+33 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>
+34     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span> <span class="token attr-name">ID3</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>A1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token entity" title="&amp;TEST;">&amp;TEST;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+35     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span> <span class="token attr-name">ID2</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>CC<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span> 
+36     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span> <span class="token attr-name">ID4</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ABC<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span> 
+37     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>school</span> <span class="token attr-name">ID5</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>TTT<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>1111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>school</span><span class="token punctuation">&gt;</span></span>
+38     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>birthday</span><span class="token punctuation">&gt;</span></span>2015<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>birthday</span><span class="token punctuation">&gt;</span></span>
+39 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code>W3c案例：
+
+TV.dtd
+
+ 1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">TVSCHEDULE</span> <span class="token attr-name">(CHANNEL+)</span><span class="token punctuation">&gt;</span></span>
+ 2 
+ 3 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">CHANNEL</span> <span class="token attr-name">(BANNER,DAY+)</span><span class="token punctuation">&gt;</span></span>
+ 4 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">BANNER</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+ 5 
+ 6 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">DAY</span> <span class="token attr-name">(DATE,(HOLIDAY|PROGRAMSLOT+)+)</span><span class="token punctuation">&gt;</span></span>
+ 7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">HOLIDAY</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+ 8 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">DATE</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+ 9 
+10 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">PROGRAMSLOT</span> <span class="token attr-name">(TIME,TITLE,DESCRIPTION?)</span><span class="token punctuation">&gt;</span></span>
+11 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">TIME</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">TITLE</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span> 
+13 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">DESCRIPTION</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span>
+14 
+15 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">TVSCHEDULE</span> <span class="token attr-name">NAME</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#REQUIRED</span><span class="token punctuation">&gt;</span></span>
+16 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">CHANNEL</span> <span class="token attr-name">CHAN</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#REQUIRED</span><span class="token punctuation">&gt;</span></span>
+17 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">PROGRAMSLOT</span> <span class="token attr-name">VTR</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#IMPLIED</span><span class="token punctuation">&gt;</span></span>
+18 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">TITLE</span> <span class="token attr-name">RATING</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#IMPLIED</span><span class="token punctuation">&gt;</span></span>
+19 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ATTLIST</span> <span class="token attr-name">TITLE</span> <span class="token attr-name">LANGUAGE</span> <span class="token attr-name">CDATA</span> <span class="token attr-name">#IMPLIED</span><span class="token punctuation">&gt;</span></span>
+TV.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token doctype">&lt;!DOCTYPE TVSCHEDULE SYSTEM &quot;TV.dtd&quot;&gt;</span>
+ 3 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TVSCHEDULE</span> <span class="token attr-name">NAME</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>CCTV<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CHANNEL</span> <span class="token attr-name">CHAN</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>CCCC<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 5         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BANNER</span><span class="token punctuation">&gt;</span></span>aaaa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>BANNER</span><span class="token punctuation">&gt;</span></span>
+ 6         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DAY</span><span class="token punctuation">&gt;</span></span>
+ 7             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DATE</span><span class="token punctuation">&gt;</span></span>2015-11-11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DATE</span><span class="token punctuation">&gt;</span></span>
+ 8             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HOLIDAY</span><span class="token punctuation">&gt;</span></span>xxxxx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>HOLIDAY</span><span class="token punctuation">&gt;</span></span>
+ 9         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DAY</span><span class="token punctuation">&gt;</span></span>        
+10         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DAY</span><span class="token punctuation">&gt;</span></span>
+11             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DATE</span><span class="token punctuation">&gt;</span></span>2015-12-12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DATE</span><span class="token punctuation">&gt;</span></span>
+12             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PROGRAMSLOT</span> <span class="token attr-name">VTR</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>SSSS<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+13                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TIME</span><span class="token punctuation">&gt;</span></span>1990<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TIME</span><span class="token punctuation">&gt;</span></span>
+14                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TITLE</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TITLE</span><span class="token punctuation">&gt;</span></span>
+15             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>PROGRAMSLOT</span><span class="token punctuation">&gt;</span></span>
+16         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DAY</span><span class="token punctuation">&gt;</span></span>
+17     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>CHANNEL</span><span class="token punctuation">&gt;</span></span>
+18 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TVSCHEDULE</span><span class="token punctuation">&gt;</span></span>
+结果：
+
+ 
+</code></pre></div><h2 id="_17、xml的解析的简介（写到java代码）（最重要的内容）"><a href="#_17、xml的解析的简介（写到java代码）（最重要的内容）" class="header-anchor">#</a> 17、xml的解析的简介（写到java代码）（<em><strong>最重要的内容</strong></em>）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* xml是标记型文档
+
+　　* js使用dom解析标记型文档？
+
+　　　　- 根据html的层级结构，在内存中分配一个树形结构，把html的标签，属性和文本都封装成对象
+
+　　　　- document对象、element对象、属性对象、文本对象、Node节点对象
+
+ 
+
+　　* xml的解析方式（技术）：dom 和 sax
+　　　　** 画图分析使用dom和sax解析xml过程
+
+ 
+
+　　　　*** dom解析和sax解析区别：
+　　　　** dom方式解析
+
+　　　　　　* 根据xml的层级结构在内存中分配一个树形结构，把xml的标签，属性和文本都封装成对象
+
+　　　　　　* 缺点：如果文件过大，造成内存溢出
+
+　　　　　　* 优点：很方便实现增删改操作
+
+ 
+
+　　　　** sax方式解析
+
+　　　　　　* 采用事件驱动，边读边解析
+
+　　　　　　　　- 从上到下，一行一行的解析，解析到某一个对象，返回对象名称
+
+　　　　　　* 缺点：不能实现增删改操作
+
+　　　　　　* 优点：如果文件过大，不会造成内存溢出，方便实现查询操作
+
+ 
+
+　　* 想要解析xml，首先需要解析器
+
+　　** 不同的公司和组织提供了 针对dom和sax方式的解析器，通过api方式提供
+
+　　*** sun公司提供了针对dom和sax解析器  jaxp
+
+　　*** dom4j组织，针对dom和sax解析器    dom4j（*** 实际开发中****）
+
+　　*** jdom组织，针对dom和sax解析器     jdom
+</code></pre></div><h2 id="_18、jaxp的api的查看"><a href="#_18、jaxp的api的查看" class="header-anchor">#</a> 18、jaxp的api的查看</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　** jaxp是javase的一部分
+
+　　** jaxp解析器在jdk的javax.xml.parsers包里面
+
+　　　　** 四个类：分别是针对dom和sax解析使用的类
+
+　　　　*** dom：
+
+　　　　DocumentBuilder  : 解析器类
+
+　　　　　　- 这个类是一个抽象类，不能new，
+
+　　　　　　此类的实例可以从 DocumentBuilderFactory.newDocumentBuilder() 方法获取
+
+ 
+
+　　　　　　- 一个方法，可以解析xml  parse(&quot;xml路径&quot;) 返回是 Document 整个文档
+
+　　　　　　- 返回的document是一个接口，父节点是Node，如果在document里面找不到想要的方法，到Node里面去找
+
+　　　　　　- 在document里面方法
+
+　　　　　　　　getElementsByTagName(String tagname)
+
+　　　　　　　　-- 这个方法可以得到标签
+
+　　　　　　　　-- 返回集合 NodeList
+
+　　　　　　　　createElement(String tagName)-- 创建标签
+
+　　　　　　　　createTextNode(String data)-- 创建文本
+
+　　　　　　　　appendChild(Node newChild) -- 把文本添加到标签下面
+
+　　　　　　　　removeChild(Node oldChild) -- 删除节点
+
+　　　　　　　　getParentNode()-- 获取父节点
+
+　　　　　　　　NodeList list
+
+　　　　　　　　- getLength() 得到集合的长度
+
+　　　　　　　　- item(int index)下标取到具体的值
+
+　　　　　　　　for(int i=0;i&lt;list.getLength();i++) {
+
+　　　　　　　　　　list.item(i)
+
+　　　　　　　　}
+
+　　　　　　　　getTextContent()- 得到标签里面的内容
+
+ 
+
+　　　　DocumentBuilderFactory： 解析器工厂
+
+　　　　　　- 这个类也是一个抽象类，不能new
+
+　　　　　　newInstance() 获取 DocumentBuilderFactory 的实例。
+
+ 　　*** sax：
+
+　　　　SAXParser：解析器类
+
+　　　　SAXParserFactory: 解析器工厂
+</code></pre></div><h2 id="_19、使用jaxp实现查询操作"><a href="#_19、使用jaxp实现查询操作" class="header-anchor">#</a> 19、使用jaxp实现查询操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　*** 查询xml中所有的name元素的值
+Person.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span>
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p1</span><span class="token punctuation">&gt;</span></span>
+ 4         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ 5         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>    
+ 6     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p1</span><span class="token punctuation">&gt;</span></span>
+ 7     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p1</span><span class="token punctuation">&gt;</span></span>
+ 8         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>lisi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ 9         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p1</span><span class="token punctuation">&gt;</span></span>
+11 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+　　* 步骤
+
+　　//查询所有name元素的值
+
+　　/*
+
+　　 * 1、创建解析器工厂
+
+　　　　DocumentBuilderFactory.newInstance();
+
+　　 * 2、根据解析器工厂创建解析器
+
+　　　　builderFactory.newDocumentBuilder();
+
+　　 * 3、解析xml返回document
+
+　　　　Document document = builder.parse(&quot;src/person.xml&quot;);
+
+　　 * 4、得到所有的name元素
+
+　　　　使用document.getElementsByTagName(&quot;name&quot;);
+
+　　 * 5、返回集合，遍历集合，得到每一个name元素
+
+　　　　- 遍历 getLength() item()
+
+　　　　- 得到元素里面值 使用 getTextContent()
+
+　　 * */
+
+ 1 　　//查询所有name元素的值
+ 2     private static void selectAll() throws Exception {
+ 3         //查询所有name元素的值
+ 4         /*
+ 5          * 1、创建解析器工厂
+ 6          * 2、根据解析器工厂创建解析器
+ 7          * 3、解析xml返回document
+ 8          *  
+ 9          * 4、得到所有的name元素
+10          * 5、返回集合，遍历集合，得到每一个name元素
+11          * */
+12         //创建解析器工厂    atl / : 代码提示
+13         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+14         //创建解析器
+15         DocumentBuilder builder = builderFactory.newDocumentBuilder();
+16         //解析xml返回document
+17         Document document = builder.parse(&quot;src/person.xml&quot;);
+18         //得到name元素
+19         NodeList list = document.getElementsByTagName(&quot;name&quot;);
+20         //遍历集合
+21         for(int i=0;i&lt;list.getLength();i++) {
+22             Node name1 = list.item(i); //得到每一个name元素
+23             //得到name元素里面的值
+24             String s = name1.getTextContent();
+25             System.out.println(s);
+26         }
+27     }
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code>　　*** 查询xml中第一个name元素的值
+　　* 步骤
+
+　　/*
+
+　　 * 1、创建解析器工厂
+
+　　 * 2、根据解析器工厂创建解析器
+
+　　 * 3、解析xml，返回document
+
+　　 * 4、得到所有name元素
+
+ 　　* 5、使用返回集合，里面方法 item，下标获取具体的元素
+
+　　　　NodeList.item(下标)： 集合下标从0开始
+
+　　 * 6、得到具体的值，使用 getTextContent方法
+
+　　 * */
+
+ 1 　　//查询xml中第一个name元素的值
+ 2     public static void selectSin() throws Exception {
+ 3         /*
+ 4          * 1、创建解析器工厂
+ 5          * 2、根据解析器工厂创建解析器
+ 6          * 3、解析xml，返回document
+ 7          * 
+ 8          * 4、得到所有name元素
+ 9          * 5、使用返回集合，里面方法 item，下标获取具体的元素
+10          * 6、得到具体的值，使用 getTextContent方法
+11          * 
+12          * */
+13         //创建解析器工厂
+14         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+15         //创建解析器
+16         DocumentBuilder builder = builderFactory.newDocumentBuilder();
+17         //解析xml，得到document
+18         Document document = builder.parse(&quot;src/person.xml&quot;);
+19         //得到所有的name元素
+20         NodeList list = document.getElementsByTagName(&quot;name&quot;);
+21         //使用下标 得到第一个元素
+22         Node name1 = list.item(1);
+23         //得到name里面的具体的值
+24         String s1 = name1.getTextContent();
+25         System.out.println(s1);
+26     }
+</code></pre></div><h2 id="_20、使用jaxp添加节点"><a href="#_20、使用jaxp添加节点" class="header-anchor">#</a> 20、使用jaxp添加节点</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　*** 在第一个p1下面（末尾）添加 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span>nv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span>
+
+　　**步骤
+
+　　/*
+
+ 　　* 1、创建解析器工厂
+
+ 　　* 2、根据解析器工厂创建解析器
+
+　　 * 3、解析xml，返回document
+
+ 　　* 4、得到第一个p1
+
+ 　　* - 得到所有p1，使用item方法下标得到
+
+ 　　* 5、创建sex标签 createElement
+
+　　 * 6、创建文本 createTextNode
+
+ 　　* 7、把文本添加到sex下面 appendChild
+
+ 　　* 8、把sex添加到第一个p1下面　appendChild
+
+　　 * 9、回写xml
+
+ 　　* */
+
+ 1 　　//在第一个p1下面（末尾）添加 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span>nv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span>
+ 2     public static void addSex() throws Exception {
+ 3         /*
+ 4          * 1、创建解析器工厂
+ 5          * 2、根据解析器工厂创建解析器
+ 6          * 3、解析xml，返回document
+ 7          * 
+ 8          * 4、得到第一个p1
+ 9          *     - 得到所有p1，使用item方法下标得到
+10          * 5、创建sex标签 createElement
+11          * 6、创建文本 createTextNode
+12          * 7、把文本添加到sex下面 appendChild
+13          * 8、把sex添加到第一个p1下面
+14          * 
+15          * 9、回写xml
+16          * */
+17         //创建解析器工厂
+18         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+19         //创建解析器
+20         DocumentBuilder builder = builderFactory.newDocumentBuilder();
+21         //得到document
+22         Document document = builder.parse(&quot;src/person.xml&quot;);
+23         
+24         //得到所有的p1
+25         NodeList list = document.getElementsByTagName(&quot;p1&quot;);
+26         //得到第一个p1
+27         Node p1 = list.item(0);
+28         //创建标签
+29         Element sex1 = document.createElement(&quot;sex&quot;);
+30         //创建文本
+31         Text text1 = document.createTextNode(&quot;nv&quot;);
+32         //把文本添加到sex1下面
+33         sex1.appendChild(text1);
+34         //把sex1添加到p1下面
+35         p1.appendChild(sex1);
+36         //回写xml
+37         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+38         Transformer transformer = transformerFactory.newTransformer();
+39         transformer.transform(new DOMSource(document), new StreamResult(&quot;src/person.xml&quot;));    
+40     }
+</code></pre></div><h2 id="_21、使用jaxp修改节点"><a href="#_21、使用jaxp修改节点" class="header-anchor">#</a> 21、使用jaxp修改节点</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　*** 修改第一个p1下面的sex内容是nan
+
+　　** 步骤
+
+　　/*
+
+　　 * 1、创建解析器工厂
+
+　　 * 2、根据解析器工厂创建解析器
+
+ 　　* 3、解析xml，返回document
+
+ 　　* 4、得到sex item方法
+
+ 　　* 5、修改sex里面的值  
+
+　　*** setTextContent方法
+
+ 　　* 6、回写xml
+
+　　 * */
+
+ 1 　　//修改第一个p1下面的sex内容是nan
+ 2     public static void modifySex() throws Exception {
+ 3         /*
+ 4          * 1、创建解析器工厂
+ 5          * 2、根据解析器工厂创建解析器
+ 6          * 3、解析xml，返回document 
+ 7          * 
+ 8          * 4、得到sex item方法
+ 9          * 5、修改sex里面的值  setTextContent方法
+10          * 
+11          * 6、回写xml
+12          * */
+13         //创建解析器工厂
+14         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+15         //创建解析器
+16         DocumentBuilder builder = builderFactory.newDocumentBuilder();
+17         //得到document
+18         Document document = builder.parse(&quot;src/person.xml&quot;);
+19         
+20         //得到sex
+21         Node sex1 = document.getElementsByTagName(&quot;sex&quot;).item(0);
+22         //修改sex值
+23         sex1.setTextContent(&quot;nan&quot;);
+24         //回写xml
+25         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+26         Transformer transformer = transformerFactory.newTransformer();
+27         transformer.transform(new DOMSource(document), new StreamResult(&quot;src/person.xml&quot;));
+28     }
+</code></pre></div><h2 id="_22、使用jaxp删除节点"><a href="#_22、使用jaxp删除节点" class="header-anchor">#</a> 22、使用jaxp删除节点</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　*** 删除<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span>nan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span>节点
+
+　　** 步骤
+
+　　/*
+
+ 　　* 1、创建解析器工厂
+
+ 　　* 2、根据解析器工厂创建解析器
+
+ 　　* 3、解析xml，返回document
+
+ 　　* 4、获取sex元素
+
+ 　　* 5、获取sex的父节点  使用getParentNode方法
+
+ 　　* 6、删除使用父节点删除  removeChild方法
+
+　　 * 7、回写xml
+
+ 　　* */
+
+ 1 　　//删除<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span>nan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span>节点
+ 2     public static void delSex() throws Exception {
+ 3         /*
+ 4          * 1、创建解析器工厂
+ 5          * 2、根据解析器工厂创建解析器
+ 6          * 3、解析xml，返回document 
+ 7          * 
+ 8          * 4、获取sex元素
+ 9          * 5、获取sex的父节点 
+10          * 6、删除使用父节点删除 removeChild方法
+11          * 
+12          * 7、回写xml
+13          * */
+14         //创建解析器工厂
+15         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+16         //创建解析器
+17         DocumentBuilder builder = builderFactory.newDocumentBuilder();
+18         //得到document
+19         Document document = builder.parse(&quot;src/person.xml&quot;);
+20         //得到sex元素
+21         Node sex1 = document.getElementsByTagName(&quot;sex&quot;).item(0);
+22         //得到sex1父节点
+23         Node p1 = sex1.getParentNode();
+24         //删除操作
+25         p1.removeChild(sex1);
+26         //回写xml
+27         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+28         Transformer transformer = transformerFactory.newTransformer();
+29         transformer.transform(new DOMSource(document), new StreamResult(&quot;src/person.xml&quot;));
+30     }
+</code></pre></div><h2 id="_23、使用jaxp遍历节点"><a href="#_23、使用jaxp遍历节点" class="header-anchor">#</a> 23、使用jaxp遍历节点</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　** 把xml中的所有元素名称打印出来
+
+　　** 步骤
+
+　　/*
+
+ 　　* 1、创建解析器工厂
+
+　　 * 2、根据解析器工厂创建解析器
+
+　　 * 3、解析xml，返回document
+
+ 　　* ====使用递归实现=====
+
+ 　　* 4、得到根节点
+
+ 　　* 5、得到根节点子节点
+
+ 　　* 6、得到根节点子节点的子节点
+
+ 　　* */
+
+　　** 遍历的方法
+
+ 
+
+ 1     //递归遍历的方法
+ 2     private static void list1(Node node) {
+ 3         //判断是元素类型时候才打印
+ 4         if(node.getNodeType() == Node.ELEMENT_NODE) {            
+ 5             System.out.println(node.getNodeName());
+ 6         }
+ 7         
+ 8         //得到一层子节点
+ 9         NodeList list = node.getChildNodes();
+10         //遍历list
+11         for(int i=0;i&lt;list.getLength();i++) {
+12             //得到每一个节点
+13             Node node1 = list.item(i);
+14             //继续得到node1的子节点
+15             //node1.getChildNodes()
+16             list1(node1);
+17         }
+18     }    </code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月6日星期六上午9点21分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/35.81a111b2.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>

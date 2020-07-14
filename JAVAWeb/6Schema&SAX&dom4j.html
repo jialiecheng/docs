@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1、schema约束 | jialiecheng</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/jialcblog/assets/img/favicon.ico">
+    <link rel="manifest" href="/jialcblog/manifest.json">
+    <link rel="apple-touch-icon" href="/jialcblog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/jialcblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="JiaLC'S BLOG">
+    <meta name="author" content="jialiecheng">
+    <meta name="keywords" content="vuepress 介绍，vuepress 说明，jialiecheng">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/jialcblog/assets/css/0.styles.751058ad.css" as="style"><link rel="preload" href="/jialcblog/assets/js/app.936873de.js" as="script"><link rel="preload" href="/jialcblog/assets/js/6.c506a410.js" as="script"><link rel="preload" href="/jialcblog/assets/js/2.364699e5.js" as="script"><link rel="preload" href="/jialcblog/assets/js/36.9c07e7ea.js" as="script"><link rel="preload" href="/jialcblog/assets/js/4.42c26233.js" as="script"><link rel="prefetch" href="/jialcblog/assets/js/10.23e9f8dc.js"><link rel="prefetch" href="/jialcblog/assets/js/11.d8d3ecd6.js"><link rel="prefetch" href="/jialcblog/assets/js/12.aa521714.js"><link rel="prefetch" href="/jialcblog/assets/js/13.d8d07d19.js"><link rel="prefetch" href="/jialcblog/assets/js/14.d371148b.js"><link rel="prefetch" href="/jialcblog/assets/js/15.a1a13310.js"><link rel="prefetch" href="/jialcblog/assets/js/16.ce75e2d3.js"><link rel="prefetch" href="/jialcblog/assets/js/17.205a9a6f.js"><link rel="prefetch" href="/jialcblog/assets/js/18.83bb1f16.js"><link rel="prefetch" href="/jialcblog/assets/js/19.ffc6f81b.js"><link rel="prefetch" href="/jialcblog/assets/js/20.7ef51bf3.js"><link rel="prefetch" href="/jialcblog/assets/js/21.8ea4ce2f.js"><link rel="prefetch" href="/jialcblog/assets/js/22.76dab3e8.js"><link rel="prefetch" href="/jialcblog/assets/js/23.14b49b47.js"><link rel="prefetch" href="/jialcblog/assets/js/24.2ee7729e.js"><link rel="prefetch" href="/jialcblog/assets/js/25.864cb436.js"><link rel="prefetch" href="/jialcblog/assets/js/26.2346aa7c.js"><link rel="prefetch" href="/jialcblog/assets/js/27.65c89d53.js"><link rel="prefetch" href="/jialcblog/assets/js/28.a98203c3.js"><link rel="prefetch" href="/jialcblog/assets/js/29.9680c054.js"><link rel="prefetch" href="/jialcblog/assets/js/3.1d2645d3.js"><link rel="prefetch" href="/jialcblog/assets/js/30.38977eb7.js"><link rel="prefetch" href="/jialcblog/assets/js/31.7149cd42.js"><link rel="prefetch" href="/jialcblog/assets/js/32.6fb55c44.js"><link rel="prefetch" href="/jialcblog/assets/js/33.bb372f1f.js"><link rel="prefetch" href="/jialcblog/assets/js/34.dcab3739.js"><link rel="prefetch" href="/jialcblog/assets/js/35.81a111b2.js"><link rel="prefetch" href="/jialcblog/assets/js/37.b17d31df.js"><link rel="prefetch" href="/jialcblog/assets/js/38.75e85ec9.js"><link rel="prefetch" href="/jialcblog/assets/js/39.169a5b83.js"><link rel="prefetch" href="/jialcblog/assets/js/40.3153f738.js"><link rel="prefetch" href="/jialcblog/assets/js/41.c020cf96.js"><link rel="prefetch" href="/jialcblog/assets/js/42.e8a9c1c4.js"><link rel="prefetch" href="/jialcblog/assets/js/43.762c6a28.js"><link rel="prefetch" href="/jialcblog/assets/js/44.19a232b8.js"><link rel="prefetch" href="/jialcblog/assets/js/45.8e72e98e.js"><link rel="prefetch" href="/jialcblog/assets/js/46.803f9ca2.js"><link rel="prefetch" href="/jialcblog/assets/js/47.74fae89d.js"><link rel="prefetch" href="/jialcblog/assets/js/48.ef88fb5b.js"><link rel="prefetch" href="/jialcblog/assets/js/49.0ff4738a.js"><link rel="prefetch" href="/jialcblog/assets/js/5.b806db0d.js"><link rel="prefetch" href="/jialcblog/assets/js/50.19fb293c.js"><link rel="prefetch" href="/jialcblog/assets/js/51.8e109fc8.js"><link rel="prefetch" href="/jialcblog/assets/js/52.e35c46f8.js"><link rel="prefetch" href="/jialcblog/assets/js/53.c28eae9b.js"><link rel="prefetch" href="/jialcblog/assets/js/54.c393fd50.js"><link rel="prefetch" href="/jialcblog/assets/js/55.975d4ef4.js"><link rel="prefetch" href="/jialcblog/assets/js/56.5c2c2afb.js"><link rel="prefetch" href="/jialcblog/assets/js/57.7de4543f.js"><link rel="prefetch" href="/jialcblog/assets/js/58.be75a524.js"><link rel="prefetch" href="/jialcblog/assets/js/59.51b5ae5b.js"><link rel="prefetch" href="/jialcblog/assets/js/60.6b62e834.js"><link rel="prefetch" href="/jialcblog/assets/js/61.9ac3f764.js"><link rel="prefetch" href="/jialcblog/assets/js/62.1059ef60.js"><link rel="prefetch" href="/jialcblog/assets/js/63.72f7ad28.js"><link rel="prefetch" href="/jialcblog/assets/js/64.910bef3d.js"><link rel="prefetch" href="/jialcblog/assets/js/65.30b22bf8.js"><link rel="prefetch" href="/jialcblog/assets/js/66.087a8ac1.js"><link rel="prefetch" href="/jialcblog/assets/js/67.670102af.js"><link rel="prefetch" href="/jialcblog/assets/js/68.1cd94b0e.js"><link rel="prefetch" href="/jialcblog/assets/js/69.6e2149f7.js"><link rel="prefetch" href="/jialcblog/assets/js/7.a5d6c814.js"><link rel="prefetch" href="/jialcblog/assets/js/70.7ce75e5e.js"><link rel="prefetch" href="/jialcblog/assets/js/8.e9ba0dfc.js"><link rel="prefetch" href="/jialcblog/assets/js/9.f1103dc0.js">
+    <link rel="stylesheet" href="/jialcblog/assets/css/0.styles.751058ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jialcblog/" class="home-link router-link-active"><img src="/jialcblog/assets/img/jlclogo1.png" alt="jialiecheng" class="logo"> <span class="site-name can-hide">jialiecheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jialcblog/JLC的画/" class="nav-link">
+  JLC的画
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVA" class="dropdown-title"><span class="title">JAVA</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D1.html" class="nav-link">
+  day1
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D2.html" class="nav-link">
+  day2
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVA/D13.html" class="nav-link">
+  day13
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JAVAWeb" class="dropdown-title"><span class="title">JAVAWeb</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/1xml.html" class="nav-link">
+  1xml
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/2html.html" class="nav-link">
+  2html
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/3css&amp;js.html" class="nav-link">
+  3css&amp;js
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/4js对象.html" class="nav-link">
+  4js对象
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/5xml&amp;dtd&amp;jaxp.html" class="nav-link">
+  5xml&amp;dtd&amp;jaxp
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  6Schema&amp;SAX&amp;dom4j
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/7java基础加强.html" class="nav-link">
+  7java基础加强
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/8Tomcat&amp;Web应用&amp;HTTP协议.html" class="nav-link">
+  8Tomcat&amp;Web应用&amp;HTTP协议
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/9Servlet.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/10Response&amp;Request.html" class="nav-link">
+  10Response&amp;Request
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11JSP&amp;Session&amp;Cookie&amp;HttpSession.html" class="nav-link">
+  11JSP&amp;Session&amp;Cookie&amp;HttpSession
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/1.html" class="nav-link">
+  1.数据结构和算法概述
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/2.html" class="nav-link">
+  2.算法分析
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/3.html" class="nav-link">
+  3.排序
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/4.html" class="nav-link">
+  4.线性表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/5.html" class="nav-link">
+  5.符号表
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/6.html" class="nav-link">
+  6.树
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/7.html" class="nav-link">
+  7.堆
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/8.html" class="nav-link">
+  8.优先队列
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/9.html" class="nav-link">
+  9.并查集
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/DataStructureAndAlgorithm/10.html" class="nav-link">
+  10.图
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  day13
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/14.html" class="nav-link">
+  day14
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/15.html" class="nav-link">
+  day15
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/16.html" class="nav-link">
+  day16
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/17.html" class="nav-link">
+  day17
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/18.html" class="nav-link">
+  day18
+</a></li><li class="dropdown-item"><!----> <a href="/jialcblog/JAVAWeb/19.html" class="nav-link">
+  day19
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="每天5题" class="dropdown-title"><span class="title">每天5题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          java基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/java基础知识/1.html" class="nav-link">
+  1
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/2.html" class="nav-link">
+  2
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/3.html" class="nav-link">
+  3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/4.html" class="nav-link">
+  4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/5.html" class="nav-link">
+  5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/6.html" class="nav-link">
+  6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/7.html" class="nav-link">
+  7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/8.html" class="nav-link">
+  8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/9.html" class="nav-link">
+  9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/10.html" class="nav-link">
+  10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/11.html" class="nav-link">
+  11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/12.html" class="nav-link">
+  12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/13.html" class="nav-link">
+  13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/jialcblog/" class="nav-link">
+  meitian
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="路径规划" class="dropdown-title"><span class="title">路径规划</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/1.html" class="nav-link">
+  算法总结
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          物流配送调度
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li><li class="dropdown-item"><h4>
+          复杂多agv规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/jialcblog/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D3.html" class="nav-link">
+  day3
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D4.html" class="nav-link">
+  day4
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D5.html" class="nav-link">
+  day5
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D6.html" class="nav-link">
+  day6
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D7.html" class="nav-link">
+  day7
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D8.html" class="nav-link">
+  day8
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D9.html" class="nav-link">
+  day9
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D10.html" class="nav-link">
+  day10
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D11.html" class="nav-link">
+  day11
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D12.html" class="nav-link">
+  day12
+</a></li><li class="dropdown-subitem"><a href="/jialcblog/JAVAWeb/D13.html" class="nav-link">
+  day13
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>1、schema约束</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_1、schema约束" class="sidebar-link">1、schema约束</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_2、schema的快速入门" class="sidebar-link">2、schema的快速入门</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_3、sax解析的原理（-）" class="sidebar-link">3、sax解析的原理（**）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_5、使用dom4j解析xml" class="sidebar-link">5、使用dom4j解析xml</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_6、使用dom4j查询xml" class="sidebar-link">6、使用dom4j查询xml</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_7、使用dom4j实现添加操作" class="sidebar-link">7、使用dom4j实现添加操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_8、使用dom4j实现在特定位置添加元素" class="sidebar-link">8、使用dom4j实现在特定位置添加元素</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_9、使用dom4j实现修改节点的操作" class="sidebar-link">9、使用dom4j实现修改节点的操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_10、使用dom4j实现删除节点的操作" class="sidebar-link">10、使用dom4j实现删除节点的操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_11、使用dom4j获取属性的操作" class="sidebar-link">11、使用dom4j获取属性的操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_12、使用dom4j支持xpath的操作" class="sidebar-link">12、使用dom4j支持xpath的操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_13、使用dom4j支持xpath具体操作" class="sidebar-link">13、使用dom4j支持xpath具体操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/jialcblog/JAVAWeb/6Schema&amp;SAX&amp;dom4j.html#_14、实现简单的学生管理系统" class="sidebar-link">14、实现简单的学生管理系统</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1、schema约束"><a href="#_1、schema约束" class="header-anchor">#</a> 1、schema约束</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　dtd语法： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">元素名称</span> <span class="token attr-name">约束</span><span class="token punctuation">&gt;</span></span>
+
+　　** schema符合xml的语法，xml语句
+
+　　** 一个xml中可以有多个schema，多个schema使用名称空间区分（类似于java包名）
+
+　　** dtd里面有PCDATA类型，但是在schema里面可以支持更多的数据类型
+
+　　　　*** 比如 年龄 只能是整数，在schema可以直接定义一个整数类型
+
+　　*** schema语法更加复杂，schema目前不能替代dtd
+</code></pre></div><h2 id="_2、schema的快速入门"><a href="#_2、schema的快速入门" class="header-anchor">#</a> 2、schema的快速入门</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 创建一个schema文件 后缀名是 .xsd
+
+　　　　** 根节点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>schema</span><span class="token punctuation">&gt;</span></span>
+
+　　** 在schema文件里面
+
+　　　　** 属性  xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot;
+
+　　　　　　- 表示当前xml文件是一个约束文件
+
+　　　　** targetNamespace=&quot;http://www.itcast.cn/20151111&quot;
+
+　　　　　　- 使用schema约束文件，直接通过这个地址引入约束文件
+
+　　　　** elementFormDefault=&quot;qualified&quot;
+
+　　步骤
+
+　　　　（1）看xml中有多少个元素
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span><span class="token punctuation">&gt;</span></span>
+
+　　　　（2）看简单元素和复杂元素
+
+　　　　　　* 如果复杂元素
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>complexType</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　　　　　子元素
+
+　　　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sequence</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>
+
+　　　　（3）简单元素，写在复杂元素的
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>person<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>complexType</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>string<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>age<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sequence</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>
+
+　　　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+
+1.xsd
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>schema</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">3</span>         <span class="token attr-name">targetNamespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.itcast.cn/20151111<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">4</span>         <span class="token attr-name">elementFormDefault</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>qualified<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 5     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>person<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 6         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>complexType</span><span class="token punctuation">&gt;</span></span>
+ 7             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>
+ 8             <span class="token comment">&lt;!-- &lt;all&gt; --&gt;</span>
+ 9             <span class="token comment">&lt;!-- &lt;choice&gt; --&gt;</span>
+10                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>string<span class="token punctuation">&quot;</span></span> <span class="token attr-name">maxOccurs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>unbounded<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+11                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>age<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+12             <span class="token comment">&lt;!-- &lt;/choice&gt; --&gt;</span>
+13             <span class="token comment">&lt;!-- &lt;/all&gt;     --&gt;</span>
+14             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sequence</span><span class="token punctuation">&gt;</span></span>
+15             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attribute</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span> <span class="token attr-name">use</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>required<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>attribute</span><span class="token punctuation">&gt;</span></span>
+16         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>
+17     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+18 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>schema</span><span class="token punctuation">&gt;</span></span>
+　　　　（4）在被约束文件里面引入约束文件
+
+person.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">3</span>         <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.itcast.cn/20151111<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">4</span>         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.itcast.cn/20151111 1.xsd<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>123<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 5     
+ 6     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ 7     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ 8     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span> 
+10 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span>
+
+　　　　<span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.itcast.cn/20151111<span class="token punctuation">&quot;</span></span>
+
+　　　　<span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.itcast.cn/20151111 1.xsd<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+ 
+
+　　　　** xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+
+　　　　　　-- 表示xml是一个被约束文件
+
+　　　　** xmlns=&quot;http://www.itcast.cn/20151111&quot;
+
+　　　　　　-- 是约束文档里面 targetNamespace
+
+　　　　** xsi:schemaLocation=&quot;http://www.itcast.cn/20151111 1.xsd&quot;&gt;
+
+　　　　　　-- targetNamespace 空格  约束文档的地址路径
+
+ 
+
+　　* <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>：表示元素的出现的顺序
+
+ 　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>all</span><span class="token punctuation">&gt;</span></span>: 元素只能出现一次
+
+ 　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>choice</span><span class="token punctuation">&gt;</span></span>：元素只能出现其中的一个
+
+ 　　　　maxOccurs=&quot;unbounded&quot;： 表示元素的出现的次数
+
+ 　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>any</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>any</span><span class="token punctuation">&gt;</span></span>:表示任意元素
+
+ 
+
+　　* 可以约束属性
+
+　　　　* 写在复杂元素里面
+
+　　　　***写在　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>之前
+
+　　　　－－
+
+　　　　<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attribute</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span> <span class="token attr-name">use</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>required<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>attribute</span><span class="token punctuation">&gt;</span></span>
+
+　　　　- name: 属性名称
+
+　　　　- type：属性类型 int stirng
+
+　　　　- use：属性是否必须出现 required
+
+ 
+
+　　* 复杂的schema约束
+
+company.xsd
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>schema</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema<span class="token punctuation">&quot;</span></span> 
+ <span class="token attr-name">3</span> <span class="token attr-name">targetNamespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.example.org/company<span class="token punctuation">&quot;</span></span> 
+ <span class="token attr-name">4</span> <span class="token attr-name">elementFormDefault</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>qualified<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 5     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>company<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 6         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>complexType</span><span class="token punctuation">&gt;</span></span>
+ 7             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>
+ 8                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>employee<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 9                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>complexType</span><span class="token punctuation">&gt;</span></span>
+10                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequence</span><span class="token punctuation">&gt;</span></span>
+11                             <span class="token comment">&lt;!-- 引用任何一个元素 --&gt;</span>
+12                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>any</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>any</span><span class="token punctuation">&gt;</span></span>
+13                             <span class="token comment">&lt;!-- 员工名称 --&gt;</span>
+14                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+15                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sequence</span><span class="token punctuation">&gt;</span></span>
+16                         <span class="token comment">&lt;!-- 为employee元素添加属性 --&gt;</span>
+17                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attribute</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>age<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>attribute</span><span class="token punctuation">&gt;</span></span>
+18                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>
+19                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+20             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sequence</span><span class="token punctuation">&gt;</span></span>
+21         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>complexType</span><span class="token punctuation">&gt;</span></span>
+22     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+23 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>schema</span><span class="token punctuation">&gt;</span></span>
+　　* 引入多个schema文件，可以给每个起一个别名
+
+company.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token comment">&lt;!-- 数据文件 引用多个Schema --&gt;</span>
+ 3 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>company</span> <span class="token attr-name">xmlns</span> <span class="token attr-value"><span class="token punctuation">=</span> <span class="token punctuation">&quot;</span>http://www.example.org/company<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">4</span>     <span class="token attr-name"><span class="token namespace">xmlns:</span>dept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.example.org/department<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">5</span>     <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span> <span class="token attr-value"><span class="token punctuation">=</span> <span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">6</span>     <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.example.org/company company.xsd     http://www.example.org/department department.xsd<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+ 7     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>employee</span> <span class="token attr-name">age</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>30<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 8         <span class="token comment">&lt;!-- 部门名称 --&gt;</span> 
+ 9    <span class="token comment">&lt;!--想要引入部门的约束文件里面的name，使用部门的别名 detp:元素名称--&gt;</span>
+10         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dept:</span>name</span><span class="token punctuation">&gt;</span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dept:</span>name</span><span class="token punctuation">&gt;</span></span>
+11         <span class="token comment">&lt;!-- 员工名称 --&gt;</span>
+12         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>王晓晓<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+13     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>employee</span><span class="token punctuation">&gt;</span></span>
+14 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>company</span><span class="token punctuation">&gt;</span></span>
+department.xsd
+
+1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>schema</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema<span class="token punctuation">&quot;</span></span>
+<span class="token attr-name">3</span>      <span class="token attr-name">targetNamespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.example.org/department<span class="token punctuation">&quot;</span></span> 
+<span class="token attr-name">4</span>      <span class="token attr-name">elementFormDefault</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>qualified<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+5  <span class="token comment">&lt;!-- 部门名称 --&gt;</span>
+6  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>element</span><span class="token punctuation">&gt;</span></span>
+7 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>schema</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_3、sax解析的原理（-）"><a href="#_3、sax解析的原理（-）" class="header-anchor">#</a> 3、sax解析的原理（********）</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 解析xml有两种技术 dom 和sax
+
+ 
+
+　　* dom方式：根据xml的层级结构在内存中分配一个树形结构
+
+　　** 把xml中标签，属性，文本封装成对象
+
+ 
+
+　　* sax方式：事件驱动，边读边解析
+
+　　* 在javax.xml.parsers包里面
+
+　　　　** SAXParser
+
+　　　　　　此类的实例可以从 SAXParserFactory.newSAXParser() 方法获得
+
+　　　　　　- parse(File f, DefaultHandler dh)
+
+　　　　　　　　* 两个参数
+
+　　　　　　　　** 第一个参数：xml的路径
+
+　　　　　　　　** 事件处理器
+
+ 
+
+　　　　** SAXParserFactory
+
+　　　　　　实例 newInstance() 方法得到
+
+　　* 画图分析一下sax执行过程
+
+ 
+
+ 
+
+　　　　* 当解析到开始标签时候，自动执行startElement方法
+
+　　　　* 当解析到文本时候，自动执行characters方法
+
+　　　　* 当解析到结束标签时候，自动执行endElement方法
+
+## 4、使用jaxp的sax方式解析xml（**会写**）
+　　* sax方式不能实现增删改操作，只能做查询操作
+
+　　** 打印出整个文档
+
+
+
+
+p1.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span><span class="token punctuation">&gt;</span></span> 
+ 3   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p1</span> <span class="token attr-name">id1</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>aaaa<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 
+ 4     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+ 5     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>300<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>  
+ 6     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sex</span><span class="token punctuation">&gt;</span></span>nv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sex</span><span class="token punctuation">&gt;</span></span> 
+ 7   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p1</span><span class="token punctuation">&gt;</span></span>  
+ 8   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p1</span><span class="token punctuation">&gt;</span></span> 
+ 9     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>lisi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+10     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span> 
+11   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p1</span><span class="token punctuation">&gt;</span></span> 
+12 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">&gt;</span></span>
+
+
+
+
+
+TestSax.java
+
+ 1 package com.li.jaxpsax;
+ 2 
+ 3 import javax.xml.parsers.ParserConfigurationException;
+ 4 import javax.xml.parsers.SAXParser;
+ 5 import javax.xml.parsers.SAXParserFactory;
+ 6 
+ 7 import org.xml.sax.Attributes;
+ 8 import org.xml.sax.SAXException;
+ 9 import org.xml.sax.helpers.DefaultHandler;
+10 
+11 public class TestSax {
+12     public static void main(String[] args) throws Exception {
+13         /*
+14          * 1、创建解析器工厂
+15          * 2、创建解析器
+16          * 3、执行parse方法
+17          * 
+18          * 4、自己创建一个类，继承DefaultHandler
+19          * 5、重写类里面的三个方法
+20          * */
+21         //创建解析器工厂
+22         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+23         //创建解析器
+24         SAXParser saxParser = saxParserFactory.newSAXParser();
+25         //执行parse方法
+26         saxParser.parse(&quot;src/p1.xml&quot;, new MyDefault2());    
+27     }    
+28 }
+29 class MyDefault1 extends DefaultHandler {
+30 
+31     @Override
+32     public void startElement(String uri, String localName, String qName,
+33             Attributes attributes) throws SAXException {
+34         System.out.print(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&quot;+qName+&quot;</span><span class="token punctuation">&gt;</span></span>&quot;);
+35     }
+36     
+37     @Override
+38     public void characters(char[] ch, int start, int length)
+39             throws SAXException {
+40         System.out.print(new String(ch,start,length));
+41     }
+42 
+43     @Override
+44     public void endElement(String uri, String localName, String qName)
+45             throws SAXException {
+46         System.out.print(&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>&quot;+qName+&quot;</span><span class="token punctuation">&gt;</span></span>&quot;);
+47     }
+48 }
+
+
+
+
+ *** 执行parse方法，第一个参数xml路径，第二个参数是 事件处理器
+
+　　　　*** 创建一个类，继承事件处理器的类，
+
+　　　　***重写里面的三个方法
+
+　　** 获取到所有的name元素的值
+　　　　** 定义一个成员变量 flag= false
+
+　　　　** 判断开始方法是否是name元素，如果是name元素，把flag值设置成true
+
+　　　　** 如果flag值是true，在characters方法里面打印内容
+
+　　　　** 当执行到结束方法时候，把flag值设置成false
+
+ 　　* 获取第一个name元素的值
+
+　　　　** 定义一个成员变量 idx=1
+
+　　　　** 在结束方法时候，idx+1 idx++
+
+　　　　** 想要打印出第一个name元素的值，
+
+　　　　　　- 在characters方法里面判断，
+
+　　　　　　-- 判断flag=true 并且 idx==1，在打印内容
+
+ 1 //实现获取所有(第一个)的name元素的值
+ 2 class MyDefault2 extends DefaultHandler {
+ 3     boolean flag = false;
+ 4     int idx = 1;
+ 5     @Override
+ 6     public void startElement(String uri, String localName, String qName,
+ 7             Attributes attributes) throws SAXException {
+ 8         //判断qName是否是name元素
+ 9         if(&quot;name&quot;.equals(qName)) {
+10             flag = true;            
+11         }
+12     }
+13     @Override
+14     public void characters(char[] ch, int start, int length)
+15             throws SAXException {
+16         //当flag值是true时候，表示解析到name元素
+17         //索引是1    实现获取第一个的name元素的值
+18         if(flag == true &amp;&amp; idx == 1) {
+19             System.out.println(new String(ch,start,length));
+20         }
+21     }
+22     
+23     @Override
+24     public void endElement(String uri, String localName, String qName)
+25             throws SAXException {
+26         //把flag设置成false，表示name元素结束
+27         if(&quot;name&quot;.equals(qName)) {
+28             flag = false;
+29             idx++;
+30         }
+31     }
+32 }
+</code></pre></div><h2 id="_5、使用dom4j解析xml"><a href="#_5、使用dom4j解析xml" class="header-anchor">#</a> 5、使用dom4j解析xml</h2> <p>* dom4j，是一个组织，针对xml解析，提供解析器 dom4j</p> <p>* dom4j不是javase的一部分，想要使用第一步需要怎么做？</p> <p>*** 导入dom4j提供jar包</p> <p>-- 创建一个文件夹 lib</p> <p>-- 复制jar包到lib下面，</p> <p>-- 右键点击jar包，build path -- add to build path</p> <p>-- 看到jar包，变成奶瓶样子，表示导入成功</p> <p>* 得到document</p> <p>SAXReader reader = new SAXReader();</p> <p>Document document = reader.read(url);</p> <p>* document的父接口是Node</p> <p>* 如果在document里面找不到想要的方法，到Node里面去找</p> <p>* document里面的方法 getRootElement() ：获取根节点 返回的是Element</p> <p>* Element也是一个接口，父接口是Node</p> <p>- Element和Node里面方法</p> <p>** getParent()：获取父节点</p> <p>** addElement：添加标签</p> <p>* element(qname)</p> <p>** 表示获取标签下面的第一个子标签</p> <p>** qname：标签的名称</p> <p>* elements(qname)</p> <p>** 获取标签下面是这个名称的所有子标签（一层）</p> <p>** qname：标签名称</p> <p>* elements()</p> <p>** 获取标签下面的所有一层子标签</p> <h2 id="_6、使用dom4j查询xml"><a href="#_6、使用dom4j查询xml" class="header-anchor">#</a> 6、使用dom4j查询xml</h2> <p>* 解析是从上到下解析</p> <p>* 查询所有name元素里面的值
+　　/*</p> <p>1、创建解析器</p> <p>2、得到document</p> <p>3、得到根节点  getRootElement() 返回Element</p> <p>4、得到所有的p1标签</p> <p>* elements(&quot;p1&quot;) 返回list集合</p> <p>* 遍历list得到每一个p1</p> <p>5、得到name</p> <p>* 在p1下面执行 element(&quot;name&quot;)方法 返回Element</p> <p>6、得到name里面的值</p> <p>* getText方法得到值</p> <p>*/</p> <p>1 　　//查询xml中所有name元素的值
+2     public static void selectName() throws Exception {
+3         /*
+4          * 1、创建解析器
+5          * 2、得到document
+6          * 3、得到根节点
+7          *
+8          * 4、得到p1
+9          * 5、得到p1下面的name
+10          * 6、得到name里面的值
+11          * <em>/
+12         //创建解析器
+13         SAXReader saxReader = new SAXReader();
+14         //得到document
+15         Document document = saxReader.read(&quot;src/p1.xml&quot;);
+16         //得到根节点
+17         Element root = document.getRootElement();
+18<br>
+19         //得到p1
+20         List<Element> list = root.elements(&quot;p1&quot;);
+21         //遍历list
+22         for (Element element : list) {
+23             //element是每一个p1元素
+24             //得到p1下面的name元素
+25             Element name1 = element.element(&quot;name&quot;);
+26             //得到name里面的值
+27             String s = name1.getText();
+28             System.out.println(s);
+29         }
+30     }
+　　* 查询第一个name元素的值
+　　/</Element></em></p> <p>* 1、创建解析器</p> <p>* 2、得到document</p> <p>* 3、得到根节点</p> <p>* 4、得到第一个p1元素</p> <p>** element(&quot;p1&quot;)方法 返回Element</p> <p>* 5、得到p1下面的name元素</p> <p>** element(&quot;name&quot;)方法 返回Element</p> <p>* 6、得到name元素里面的值</p> <p>** getText方法</p> <p>* */</p> <p>1 　　//获取到一个name元素里面的值
+2     public static void selectSin() throws Exception {<br>
+3         /*
+4          * 1、创建解析器
+5          * 2、得到document
+6          * 3、得到根节点
+7          *
+8          * 4、得到第一个p1元素
+9          * 5、得到p1下面的name元素
+10          * 6、得到name元素里面的值
+11          * <em>/
+12         //创建解析器
+13         SAXReader saxReader = new SAXReader();
+14         //得到document
+15         Document document = saxReader.read(&quot;src/p1.xml&quot;);
+16         //得到根节点
+17         Element root = document.getRootElement();
+18         //得到第一个p1
+19         Element p1 = root.element(&quot;p1&quot;);
+20         //得到p1下面的name元素
+21         Element name1 = p1.element(&quot;name&quot;);
+22         //得到name的值
+23         String s1 = name1.getText();
+24         System.out.println(s1);
+25     }
+　　* 获取第二个name元素的值
+　　/</em></p> <p>* 1、创建解析器</p> <p>* 2、得到document</p> <p>* 3、得到根节点</p> <p>*  4、得到所有的p1</p> <p>** 返回 list集合</p> <p>*  5、遍历得到第二个p1</p> <p>** 使用list下标得到 get方法，集合的下标从 0 开始，想要得到第二个值，下标写 1</p> <p>*  6、得到第二个p1下面的name</p> <p>** element(&quot;name&quot;)方法 返回Element</p> <p>*  7、得到name的值</p> <p>** getText方法</p> <p>* */</p> <p>1 　　//获取第二个name元素里面的值
+2     public static void selectSecond() throws Exception {<br>
+3         /*
+4          * 1、创建解析器
+5          * 2、得到document
+6          * 3、得到根节点
+7          *
+8          *  4、得到所有的p1
+9          *  5、遍历得到第二个p1
+10          *  6、得到第二个p1下面的name
+11          *  7、得到name的值
+12          * */
+13         //创建解析器
+14         SAXReader saxReader = new SAXReader();
+15         //得到document
+16         Document document = saxReader.read(&quot;src/p1.xml&quot;);
+17         //得到根节点
+18         Element root = document.getRootElement();
+19         //得到所有的p1
+20         List<Element> list = root.elements(&quot;p1&quot;);
+21         //得到第二个p1 list集合下标从0开始
+22         Element p2 = list.get(1);
+23         //得到p1下面的name
+24         Element name2 = p2.element(&quot;name&quot;);
+25         //得到name里面的值
+26         String s2 = name2.getText();
+27         System.out.println(s2);
+28     }</Element></p> <h2 id="_7、使用dom4j实现添加操作"><a href="#_7、使用dom4j实现添加操作" class="header-anchor">#</a> 7、使用dom4j实现添加操作</h2> <p>Dom4jUtils.java</p> <p>1 package com.li.utils;
+2
+3 import java.io.FileOutputStream;
+4
+5 import org.dom4j.Document;
+6 import org.dom4j.DocumentException;
+7 import org.dom4j.io.OutputFormat;
+8 import org.dom4j.io.SAXReader;
+9 import org.dom4j.io.XMLWriter;
+10
+11 public class Dom4jUtils {
+12     public static final String PATH = &quot;src/p1.xml&quot;;
+13     //返回document
+14     public static Document getDocument(String path) {
+15         try {
+16             //创建解析器
+17             SAXReader reader = new SAXReader();
+18             //得到document
+19             Document document = reader.read(path);
+20             return document;
+21         } catch (Exception e) {
+22             e.printStackTrace();
+23         }
+24         return null;
+25     }
+26<br>
+27     //回写xml的方法
+28     public static void xmlWriters(String path,Document document) {
+29         try {
+30             OutputFormat format = OutputFormat.createPrettyPrint();
+31             XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(path), format);
+32             xmlWriter.write(document);
+33             xmlWriter.close();
+34         }catch(Exception e) {
+35             e.printStackTrace();
+36         }
+37     }
+38 }
+　　* 在第一个p1标签末尾添加一个元素 <sex>nv</sex>
+　　* 步骤</p> <p>/*</p> <p>* 1、创建解析器</p> <p>* 2、得到document</p> <p>* 3、得到根节点</p> <p>* 4、获取到第一个p1</p> <p>* 使用element方法</p> <p>* 5、在p1下面添加元素</p> <p>* 在p1上面直接使用 addElement(&quot;标签名称&quot;)方法 返回一个Element</p> <p>* 6、在添加完成之后的元素下面添加文本</p> <p>*在sex上直接使用 setText(&quot;文本内容&quot;)方法</p> <p>* 7、回写xml</p> <p>* 格式化 OutputFormat,使用 createPrettyPrint方法，表示一个漂亮的格式</p> <p>* 使用类XMLWriter 直接new 这个类 ，传递两个参数</p> <p>*** 第一个参数是xml文件路径 new FileOutputStream(&quot;路径&quot;)</p> <p>*** 第二个参数是格式化类的值</p> <p>* */</p> <p>1 　　//在第一个p1标签末尾添加一个元素 <sex>nv</sex>
+2     public static void addSex() throws Exception {
+3         /*
+4          * 1、创建解析器
+5          * 2、得到document
+6          * 3、得到根节点
+7          *
+8          * 4、获取到第一个p1
+9          * 5、在p1下面添加元素
+10          * 6、在添加完成之后的元素下面添加文本
+11          *
+12          * 7、回写xml
+13          * */
+14         //创建解析器
+15 //        SAXReader reader = new SAXReader();
+16         //得到document
+17 //        Document document = reader.read(&quot;src/p1.xml&quot;);
+18         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+19         //得到根节点
+20         Element root = document.getRootElement();
+21         //得到第一个p1元素
+22         Element p1 = root.element(&quot;p1&quot;);
+23         //在p1下面直接添加元素
+24         Element sex1 = p1.addElement(&quot;sex&quot;);
+25         //在sex下面添加文本
+26         sex1.setText(&quot;nv&quot;);
+27<br>
+28         //回写xml
+29 //        OutputFormat format = OutputFormat.createPrettyPrint(); //可以有缩进的效果
+30 ////        OutputFormat format = OutputFormat.createCompactFormat();    //压缩
+31 //        XMLWriter  xmlWriter = new XMLWriter(new FileOutputStream(&quot;src/p1.xml&quot;), format);
+32 //        xmlWriter.write(document);
+33 //        xmlWriter.close();
+34         Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+35     }</p> <h2 id="_8、使用dom4j实现在特定位置添加元素"><a href="#_8、使用dom4j实现在特定位置添加元素" class="header-anchor">#</a> 8、使用dom4j实现在特定位置添加元素</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 在第一个p1下面的age标签之前添加 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>school</span><span class="token punctuation">&gt;</span></span>ecit.edu.cn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>schlool</span><span class="token punctuation">&gt;</span></span>
+　　* 步骤
+
+  　/*
+
+ 　　* 1、创建解析器
+
+ 　　* 2、得到document
+
+ 　　* 3、得到根节点
+
+ 　　* 4、获取到第一个p1
+
+ 　　* 5、获取p1下面的所有的元素
+
+　　 　　　** elements()方法 返回 list集合
+
+　　 　　　** 使用list里面的方法，在特定位置添加元素
+
+　　 　　　** 首先创建元素 在元素下面创建文本
+
+　　　　　　　　- 使用DocumentHelper类方法createElement创建标签
+
+　　　　　　　　- 把文本添加到标签下面 使用 setText(&quot;文本内容&quot;)方法
+
+ 　　      *** list集合里面的 add(int index, E element)
+
+ 　　      - 第一个参数是 位置 下标，从0开始
+
+ 　　      - 第二个参数是 要添加的元素
+
+ 　　* 6、回写xml
+
+ 　　* */
+
+ 1     //在第一个p1下面的age标签之前添加 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>school</span><span class="token punctuation">&gt;</span></span>ecit.edu.cn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>schlool</span><span class="token punctuation">&gt;</span></span>
+ 2     public static void addAgeBefore() throws Exception {
+ 3         /*
+ 4          * 1、创建解析器
+ 5          * 2、得到document
+ 6          * 3、得到根节点
+ 7          * 4、获取到第一个p1
+ 8          * 
+ 9          * 5、获取p1下面的所有的元素
+10          *         ** elements()方法 返回 list集合
+11          *      ** 使用list里面的方法，在特定位置添加元素
+12          *      ** 创建元素 在元素下面创建文本
+13          *          *** add(int index, E element)
+14          *              - 第一个参数是 位置 下标，从0开始
+15          *              - 第二个参数是 要添加的元素
+16          * 6、回写xml
+17          * */
+18         //创建解析器
+19 //        SAXReader saxReader = new SAXReader();
+20         //得到document
+21 //        Document document = saxReader.read(&quot;src/p1.xml&quot;);
+22         
+23         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+24         //得到根节点
+25         Element root = document.getRootElement();
+26         //获取到第一个p1
+27         Element p1 = root.element(&quot;p1&quot;);
+28         //获取p1下面的所有元素
+29         List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Element</span><span class="token punctuation">&gt;</span></span> list = p1.elements();
+30         //创建元素 使用
+31         Element school = DocumentHelper.createElement(&quot;school&quot;);
+32         //在school下面创建文本
+33         school.setText(&quot;ecit&quot;);    
+34         //在特定位置添加
+35         list.add(1, school);
+36         //回写xml
+37         /*OutputFormat format = OutputFormat.createPrettyPrint();
+38         XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(&quot;src/p1.xml&quot;), format);
+39         xmlWriter.write(document);
+40         xmlWriter.close();*/
+41         Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+42     }
+　　** 可以对得到document的操作和 回写xml的操作，封装成方法
+
+　　** 也可以把传递的文件路径，封装成一个常量
+
+　　*** 好处：可以提高开发速度，可以提交代码可维护性
+
+　　　　- 比如想要修改文件路径（名称），这个时候只需要修改常量的值就可以了，其他代码不需要做任何改变
+</code></pre></div><h2 id="_9、使用dom4j实现修改节点的操作"><a href="#_9、使用dom4j实现修改节点的操作" class="header-anchor">#</a> 9、使用dom4j实现修改节点的操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 修改第一个p1下面的age元素的值 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+　　* 步骤
+
+　　/*
+
+ 　　* 1、得到document
+
+ 　　* 2、得到根节点，然后再得到第一个p1元素
+
+ 　　* 3、得到第一个p1下面的age
+
+　　　　element(&quot;&quot;)方法
+
+ 　　* 4、修改值是 30
+
+ 　　　　** 使用setText(&quot;文本内容&quot;)方法
+
+ 　　* 5、回写xml
+
+　　 * */
+
+ 1     //修改第一个p1下面的age元素的值 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span>
+ 2     public static void modifyAge() throws Exception {
+ 3         /*
+ 4          * 1、得到document
+ 5          * 2、得到根节点，然后再得到第一个p1元素
+ 6          * 3、得到第一个p1下面的age
+ 7          * 4、修改值是 30
+ 8          * 
+ 9          * 5、回写xml
+10          * 
+11          * */
+12         //得到document
+13         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+14         //得到第一个根节点
+15         Element root = document.getRootElement();
+16         //得到第一个p1
+17         Element p1 = root.element(&quot;p1&quot;);
+18         //得到p1下面的age
+19         Element age = p1.element(&quot;age&quot;);
+20         //修改age的值
+21         age.setText(&quot;30&quot;);
+22         //回写xml
+23         Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+24     }    
+</code></pre></div><h2 id="_10、使用dom4j实现删除节点的操作"><a href="#_10、使用dom4j实现删除节点的操作" class="header-anchor">#</a> 10、使用dom4j实现删除节点的操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 删除第一个p1下面的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>school</span><span class="token punctuation">&gt;</span></span>ecit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>school</span><span class="token punctuation">&gt;</span></span>元素
+　　* 步骤
+
+　　/*
+
+　　 * 1、得到document
+
+ 　　* 2、得到根节点
+
+ 　　* 3、得到第一个p1标签
+
+ 　　* 4、得到第一个p1下面的school元素
+
+ 　　* 5、删除（使用p1删除school）
+
+　　　　* 得到school的父节点
+
+　　　　　　- 第一种直接得到p1
+
+　　　　　　- 使用方法 getParent方法得到
+
+　　　　* 删除操作
+
+　　　　　　- 在p1上面执行remove方法删除节点
+
+ 　　* 6、回写xml
+
+　　* */
+
+ 1     //删除第一个p1下面的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>school</span><span class="token punctuation">&gt;</span></span>ecit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>school</span><span class="token punctuation">&gt;</span></span>元素
+ 2     public static void delSch() throws Exception {
+ 3         /*
+ 4          * 1、得到document
+ 5          * 2、得到根节点
+ 6          * 3、得到第一个p1标签
+ 7          * 4、得到第一个p1下面的school元素
+ 8          * 5、删除（使用p1删除school）
+ 9          * 
+10          * 6、回写xml
+11          * */
+12         //得到document    ctrl shift o 快速导包
+13         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+14         //得到根节点
+15         Element root = document.getRootElement();
+16         //得到第一个p1元素
+17         Element p1 = root.element(&quot;p1&quot;);
+18         //得到p1下面的school标签
+19         Element sch = p1.element(&quot;school&quot;);
+20         //删除school元素
+21         //通过父节点删除 
+22         //获取父节点的方法
+23         //sch.getParent(); //获取到school的父节点p1
+24         p1.remove(sch);
+25         //回写xml
+26         Dom4jUtils.xmlWriters(Dom4jUtils.PATH, document);
+27     }
+</code></pre></div><h2 id="_11、使用dom4j获取属性的操作"><a href="#_11、使用dom4j获取属性的操作" class="header-anchor">#</a> 11、使用dom4j获取属性的操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 获取第一个p1里面的属性id1的值
+　　* 步骤
+
+　　/*
+
+ 　　* 1、得到document
+
+ 　　* 2、得到根节点
+
+ 　　* 3、得到第一个p1元素
+
+　　 * 4、得到p1里面的属性值
+
+　　　　- p1.attributeValue(&quot;id1&quot;);
+
+　　　　- 在p1上面执行这个方法，里面的参数是属性名称
+
+　　* */
+
+ 1     //获取第一个p1里面的属性id1的值
+ 2     public static void getValues() throws Exception {
+ 3         /*
+ 4          * 1、得到document
+ 5          * 2、得到根节点
+ 6          * 3、得到第一个p1元素
+ 7          * 4、得到p1里面的属性值
+ 8          * */
+ 9         //得到document
+10         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+11         //得到根节点
+12         Element root = document.getRootElement();
+13         //得到第一个p1元素
+14         Element p1 = root.element(&quot;p1&quot;);
+15         //得到p1里面的属性值
+16         String value = p1.attributeValue(&quot;id1&quot;);
+17         System.out.println(value);
+18     }
+</code></pre></div><h2 id="_12、使用dom4j支持xpath的操作"><a href="#_12、使用dom4j支持xpath的操作" class="header-anchor">#</a> 12、使用dom4j支持xpath的操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　* 可以直接获取到某个元素
+
+查看XPath.chm得知：
+
+　　* 第一种形式
+
+　　　　/AAA/DDD/BBB： 表示一层一层的，AAA下面 DDD下面的BBB
+
+　　* 第二种形式
+
+　　　　//BBB： 表示和这个名称相同，表示只要名称是BBB，都得到
+
+　　* 第三种形式
+
+　　　　/*: 所有元素
+
+　　* 第四种形式
+
+　　　　**　BBB[1]：　表示第一个BBB元素
+
+　　　　××　BBB[last()]：表示最后一个BBB元素
+
+　　* 第五种形式
+
+　　　　** //BBB[@id]： 表示只要BBB元素上面有id属性，都得到
+
+　　* 第六种形式
+
+　　　　** //BBB[@id='b1'] 表示元素名称是BBB,在BBB上面有id属性，并且id的属性值是b1
+</code></pre></div><h2 id="_13、使用dom4j支持xpath具体操作"><a href="#_13、使用dom4j支持xpath具体操作" class="header-anchor">#</a> 13、使用dom4j支持xpath具体操作</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　** 默认的情况下，dom4j不支持xpath
+
+　　** 如果想要在dom4j里面是有xpath
+
+　　　　* 第一步需要，引入支持xpath的jar包，使用 jaxen-1.1-beta-6.jar
+
+　　　　** 需要把jar包导入到项目中
+
+　　** 在dom4j里面提供了两个方法，用来支持xpath
+
+　　　　*** selectNodes(&quot;xpath表达式&quot;)
+
+　　　　　　- 获取多个节点
+
+　　　　*** selectSingleNode(&quot;xpath表达式&quot;)
+
+　　　　　　- 获取一个节点
+
+　　** 使用xpath实现：查询xml中所有name元素的值
+　　　　** 所有name元素的xpath表示： //name
+
+　　　　** 使用selectNodes(&quot;//name&quot;);
+
+　　　　** 代码和步骤
+
+ 1     //查询xml中所有name元素的值
+ 2     public static void test1() throws Exception {
+ 3         /*
+ 4          * 1、得到document
+ 5          * 2、直接使用selectNodes(&quot;//name&quot;)方法得到所有的name元素
+ 6          * */
+ 7         //得到document
+ 8         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+ 9         //使用selectNodes(&quot;//name&quot;)方法得到所有的name元素
+10         List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Node</span><span class="token punctuation">&gt;</span></span> list = document.selectNodes(&quot;//name&quot;);
+11         //遍历list集合
+12         for (Node node : list) {
+13             //node是每一个name元素
+14             //得到name元素里面的值
+15             String s = node.getText();
+16             System.out.println(s);
+17         }
+18     }
+　　** 使用xpath实现：获取第一个p1下面的name的值
+　　　　* //p1[@id1='aaaa']/name
+
+　　　　* 使用到 selectSingleNode(&quot;//p1[@id1='aaaa']/name&quot;)
+
+　　　　* 步骤和代码
+
+ 1     //使用xpath实现：获取第一个p1下面的name的值
+ 2     public static void test2() throws Exception {
+ 3         /*
+ 4          * 1、得到document
+ 5          * 2、直接使用selectSingleNode方法实现
+ 6          *     - xpath ： //p1[@id1='aaaa']/name
+ 7          * */
+ 8         //得到document
+ 9         Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
+10         //直接使用selectSingleNode方法实现
+11         Node name1 = document.selectSingleNode(&quot;//p1[@id1='aaaa']/name&quot;); //name的元素
+12         //得到name里面的值
+13         String s1 = name1.getText();
+14         System.out.println(s1);
+15     }
+</code></pre></div><h2 id="_14、实现简单的学生管理系统"><a href="#_14、实现简单的学生管理系统" class="header-anchor">#</a> 14、实现简单的学生管理系统</h2> <div class="language-html extra-class"><pre class="language-html"><code>　　** 使用xml当做数据，存储学生信息
+
+　　** 创建一个xml文件，写一些学生信息
+
+student.xml
+
+ 1 <span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sudent</span><span class="token punctuation">&gt;</span></span> 
+ 3     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stu</span><span class="token punctuation">&gt;</span></span> 
+ 4         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>  
+ 5         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>zhangsan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+ 6             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span> 
+ 7       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>stu</span><span class="token punctuation">&gt;</span></span>  
+ 8       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stu</span><span class="token punctuation">&gt;</span></span> 
+ 9             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>  
+10             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>lisi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+11             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">&gt;</span></span> 
+12       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>stu</span><span class="token punctuation">&gt;</span></span> 
+13 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sudent</span><span class="token punctuation">&gt;</span></span>
+　　** 增加操作
+　　　　/*
+
+　　　　 * 1、创建解析器
+
+ 　　　　* 2、得到document
+
+ 　　　　* 3、获取到根节点
+
+ 　　　　* 4、在根节点上面创建stu标签
+
+ 　　　　* 5、在stu标签上面依次添加id name age
+
+　　　　　　** addElement方法添加
+
+ 　　　　* 6、在id name age上面依次添加值
+
+　　　　　　** setText方法
+
+ 　　　　* 7、回写xml
+
+ 　　　　* */
+
+Student.java
+
+ 1 package com.li.vo;
+ 2 public class Student {
+ 3     private String id;
+ 4     private String name;
+ 5     private String age;
+ 6     
+ 7     public String getId() {
+ 8         return id;
+ 9     }
+10     public void setId(String id) {
+11         this.id = id;
+12     }
+13     public String getName() {
+14         return name;
+15     }
+16     public void setName(String name) {
+17         this.name = name;
+18     }
+19     public String getAge() {
+20         return age;
+21     }
+22     public void setAge(String age) {
+23         this.age = age;
+24     }
+25     @Override
+26     public String toString() {
+27         return &quot;Student [id=&quot; + id + &quot;, name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+28     }
+29 }
+StuService.java
+
+ 1 import java.util.List;
+ 2 
+ 3 import org.dom4j.Document;
+ 4 import org.dom4j.DocumentException;
+ 5 import org.dom4j.Element;
+ 6 import org.dom4j.Node;
+ 7 import org.dom4j.io.OutputFormat;
+ 8 import org.dom4j.io.SAXReader;
+ 9 import org.dom4j.io.XMLWriter;
+10 
+11 import cn.itcast.vo.Student;
+12 
+13 public class StuService {
+14     //增加
+15     public static void addStu(Student student) throws Exception {
+16         /*
+17          * 1、创建解析器
+18          * 2、得到document
+19          * 3、获取到根节点
+20          * 4、在根节点上面创建stu标签
+21          * 5、在stu标签上面依次添加id name age
+22          * 6、在id name age上面依次添加值
+23          * 
+24          * 7、回写xml
+25          * */
+26         //创建解析器
+27         SAXReader saxReader = new SAXReader();
+28         //得到document
+29         Document document = saxReader.read(&quot;src/student.xml&quot;);
+30         //得到根节点
+31         Element root = document.getRootElement();
+32         //在根节点上面添加stu
+33         Element stu = root.addElement(&quot;stu&quot;);
+34         //在stu标签上面依次添加id name age标签
+35         Element id1 = stu.addElement(&quot;id&quot;);
+36         Element name1 = stu.addElement(&quot;name&quot;);
+37         Element age1 = stu.addElement(&quot;age&quot;);
+38         //在id name age上面依次添加值
+39         id1.setText(student.getId());
+40         name1.setText(student.getName());
+41         age1.setText(student.getAge());
+42         //回写xml
+43         OutputFormat format = OutputFormat.createPrettyPrint();
+44         XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(&quot;src/student.xml&quot;), format);
+45         xmlWriter.write(document);
+46         xmlWriter.close();
+47     }
+48 }
+TestStu.java
+
+1     //测试添加方法
+2     public static void testAdd() throws Exception {
+3         //设置值
+4         Student stu = new Student();
+5         stu.setId(&quot;103&quot;);
+6         stu.setName(&quot;wangwu&quot;);
+7         stu.setAge(&quot;40&quot;);
+8         StuService.addStu(stu);
+9     }
+　　** 删除操作（根据id删除）
+　　　　/*
+
+ 　　　　* 1、创建解析器
+
+ 　　　　* 2、得到document
+
+ 　　　　* 3、获取到所有的id
+
+ 　　　　　　* 使用xpath //id 返回 list集合
+
+ 　　　　* 4、遍历list集合
+
+ 　　　　* 5、判断集合里面的id和传递的id是否相同
+
+ 　　　　* 6、如果相同，把id所在的stu删除
+
+ 　　　　* */
+
+StuService.java
+
+ 1     //删除 根据学生的id删除
+ 2     public static void delStu(String id) throws Exception {
+ 3         /*
+ 4          * 1、创建解析器
+ 5          * 2、得到document
+ 6          * 
+ 7          * 3、获取到所有的id    
+ 8          *     使用xpath //id 返回 list集合
+ 9          * 4、遍历list集合
+10          * 5、判断集合里面的id和传递的id是否相同
+11          * 6、如果相同，把id所在的stu删除
+12          * 
+13          * */
+14         //创建解析器
+15         SAXReader saxReader = new SAXReader();
+16         //得到document
+17         Document document = saxReader.read(&quot;src/student.xml&quot;);
+18         //获取所有的id  xpath: //id
+19         List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Node</span><span class="token punctuation">&gt;</span></span> list = document.selectNodes(&quot;//id&quot;);
+20         //遍历list集合
+21         for (Node node : list) { //node是每一个id的元素
+22             //得到id的值
+23             String idv = node.getText();
+24             //判断idv和传递的id是否相同
+25             if(idv.equals(id)) { //id相同
+26                 //得到stu节点
+27                 Element stu = node.getParent();
+28                 //获取stu的父节点
+29                 Element student = stu.getParent();
+30                 //删除stu
+31                 student.remove(stu);
+32             }        
+33         }
+34         //回写xml
+35         OutputFormat format = OutputFormat.createPrettyPrint();
+36         XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(&quot;src/student.xml&quot;), format);
+37         xmlWriter.write(document);
+38         xmlWriter.close();
+39     }
+TestStu.java
+
+    //测试删除方法
+    public static void testDel() throws Exception {
+        StuService.delStu(&quot;103&quot;);        
+    }
+　　** 查询操作（根据id查询）
+　　　　/*
+
+ 　　　　* 1、创建解析器
+
+ 　　　　* 2、得到document
+
+ 　　　　* 3、获取到所有的id
+
+ 　　　　* 4、返回的是list集合，遍历list集合
+
+ 　　　　* 5、得到每一个id的节点
+
+ 　　　　* 6、id节点的值
+
+ 　　　　* 7、判断id的值和传递的id值是否相同
+
+ 　　　　* 8、如果相同，先获取到id的父节点stu
+
+ 　　　　* 9、通过stu获取到name age值
+
+ 　　　　　　** 把这些值封装到一个对象里面 返回对象
+
+ 　　　　* */
+
+StuService.java
+
+ 1     //查询 根据id查询学生信息
+ 2     public static Student getStu(String id) throws Exception {
+ 3         /*
+ 4          * 1、创建解析器
+ 5          * 2、得到document
+ 6          * 
+ 7          * 3、获取到所有的id
+ 8          * 4、返回的是list集合，遍历list集合
+ 9          * 5、得到每一个id的节点
+10          * 6、id节点的值
+11          * 7、判断id的值和传递的id值是否相同
+12          * 8、如果相同，先获取到id的父节点stu
+13          * 9、通过stu获取到name age值
+14          * 
+15          * */
+16         //创建解析器
+17         SAXReader saxReader = new SAXReader();
+18         //得到document
+19         Document document = saxReader.read(&quot;src/student.xml&quot;);
+20         //获取所有的id
+21         List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Node</span><span class="token punctuation">&gt;</span></span> list = document.selectNodes(&quot;//id&quot;);
+22         //创建student对象
+23         Student student = new Student();
+24         //遍历list
+25         for (Node node : list) { //node是每一个id节点
+26             //得到id节点的值
+27             String idv = node.getText();
+28             //判断id是否相同
+29             if(idv.equals(id)) { 
+30                 //得到id的父节点 stu
+31                 Element stu = node.getParent();
+32                 //通过stu获取name和age
+33                 String namev = stu.element(&quot;name&quot;).getText();
+34                 String agev = stu.element(&quot;age&quot;).getText();
+35                 student.setId(idv);
+36                 student.setName(namev);
+37                 student.setAge(agev);
+38             }
+39         }
+40         return student;
+41     }
+TestStu.java
+
+ 
+
+    //测试查询方法
+    public static void testSelect() throws Exception {
+        Student stu = StuService.getStu(&quot;100&quot;);
+        System.out.println(stu.toString());
+    }
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年6月6日星期六上午9点21分</span></div></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/jialcblog/assets/js/app.936873de.js" defer></script><script src="/jialcblog/assets/js/6.c506a410.js" defer></script><script src="/jialcblog/assets/js/2.364699e5.js" defer></script><script src="/jialcblog/assets/js/36.9c07e7ea.js" defer></script><script src="/jialcblog/assets/js/4.42c26233.js" defer></script>
+  </body>
+</html>
